@@ -1,0 +1,18 @@
+{
+    "name": "pdf-to-txt-converter",
+    "version": "1.0.0",
+    "description": "Convert PDFs to TXT files using ConvertAPI",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "express-fileupload": "^1.5.0",
+        "node-fetch": "^2.7.0",
+        "serve-favicon": "^2.5.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

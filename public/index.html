@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de PDF a TXT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        /* Estilos adicionales */
+        #resultados {
+            display: none; /* Ocultar resultados por defecto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Convertidor de PDF a TXT</h1>
+    </header>
+    <main>
+        <form id="uploadForm">
+            <label for="folderInput">Selecciona una carpeta con archivos PDF:</label>
+            <input type="file" id="folderInput" webkitdirectory directory multiple>
+            <button type="submit">Convertir a TXT</button>
+        </form>
+        <button id="processBtn">Procesar Archivos TXT</button>
+        <div id="resultados">
+            <!-- Aquí se mostrarán los resultados -->
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Convertidor de PDF a TXT</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

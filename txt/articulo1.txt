@@ -1,0 +1,626 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Universidad Autónoma de Querétaro
+
+Facultad de Informática
+
+C.U. a 18 de enero de 2023
+Maestría en Sistemas Computacionales
+
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+Nombre del Alumno: Daniel Rincón Méndez
+No. de Expediente: 278776
+No. CVU:            (Si cuenta con él) Correo electrónico: daniel2000rincon@gmail.com Teléfono: 4422306467
+
+Línea de investigación sobre la cual se desarrollará el trabajo: Sistemas de soporte a la decisión.
+Responsable de la Asesoría: M.C.C. Martín Muñoz Mandujano
+Programas educativos que apoya: Maestría en Sistemas Computacionales Línea de investigación del responsable: Sistemas de soporte a la decisión Firma de aceptación:
+
+Co-asesor: Dr. Martin Alfonso Gutiérrez López.
+Firma de aceptación:
+
+
+Número de veces que se ha sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez (  )   2da. ( X )    Más de 2 veces (  )
+Semestre o Cuatrimestre actual del alumno:    2   
+Fecha de Ingreso al programa:      1 de agosto de 2022      
+
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+I. DATOS GENERALES
+
+
+•  Título  del  proyecto:  Desarrollo  de  software  hidroinformático  para  la sistematización del cálculo de escurrimientos con base en la norma NOM-011- CONAGUA-2015.
+•  Nombre del alumno responsable: Daniel Rincón Méndez
+•  Colaboradores (Director y/o Co-director): Director: M.C.C. Martín Muñoz Mandujano
+Co-director: Dr. Martín Alfonso Gutiérrez López
+•  Centro o lugar donde se realiza investigación:
+Facultad de Informática – Universidad Autónoma de Querétaro
+•  Tipo de investigación básica, aplicada o tecnológica (diseño, construcción de prototipo o prueba experimental):
+Investigación aplicada en tecnología
+•  Línea de investigación sobre la cual se desarrollará el trabajo: Desarrollo de software para la toma de decisiones.
+
+
+
+II. ANTECEDENTES Y/O FUNDAMENTACIÓN TEÓRICA
+
+
+En zonas áridas y semiáridas de México la disponibilidad de agua es crítica, recalcando que se debe a su escasez y a su comportamiento impredecible en términos de tiempo y espacio (Martínez-Yrízar et al., 2017). En zonas húmedas, el consumo de agua aparenta no ser un tema alarmante, sin embargo, es una cuestión de importancia, puntualmente en la programación de riego y la gestión del agua agrícola (Karimi et al., 2020).
+
+
+
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Se considera que en la actualidad el tema del recurso del agua, específicamente agua dulce, es de importancia y relevancia alta, tomando en cuenta un contexto donde no se discrimina de manera geográfica, sino considerando la problemática de  carácter  global.  “Este  conocimiento  es  relevante  en  el  contexto  de  la vulnerabilidad de la disponibilidad de agua ante el cambio climático” (Martínez- Yrízar et al., 2017).
+
+Se especifican diversas áreas con el fin de obtener una salud planetaria óptima, entre las que para esta investigación resalta el cambio climático, específicamente la seguridad del agua. Se detalla que la gran demanda de energía y agua causan efectos desfavorables para el medio ambiente que como consecuencia afecta por al igual a la sociedad. Es por ello que se enfatiza en un manejo consciente y responsable del agua con el objetivo de lograr una salud planetaria sostenible (Álvarez et al., 2021).
+
+Se refiere al agua como un recurso esencial y vital para el desarrollo del ser humano, sin embargo,  únicamente el  0.8%  del agua total  está  disponible  para ser aprovechada tanto para el consumo del ser humano como sus mismas actividades. Recalcando el hecho de que el recurso actualmente se encuentra muy limitado debido al crecimiento acelerado de la población y a lo que esto conlleva, resumiéndose al deterioro del recurso. Debido a la actividad humana se requieren soluciones que permitan el máximo aprovechamiento del agua. (Grueso et al., 2019).
+
+Se menciona que “el agua es un recurso natural y fundamental para la existencia de la vida” expresando los principales usos que se le dan, los cuáles son: consumo humano, agricultura, producción de bienes, uso doméstico, producción piscícola, prestación de servicios y actividades recreativas. (Guerrero, 2022)
+
+Una norma es conceptualizada como una regulación técnica emitida por una dependencia competente con el fin de que se establezcan características
+
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+específicas las cuales deben cumplir los procesos y servicios de determinada índole. (Salud, 2015)
+
+A lo largo del escrito se definen diversas abreviaciones para un mejor desarrollo en el flujo del documento y le permita al lector una mejor comprensión.
+
+La  norma  NOM-011-CONAGUA-2015  (Norma  Oficial  Mexicana  NOM-011- CONAGUA-2015, 2015), a la que se hará referencia como NOM-011, refiere los principales usos del agua, así como su rango en porcentaje de uso y de retorno del agua asignado por estimación a cada respectivo uso los cuales se pueden observar en la Tabla 1:
+
+Tabla 1:
+
+
+Porcentaje de rango y retorno según usos del agua
+
+
+USOS            % RANGO       % RETORNO
+Agrícola           10% - 30%         20%
+Público Urbano         70% - 80%         75%
+Industrial           50% - 60%         55%
+Doméstico           70% - 80%         75%
+Pecuario           10% - 30%         15%
+Acuacultura          95% - 100%         100%
+Generación de energía eléctrica    95% - 100%         100%
+Fuente: Elaboración propia con base en (Norma Oficial Mexicana NOM-011- CONAGUA-2015, 2015)
+
+La NOM-011 tiene como principal objetivo establecer las especificaciones y el método base para determinar la disponibilidad media anual de las aguas nacionales tanto superficiales y como del subsuelo, ya sea para su explotación, uso o aprovechamiento  según  se  requiera.  (Norma  Oficial  Mexicana  NOM-011- CONAGUA-2015, 2015)
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+El escurrimiento o escorrentía es el flujo de agua que no se logra infiltrar en un área para así formar cursos de agua superficiales en forma continua o durante períodos de lluvia, depende de factores climáticos, fisiográficos y vegetativos. Una cuenca es una  unidad  hidrográfica  delimitada  con  características  físico-ambientales específicas de esa cuenca donde pueden converger distintos flujos de agua. (Cabrera & Suarez, 2022)
+
+La NOM-011 (Norma Oficial Mexicana NOM-011-CONAGUA-2015, 2015) define que la disponibilidad media anual de agua superficial en una cuenca hidrológica se determina en el cauce principal en la salida de la cuenca hidrológica, mediante la ecuación 1; donde DMA hace referencia a “Disponibilidad media anual de agua superficial en la cuenca hidrológica”, VAB hace referencia a “Volumen medio anual de escurrimiento de la cuenca hacia aguas abajo” y VAA hace referencia a “Volumen anual actual comprometido aguas abajo”.
+
+DMA = VAB - VAA                (1)
+
+
+La NOM-011 (Norma Oficial Mexicana NOM-011-CONAGUA-2015, 2015) define que el volumen anual actual comprometido aguas abajo se determina como la parte de los escurrimientos de la cuenca hacia aguas abajo, esta es necesaria para cumplir con los volúmenes asignados y concesionados por la Comisión, limitaciones que se establezcan en las vedas, los volúmenes correspondientes a reservas, uso ambiental, reglamentos y Programación Hídrica.
+
+La NOM-011 (Norma Oficial Mexicana NOM-011-CONAGUA-2015, 2015) define que el volumen medio anual de escurrimiento de la cuenca hacia aguas abajo del sitio de interés se determina mediante la ecuación 2; donde VAB hace referencia a “Volumen medio anual de escurrimiento de la cuenca hacia aguas abajo", VAR hace referencia a “Volumen medio anual de escurrimiento desde la cuenca aguas arriba”, VN hace referencia a “Volumen medio anual de escurrimiento natural”, VR hace
+referencia a “Volumen anual de retornos”, VI hace referencia a “Volumen anual de
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+importaciones”, VE hace referencia a “Volumen anual de exportaciones”, VEA hace referencia a “Volumen anual de extracciones de agua superficial”, VE hace referencia a “Volumen medio anual de evaporación en embalses” y VV hace referencia a “Volumen medio anual de variación de almacenamiento en embalses”.
+
+VAB = VAR + VN + VR + VI – VE – VEA – VE – VV         (2)
+
+
+La NOM-011 (Norma Oficial Mexicana NOM-011-CONAGUA-2015, 2015) define 2 métodos para determinar el volumen medio anual de escurrimiento natural:
+1. Método directo: este método es aplicable cuando en la cuenca existe un registro mínimo de 20 años. Los datos necesarios para realizar este método son: Nombre y área de la cuenca hidrológica o subcuenca en estudio, ubicación de la cuenca hidrológica en cartas hidrográficas, indicando su localización con respecto a la región o subregión hidrológica y entidades federativas a las que pertenece, nombre de las estaciones hidrométricas y su ubicación sobre el cauce principal, volúmenes de extracción de la cuenca hidrológica en estudio y sus diversos usos y notas aclaratorias necesarias. Este método se define mediante la ecuación 3; donde VNC hace referencia a “Volumen anual de escurrimiento natural de la cuenca”, VAAB hace referencia a “Volumen anual de escurrimiento aforado de la cuenca hacia aguas abajo”, VEA hace referencia a “Volumen anual de extracciones de agua superficial”, VAAR hace referencia a “Volumen anual de escurrimiento aforado desde la cuenca aguas arriba”, VE hace referencia a “Volumen anual de exportaciones”, VI hace referencia a “Volumen anual de importaciones” y VR hace referencia a “Volumen anual de retornos”.
+
+VNC = VAAB + VAEA – VAAR + VE – VI – VR        (3)
+
+Método indirecto o de precipitación-escurrimiento: este método es aplicable en caso de que la cuenca en estudio no cuente con suficiente información de registros hidrométricos o esta sea escasa. Este método se define mediante la ecuación 4; donde VNC hace referencia a “Volumen anual de escurrimiento
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+natural de la cuenca”, P hace referencia a “Precipitación anual de la cuenca”, A hace referencia a “Área de la cuenca y C hace referencia a “Coeficiente de escurrimiento”.
+
+VNC = P * A * C                 (4)
+
+
+El  Centro de Investigaciones  del  Agua Querétaro (CIAQ), se deriva  de la Universidad Autónoma de Querétaro ofreciendo diversas herramientas relacionadas con recursos hídricos. Sus principales actividades son: la investigación y desarrollo tecnológico de alto nivel, la prestación de servicios de asesoría especializada y consultoría, la formación de recurso humano, capacitación y transferencia de conocimiento en el campo de la ingeniería de registros hídricos.  “El trabajo realizado por el CIAQ ha generado resultados muy favorables, al grado de que instancias como la Conagua, las unidades estatal y municipal de Protección Civil y el Centro de Comunicación y Monitoreo (Cecom) de la Secretaría de Seguridad Pública Municipal de Querétaro, solicitan información a la Red CIAQ acerca de las condiciones meteorológicas del estado.” (Pérez, 2015)
+
+Disciplinas relacionadas con temas de sostenibilidad o dirigidas a la interacción entre en ser humano y el agua requieren nuevas herramientas eficaces “para estudios y análisis relacionados con el suministro de agua y la gestión de cuencas hidrográficas, la energía hidroeléctrica, la agricultura y las prácticas de riego, impactos del cambio climático y conservación de la biodiversidad.” (Pumo et al., 2017).
+
+Dilucida que tanto la distribución de agua, es decir la magnitud de infiltración y la escorrentía superficial, como los valores de flujos en un ecosistema se basan en los siguientes aspectos: los rasgos funcionales de la vegetación, los tipos de cobertura de suelo, la intensidad de la lluvia, la variación estacional y el mismo uso del agua. La adopción de tecnologías innovadoras ha dado pie al diseño de estudios que integran  variables ambientales y biológicas, así como al análisis de  las
+
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+interacciones para así lograr la identificación de mecanismos y factores que regulan la dinámica del agua.(A. Martínez et al., 2017)
+
+La hidroinformática nace como una disciplina derivada de la ingeniería que busca una mejora en la toma de decisiones en relación con el uso del agua y garantizar la sostenibilidad hídrica basándose herramientas derivadas de tecnología de la información.  Sin  embargo,  su  aparición  en  estudios  de  aprovechamiento  y conservación de recursos hídricos es reciente comparado con las anteriores ingenierías.  Las  herramientas  de  tecnología  de  la  información  se  pueden ejemplificar como: sistemas de información geográfica, modelos matemáticos y algoritmos, sensores y dispositivos de medición, entre otras tecnologías para recoger, almacenar, procesar y analizar datos sobre el agua y su uso. La hidroinformática integra 3 disciplinas las cuales son: la ingeniería civil, la informática y la matemática en el desarrollo sistemas complejos enfocados en una variedad de campos, como la gestión del agua, la agricultura, la ingeniería hidráulica, la meteorología, la conservación del medio ambiente y la salud pública. (Obregón & Fragala, 2003)
+
+En el campo de la hidroinformática mientras más detallado esté un modelo, mejor es el conocimiento que se obtiene, sin embargo, la construcción del mismo es más difícil y su complejidad mayor. Igualmente enfatiza el hecho de que anteriormente, a falta de ordenadores con la suficiente potencia para el uso de modelos sofisticados, estos modelos debían ser excesivamente simples, y es por eso por lo que en la actualidad la tecnología informática permite el uso de modelos más elaborados que a la vez son más complejos y están más alineados a la realidad (Soler et al., 2012).
+
+Se han encontrado en gran variedad y cantidad errores en métricas asociadas a la literatura hidrológica y de modelados, específicamente en la comparación de datos. En términos de hidrología los errores de tiempo son comunes, evaluando con métricas de error retardado. En términos generales el autor recomienda la utilización de un conjunto más completo de métricas y análisis (específicamente una librería
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+de código abierto, HydroErr, implementada en Python y MATLAB), en vez de solo un elemento, para abarcar una problemática de una manera más amplia, obteniendo mejores resultados (Jackson et al., 2019).
+
+Se presenta que el proyecto “PETP V2.0.0” con enfoque en la demanda de agua y la realización de estudios hidrológicos y ambientales fue desarrollado en Visual Basic dentro del entorno de desarrollo integrado de Visual Studio 2010 ya que facilita la labor manual permitiendo la realización de cálculos de manera automática y precisa bajo distintas condiciones de cálculo (Gutierrez & Gonzalez, 2021).
+
+El sistema de modelamiento HEC-RAS se basa en la simulación de procesos orientados a la relación lluvia-escurrimiento de una cuenca, este mecanismo es utilizado  para  obtener  datos  hidrológicos  específicos.  Este mecanismo está compuesto por un modelo meteorológico y un modelo de cuenca basados en parámetros estáticos y dinámicos. De igual manera permite intercambio de datos con plataformas de sistemas de información geográfica para la delimitación de cuencas y el cálculo de parámetros morfológicos de la misma. Así mismo permite la utilización del “curve number” con el que se estima la infiltración y escurrimiento superficial.(Cabrera & Suarez, 2022)
+
+El sistema SWAT es un modelo que puede ser utilizado en cuencas hidrográficas sin importar su tamaño. Este modelo utiliza un proceso de simulación dividido en dos etapas, la primera controla el volumen de agua y los sedimentos, la segunda consiste en cómo se desplaza el flujo dentro de la cuenca y los sedimentos a través de la red de canales de la cuenca hacia una unidad hidrográfica mayor. Este modelo suele utilizarse para medir el impacto en la hidrología de una cuenca al haber un cambio en el uso de suelo. (Cabrera & Suarez, 2022)
+
+La arquitectura de software de microkernel consta de dos componentes, el sistema central y los módulos. El sistema central contiene las mínimas funcionalidades necesarias  para  que  el  sistema  funcione.  Los  módulos  con  componentes independientes especializados en procesos individuales, normalmente, estos son
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+independientes entre sí, pero se puede dar el caso de que uno requiera de otro para existir. Esta arquitectura proporciona extensibilidad, flexibilidad, aislamiento de características  de  la  aplicación  y  lógica  de  procesamiento  personalizada. Adicionalmente esta arquitectura puede ser utilizada como parte de otra arquitectura si se considera conveniente. (Richards & Ford, 2020)
+
+
+
+III. JUSTIFICACIÓN
+
+
+La disponibilidad media anual de agua superficial o del subsuelo es una medida importante ya que permite calcular la cantidad de agua disponible para el consumo humano, actividades antrópicas y para el mantenimiento de ecosistemas sin comprometer el equilibrio del mismo ecosistema. (Norma Oficial Mexicana NOM- 011-CONAGUA-2015, 2015)
+
+El seguimiento de los lineamientos establecidos por la Comisión Nacional del Agua a través de la NOM-011-CONAGUA-2015 con base en cálculos precisos, los cuales son  de  carácter  estrictamente  obligatorio,  permite  una  correcta  gestión  y administración del agua en términos de suministro y demanda para cada caso en particular.  De  manera  más  práctica  algunos  de  sus  beneficios  se  pueden ejemplificar a continuación: determinar la cantidad de agua disponible tanto para uso agrícola, industrial o doméstico, y facilitar la realización de la planificación del desarrollo, debido a que esta información se hace relevante y puede influir al momento de la toma de decisiones sobre el uso del suelo tanto del sector público como privado, así como de la elección de la ubicación de nuevas construcciones.
+
+Es importante enfatizar el hecho de que una correcta gestión del recurso hídrico promueve el desarrollo y manejo coordinado del agua con el fin de maximizar el bienestar del ser humano y su entorno sin comprometer la sostenibilidad de los ecosistemas vitales. (Burstein, 2018)
+
+
+
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Es importante recalcar que la NOM-011 es considerada como un instrumento jurídico el cuál es debe aplicarse de manera obligatoria para la realización de estos cálculos, por lo que si se buscan datos válidos no se puede utilizar otro método. Igualmente, la NOM-011 se encuentra sujeta a un proceso cíclico de mejora denominado Revisión Quinquenal de las Normas Oficiales Mexicanas; y no es hasta que está sea oficialmente actualizada que se utilizarán otros métodos. (Rentería et al., 2020)
+
+Como referencia la NOM-011 fue publicada en el año 2015, naciendo como una actualización de su predecesora “NOM-011-CNA-2000” (Norma Oficial Mexicana NOM-011-CNA-2000, 2002). Sin embargo, no existe algún mecanismo tecnológico que permita el cálculo e implementación, en su momento de la norma “NOM-011- CNA-2000”, ni en la actualidad de la NOM-011, quedando como única alternativa el cálculo manual de cada fórmula descrita según sea requerido.
+
+Con base en lo mencionado anteriormente, se considera necesario e importante el desarrollo una solución representada por un sistema de software que permita la realización eficiente de cálculos precisos de escurrimientos según lo establecido por la NOM-011 para una correcta gestión del valioso recurso hídrico.
+
+
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+
+
+Se realizó un análisis del estado del arte referente a la NOM-011-CONAGUA- 2015, y no se identificó algún mecanismo tecnológico que permita realizar los cálculos  de  la  norma  y  por  consiguiente  tampoco  existe  su  respectiva implementación. Lo anterior arroja la premisa de que el objetivo de la norma no se está cumpliendo en su totalidad o al menos no de manera eficiente derivado de diversos factores como pueden ser consistencia, velocidad, optimización y validación. En este mismo estado del arte se identificaron diversas propuestas de mejora para la obtención de datos utilizando otros métodos para su cálculo,
+sin embargo, estas no son aplicables a este caso debido a que los métodos
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+propuestos por la norma deben ser aplicados tal cuál como son descritos, así mismo es importante destacar que su aplicación es de carácter obligatorio a nivel federal.
+
+Se especifica que los cálculos matemáticos complejos, como es el caso, requieren un entendimiento profundo del proceso matemático, una metodología detallada y el un mecanismo de software para su cálculo. (J. A. Martínez, 2022)
+
+Uno de los principales problemas detectados al no tener un mecanismo para su implementación en la situación en contexto, específicamente en la realización de cálculos no sistematizados y al ser realizados por humanos, es justamente que es vulnerable al error humano.
+
+No existe duda en el hecho que, de existir un programa, la susceptibilidad a un error humano en los cálculos en contexto relacionados a la disponibilidad media anual de las aguas nacionales superficiales y del subsuelo no desaparecería, sin embargo, esta problemática se vería reducida de forma significativa. De igual manera, al existir dicho programa, que posibilite el realizar los cálculos requeridos, el poder implementar la norma en diversos proyectos se volvería una tarea mucho más sencilla.
+
+
+
+V. COMITÉ DE BIOÉTICA
+
+
+Los escritos e investigaciones de índole académica se basan en principios legales y éticos básicos, con los cuales encaja la investigación en contexto. Los principios en cuestión se plantean con la finalidad de lograr los tres objetivos descritos a continuación:
+•  Garantizar el conocimiento científico en temas de precisión.
+•  Salvaguardar los derechos y las garantías de las personas que participan en la investigación.
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Salvaguardar los derechos de propiedad intelectual.
+
+
+Esta investigación tomará como punto principal el asegurar la precisión del conocimiento científico, pues se pretende que la investigación permita el generar un software hidroinformático que sistematice los cálculos de la norma NOM-011, más su intención no es el remplazar ni modificar dicha norma, ya que, al ser una norma federal de carácter obligatorio, una modificación de ese estilo no permitiría su cumplimiento.
+
+
+
+VI. PLANTEAMIENTO TEÓRICO (Hipótesis y/o supuestos, pregunta, etc.)
+
+
+Hipótesis:
+Con base en lo establecido por la norma NOM-011-CONAGUA-2015, es posible el desarrollo de un producto de software que sirva para la sistematización del cálculo de escurrimientos con el fin de optimizar dicho proceso.
+
+Preguntas de investigación:
+1. ¿Existen mecanismos que sistematicen la realización de cálculos de escurrimientos con base en la NOM-011-CONAGUA-2015?
+2. ¿Qué beneficios se obtienen a partir de una óptima realización de cálculos de escurrimientos con base en la NOM-011-CONAGUA-2015?
+3. ¿Qué aporte tiene la hidroinformática en la realización de cálculos de escurrimientos con base en la NOM-011-CONAGUA-2015?
+
+
+
+VII. OBJETIVOS
+
+
+Objetivo general:
+Realizar el desarrollo óptimo de un software hidroinformático, elaborado en Python con base en la arquitectura de microkernel, para la sistematización del
+cálculo de escurrimientos con base en la norma NOM-011-CONAGUA-2015
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+teniendo como área de estudio el estado de Querétaro, con el fin de optimizar el proceso de dichos cálculos evitando errores en la distribución del recurso hídrico.
+
+Objetivos específicos:
+•  Realizar una investigación sobre el balance hídrico.
+•  Realizar un análisis de la norma NOM-011-CONAGUA-2015.
+•  Desarrollar funciones para cálculo de volumen anual de escurrimiento con y sin registros hidrométricos.
+•  Elaborar una librería de Python integrando las funciones desarrolladas.
+•  Elaborar la documentación de una librería.
+•  Realizar el registro ante el INDAUTOR de la librería desarrollada.
+•  Desarrollar una propuesta de software que permita la integración de librerías.
+
+
+
+VIII. METODOLOGÍA
+
+
+Se proyecto se pretende desarrollar como una librería que conjunte los algoritmos para la realización de los cálculos pertinentes, esto con el fin de que la comunidad pueda utilizar dicha librería en proyectos futuros que lo ameriten.
+
+(de Benito & Salinas, 2016) describe la Metodología Basada en Diseño con características que la hacen ideal para el desarrollo de este proyecto se optó por la utilización de esta metodología, dichas características son:
+•  Iterativa: Permite la revisión y reformulación en las etapas del proceso por los involucrados en el proyecto.
+•  Reflexiva: Busca la oposición al enfoque de una racionalidad técnica basándose en que los problemas de importancia en la práctica profesional no pueden ni resolverse ni definirse con soluciones preconcebidas.
+•  Participativa: Considera un cambio de perspectiva.
+
+
+14
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Se define a la Metodología Basada en Diseño como una metodología que se caracteriza por ser flexible y pragmática dando importancia a las consideraciones prácticas, por lo que al momento de la definición de etapas esta metodología otorga un amplio margen para estructurarlas a conveniencia (Velasco et al., 2021). Si bien hay una base sólida que incluye acciones como: la definición del problema, el diseño, el desarrollo, la implementación y la evaluación, estas son adaptables para el desarrollo óptimo del proyecto (de Benito & Salinas, 2016). Tomando en cuenta lo anterior este proyecto estará conformado por 4 etapas con el fin de que se pueda desarrollar adecuadamente y al mismo tiempo mantenerlo conciso, estas etapas son:
+1. Investigación: Se realiza un análisis de la situación y definición del problema.
+2. Desarrollo: Busca el diseño, desarrollo e implementación de soluciones de acuerdo con una fundamentación teórica.
+3. Obtención de resultados: Se realiza un análisis y validación de los resultados obtenidos.
+4. Transferencia de conocimiento: Busca la publicación de resultados que establezcan bases para futuras investigaciones.
+
+Como se puede apreciar en la Figura 1 aunque la metodología tiene sus 4 fases definidas, esta permite el salto entre una y otra según se considere conveniente para el óptimo desarrollo del proyecto.
+
+Figura 1:
+
+
+Metodología basada en diseño
+
+
+
+
+
+
+
+
+
+
+
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Elaboración propia.
+
+
+A continuación, se describen las actividades a realizar en cada etapa:
+1. Investigación:
+•  Análisis sobre el balance hídrico.
+•  Análisis del estado del arte con base en el cálculo de escurrimientos.
+•  Análisis comparativo del cálculo de escurrimientos entre la propuesta de la norma NOM-011 y otras propuestas existentes para el cálculo de escurrimientos.
+•  Análisis de características y limitaciones de la propuesta de la norma NOM-011 para el cálculo de escurrimientos.
+•  Análisis documental con base en las funciones que debe cumplir el proyecto.
+2. Desarrollo: Se realizará con base en la arquitectura de software de microkernel ya que cuenta con altos niveles en términos de agilidad general, facilidad de despliegue, testabilidad y actuación; únicamente se considera
+
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+que cuenta con un nivel bajo en términos de escalabilidad (Richards & Ford, 2020).
+•  Análisis, codificación e implementación de funciones para el cálculo de escurrimientos con y sin registros previos.
+•  Análisis, codificación e implementación de la librería que integre el proyecto.
+3. Obtención de resultados:
+•  Validación, verificación y evaluación analítica de las funciones desarrolladas para el cálculo de escurrimientos con y sin registros previos.
+•  Validación, verificación y evaluación analítica del desarrollo de la librería que integre el proyecto.
+4. Transferencia de conocimiento:
+•  Elaboración de tesis.
+• Generación de artículo.
+•  Documentación de la librería para su integración en el catálogo PYPI.
+•  Participación en congreso en temas de software hidroinformático.
+
+
+Con el objetivo de representar una calendarización en las actividades que fueron especificadas se muestra un cronograma ejemplificado en la Tabla 2:
+
+Tabla 2:
+
+
+Cronograma de actividades
+
+
+ETAPAS Y ACTIVIDADES  SEP
+OCT 2022
+NOV DIC 2022
+ENE FEB 2023
+MAR ABR 2023
+MAY JUN 2023
+JUL AGO 2023
+SEP OCT 2023
+NOV DIC 2023
+ENE FEB 2024
+MAR ABR 2024
+MAY JUN 2024
+Análisis sobre el balance hídrico.
+Análisis del estado del arte con base en el cálculo de escurrimientos.
+Análisis comparativo del cálculo de escurrimientos entre la propuesta de la norma NOM-011 y otras propuestas existentes para el cálculo de escurrimientos. Análisis de características y limitaciones de la propuesta
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+de la norma NOM-011 para el cálculo de escurrimientos. Análisis documental con base en las funciones que debe cumplir el proyecto.
+Análisis de funciones para cálculo de volumen anual de escurrimiento sin registros previos.
+Análisis del desarrollo de librería integrando funciones desarrolladas.
+Codificación de funciones para cálculo de volumen anual de escurrimiento con registros hidrométricos.
+Codificación de funciones para cálculo de volumen anual de escurrimiento sin registros previos.
+Implementación de funciones para cálculo de volumen anual de escurrimiento sin registros previos.
+Codificación de librería integrando funciones desarrolladas.
+Implementación de librería integrando funciones desarrolladas.
+Validación, verificación y evaluación analítica de las funciones desarrolladas para el cálculo de escurrimientos con registros previos.
+Validación, verificación y evaluación analítica de las funciones desarrolladas para el cálculo de escurrimientos sin registros previos.
+Validación, verificación y evaluación analítica del desarrollo de la librería que integre el proyecto.
+Elaboración de tesis. Generación de artículo. Documentación de la librería para su integración en el catálogo PYPI. Participación en congreso en temas de software hidroinformático.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*              *              *     *
+
+
+
+*              *              *     *
+
+
+Fuente: Elaboración propia
+
+
+Como se puede apreciar se irá elaborando la tesis a la par del desarrollo de las fases correspondientes. La generación del artículo y la participación en un congreso están propuestas, según se considere conveniente, para realizarse en al menos uno de los períodos propuestos que coinciden con la finalización de etapas anteriores.
+
+
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO
+18
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+Los resultados que se pretenden obtener de carácter tecnológico a lo largo del proceso de desarrollo de esta investigación son los siguientes:
+1. Desarrollo e implementación de diversos algoritmos dirigidos al cálculo de escurrimientos con base en la norma NOM-011, ya sea con o sin registros hidrométricos previos para cada caso en particular.
+2. Desarrollo, implementación y documentación de una librería que integre las funcionalidades requeridas para el óptimo funcionamiento de los algoritmos en cuestión, lo anterior con el principal objetivo de integrarla al catálogo PYPI.
+
+Los resultados que se pretenden obtener en cuanto a la producción a largo del proceso de desarrollo de esta investigación son los siguientes son:
+1. Realizar  al  menos  una  participación  en  congresos  nacionales  o internacionales de software hidroinformático.
+2. El registro en INDAUTOR de al menos un desarrollo tecnológico.
+3. Generar un artículo en una revista indexada nacional o internacional.
+
+
+El principal resultado que se pretende obtener de carácter social es que el uso óptimo del desarrollo de esta investigación cumpla con el objetivo de darle una gestión eficiente al recurso del agua, del cual se ha denotado su vital importancia. De igual manera se pretende sentar una base para que la comunidad que lo requiera pueda implementarlo de manera efectiva ya sea tal cuál o con las adaptaciones necesarias con respecto a objetivos particulares.
+
+
+
+X. INDICE TENTATIVO DE LA TESIS
+
+
+Índice.
+Índice de Figuras Índice de Tablas Dedicatorias.
+Agradecimientos.
+19
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Resumen en español Abstract.
+I.  Introducción:
+a. Descripción del problema.
+b. Justificación del problema.
+c. Objetivo general y específicos.
+d. Alcances y limitaciones.
+II.  Antecedentes:
+a. Antecedentes.
+b. Estado del arte.
+c. Fundamentación teórica.
+III.  Planteamiento teórico:
+a. Hipótesis
+b. Preguntas de investigación.
+c. Metodología
+IV.  Resultados.
+V.  Discusión.
+VI.  Conclusiones:
+a. Conclusiones.
+b. Limitaciones.
+c. Trabajo futuro.
+VII.  Referencias.
+VIII.  Anexos.
+
+
+
+XI. REFERENCIAS BIBLIOGRÁFICAS
+Álvarez, C., López, I. M., Sanz, S., & Álvarez, C. (2021). Planetary health: Education for sustainable healthcare. Educacion Medica, 22(6), 352–357. https://doi.org/10.1016/j.edumed.2021.08.001
+Burstein, T. (2018). Reflexiones sobre la gestión de los recursos hídricos y la salud pública en el Perú. Revista Peruana de Medicina Experimental y Salud
+20
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Pública, 35(2), 297. https://doi.org/10.17843/rpmesp.2018.352.3641
+
+Cabrera, E., & Suarez, B. (2022). Revisión sistemática: Análisis de la influencia de cobertura vegetal en el caudal de escorrentía en una cuenca mediante los modelos HEC – HMS y SWA.
+de Benito, B., & Salinas, J. M. (2016). La Investigación Basada en Diseño en Tecnología Educativa. Revista Interuniversitaria de Investigación En Tecnología Educativa, 0, 44–59. https://doi.org/10.6018/riite2016/260631
+Grueso, M. C., Castro, C. C., Correa, M. A., & Saldarriaga, J. C. (2019). Estado del arte: desalinización mediante tecnologías de membrana como alternativa frente al problema de escasez de agua dulce. Revista Ingenierías Universidad de Medellín, 18(35), 69–89. https://doi.org/10.22395/rium.v18n35a5
+Guerrero, M. F. (2022). Análisis de Programas de Uso y Ahorro Eficiente de agua en empresas de diferentes sectores económicos en Colombia: una revisión de literatura. In Universidad de Antioquia (Issue 8.5.2017).
+Gutierrez, C., & Gonzalez, R. (2021). Software to analyze ETo. Compilation of indirect methods. Environmental Modelling & Software, 142, 105056. https://doi.org/10.1016/J.ENVSOFT.2021.105056
+Jackson, E. K., Roberts, W., Nelsen, B., Williams, G. P., Nelson, E. J., & Ames, D.
+P. (2019). Introductory overview: Error metrics for hydrologic modelling – A review of common practices and an open source library to facilitate use and adoption. Environmental Modelling & Software, 119, 32–48. https://doi.org/10.1016/J.ENVSOFT.2019.05.001
+Martínez, A., Álvarez, J., & Maass, M. (2017). Análisis y perspectivas del estudio de los ecosistemas terrestres de México: dinámica hidrológica y flujos de nitrógeno y fósforo. Revista Mexicana de Biodiversidad, 88, 27–41. https://doi.org/10.1016/J.RMB.2017.10.008
+Martínez, J. A. (2022). Fundamentos Fisiológicos De La Capacidad Anaerobia: Revisión Sistemática. Revista Mexicana de Ciencias de La Cultura Física,
+
+21
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+1(1). https://doi.org/10.54167/rmccf.v1i1.901
+
+Obregón, N., & Fragala, F. (2003). Sistemas inteligentes, ingeniería e hidroinformática. Ciencia e Ingeniería Neogranadina, 13(1), 71–79. https://doi.org/10.18359/rcin.1339
+Pérez, I. (2015). Red CIAQ, el análisis científico de los fenómenos meteorológicos. http://www.cienciamx.com/index.php/ciencia/ambiente/2459-red-ciaq
+Pumo, D., Lo Conti, F., Viola, F., & Noto, L. V. (2017). An automatic tool for reconstructing monthly time-series of hydro-climatic variables at ungauged basins. Environmental Modelling & Software, 95, 381–400. https://doi.org/10.1016/J.ENVSOFT.2017.06.045
+Rentería, S., Rangel, J., & García, F. (2020). Propuestas de mejora al método para determinar la disponibilidad oficial de agua superficial en México.
+Richards, M., & Ford, N. (2020). Fundamentals of Software Architecture. O’Reilly.
+
+Salud, S. de. (2015). Normas Oficiales Mexicanas. https://www.gob.mx/salud/en/documentos/normas-oficiales-mexicanas-9705
+Soler, J., Bladé, E., & Sánchez, M. (2012, April 1). Ensayo comparativo entre modelos unidimensionales y bidimensionales en la modelización de la rotura de una balsa de materiales sueltos erosionables. Revista Internacional de Métodos Numéricos Para Cálculo y Diseño En Ingeniería, 28(2), 103–111. https://doi.org/10.1016/J.RIMNI.2012.03.002
+Velasco, N., Gandolfo, N., & Buteler, L. (2021). La investigación basada en el diseño: una revisión en educación en física en Argentina. Revista de Enseñanza de La Física, 33(extra), 629–635.
+
+
+
+
+
+
+
+
+
+22
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+Firma del alumno
+
+
+
+
+
+
+Nivel de revisión: 1.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23

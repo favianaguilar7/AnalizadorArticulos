@@ -1,0 +1,558 @@
+F-50-01
+PROTOCOLO DE INVESTIGACIÓN
+Universidad Autónoma de Querétaro
+Facultad de Informática
+C.U. a FECHA
+MAESTRÍA EN CIENCIAS DE LA COMPUTACIÓN
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+Nombre del Alumno: Campos Sánchez Jonathan Josefat
+No. de Expediente: 132566
+No. CVU: 1311846fF
+Correo electrónico: josefat.campos@uaq.mx
+Teléfono: 4131003979
+
+
+Línea de investigación sobre la cual se desarrollará el trabajo:
+Inteligencia Artificial
+Responsable de la Asesoría: Dr. Fidel González, Dr. Francisco Castillo
+Programas educativos que apoya: Maestría en Ciencias de la Computación Línea de investigación del responsable: Inteligencia Artificial, Procesamiento de Lenguaje Natural
+Firma de aceptación:
+
+
+Número de veces que se a sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez ( X )   2da. (  )    Más de 2 veces (  )
+Semestre o Cuatrimestre actual del alumno:     
+Fecha  de  Ingreso  al  programa:         
+
+
+
+
+
+
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+LINEAMIENTOS GENERALES
+1. Documentos PDF editable
+2. Mínimo 18 cuartilla
+3. Máximo 25 cuartillas incluyendo índice y referencias
+4. Los anexos no forman parte de las 25 cuartillas
+5. Espaciado a 1.5
+6. Párrafos justificados.
+7. Tipo y tamaño de letra: Arial o Times New Roman tamaño 12, en todo el documento
+8.  En caso de usar palabras en latín y/o griego o en otro idioma diferentes al de la escritura de la tesis, utilizar cursivas.
+9.  Márgenes: izquierdo 4 cm, derecho 2 cm, inferior y superior 3 cm.
+10. Citas y referencias bibliográficas de acuerdo al formato APA 7
+11. Utilizar sólo letra en negritas en los títulos
+
+
+
+I. DATOS GENERALES
+•  Título del proyecto. Modelos para el procesamiento de datos no estructurados
+•  Nombre del alumno responsable. Campos Sánchez Jonathan Josefat
+•  Colaboradores (Director y/o Co-director): Dr. Fidel González, Dr. Francisco Castillo
+•  Centro o lugar donde se realiza investigación. Universidad Autónoma de Querétaro
+•  Tipo de investigación básica, aplicada o tecnológica (diseño, construcción de prototipo o prueba experimental). Investigación Aplicada
+•  Línea de investigación sobre la cual se desarrollará el trabajo. Procesamiento de Lenguaje Natural
+
+
+
+II. ANTECEDENTES Y/O FUNDAMENTACIÓN TEÓRICA
+Los Antecedentes consisten en describir la evaluación histórica del conocimiento acerca del fenómeno o hecho a investigar.
+La Fundamentación Teórica consiste en el planteamiento de:
+a) La perspectiva desde donde se desarrollará el estudio (modelo teórico, básico).
+b) Los elementos del tema que consideramos más significativos (variable con las cuales va a interactuar el investigador).
+c) Los instrumentos teóricos de análisis de los datos obtenidos.
+
+
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Algoritmos
+
+
+El concepto de algoritmo se remonta a la antigüedad. La propia palabra "algoritmo" puede atribuirse al matemático persa Al-Khwarizmi, que vivió durante el siglo IX. El trabajo de Al-Khwarizmi influyó enormemente en el desarrollo  del  álgebra  e  introdujo  métodos  sistemáticos  para  resolver ecuaciones. Sus contribuciones sentaron las bases de los algoritmos modernos tal y como los conocemos al día de hoy.
+
+En 1842, la matemática y pionera de la informática, Ada Lovelace, programó el primer algoritmo destinado a ser procesado por una máquina. Adelantada a su época, Ada especuló que la máquina “podría actuar sobre otras cosas además de los números... el motor (la máquina) podría componer piezas musicales elaboradas y científicas de cualquier grado de complejidad o extensión”. Décadas más tarde, la visión de Ada es una realidad gracias a la Inteligencia Artificial (IA).
+
+En 1845, Ada tradujo al inglés un documento explicativo sobre el excepcional trabajo de Babbage al que fue añadiendo notas explicativas que ampliaron su extensión a casi el doble del original. Este traducción y explicación fue publicada en una revista francesa.
+
+Esta investigación, que tenía su origen en el trabajo de Babbage, sirvió a la joven matemática para introducir algunas ideas sobre programación muy avanzadas para la época. Entre ellas, un sistema de tarjetas perforadas que serían esenciales para programar los primeros ordenadores a mediados del siglo XX. Estas aportaciones de Lovelace supusieron la creación del primer algoritmo destinado a ser procesado por una máquina.
+
+
+
+
+
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apuntes de Ada Lovelace en el que definió el primer lenguaje de programación
+
+Ada Lovelace tomó como referencia los números de Bernoulli para desarrollar lo que hoy conocemos como algoritmo informático. Sin embargo, uno de los grandes avances que desarrolló fue la introducción de este algoritmo en la máquina de Babbage. Este hecho le permitió definir lo que actualmente en informática se conoce como «bucle»: ejecutar una serie de acciones de forma repetida.
+
+A su vez, Ada Lovelace diseñó la idea de una máquina que fuera capaz de programarse y reprogramarse para ejecutar funciones que le llevarán a la realización de una serie de tareas que fueran mas allá de llevar a cabo simples cálculos y que quedarán expresadas mediante símbolos.
+
+
+
+
+
+
+
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Inteligencia Artificial (IA)
+
+
+Las bases de la inteligencia artificial, así como visión y objetivos fueron planteados en los años 50’s por el matemático Alan Turing en sus artículos “Computing Machinery and Inteligence” y “Test de Turing”.
+
+La inteligencia artificial se refiere a la simulación de procesos de inteligencia humana mediante la programación de equipos de cómputo y sistemas para la realización  de  tareas,  dentro  de  las  cuales  se  pueden  considerar  el aprendizaje, reconocimiento de patrones, resolución de problemas, toma de decisiones y comprensión de lenguaje natural con la finalidad de pensar de manera autónoma. La inteligencia artificial es una ciencia interdisciplinaria con múltiples  enfoques,  al  día  de  hoy  en  Machine  Learning(aprendizaje automático),  Deep  Learning(aprendizaje  profundo),  Procesamiento  de Lenguaje Natural(NLP), Visión por Computadora y Robótica.
+
+Los algoritmos son un componente esencial de la Inteligencia Artificial. Son conjuntos de instrucciones y normas a las que se adhieren los sistemas de Inteligencia Artificial para completar tareas específicas. Los algoritmos se elaboran para analizar datos, reconocer patrones y decidir en función de esos datos. Proporcionan el marco para que los sistemas de Inteligencia Artificial comprendan,  razonen  y  aprendan  de  los  datos  que  adquieren.  En  la Inteligencia Artificial se utilizan distintos tipos de algoritmos, cada uno con una finalidad distinta. Por ejemplo, los algoritmos de búsqueda se utilizan para descubrir resoluciones óptimas en tareas de resolución de problemas, mientras que los algoritmos de aprendizaje automático permiten a los sistemas de Inteligencia Artificial aprender de los datos y mejorar su rendimiento con el tiempo.
+Un algoritmo es una serie de pasos organizados, que describe el proceso que se debe seguir, para dar solución a un problema específico. (Fadul, 2004).
+
+
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Información Estructurada vs Información No Estructurada
+
+
+La información estructurada se organiza en un formato específico y es más fácil de procesar, con sistemas automatizados, como bases de datos y aplicaciones.
+
+La  información  no  estructurada  es  más  desordenada  y  requiere  de procesamiento  más  avanzado,  como  el  procesamiento  de  lenguaje natural(NLP) o visión por computadora, para extraer información útil.
+
+La mayoría de los datos generados en la actualidad son no estructurados, lo que hace que su gestión y análisis sean desafiantes. Debido a ello, la capacidad de extraer información valiosa de datos no estructurados ha llevado al desarrollo de tecnologías avanzadas para su procesamiento, lo que resulta en aplicaciones como la minería de datos, clasificación de imágenes y la inteligencia artificial.
+
+Procesamiento de Información no Estructurada
+
+
+Es un campo de la informática que se enfoca en analizar y extraer información valiosa de datos que no tienen un formato predefinido, como texto, imágenes, audio, video, etc.
+
+Procesamiento de Lenguaje Natural (NLP)
+El procesamiento de lenguaje natural es una rama de la inteligencia artificial que se enfoca en la interacción entre las computadoras y el lenguaje humano, siendo su objetivo permitir que estas puedan interpretar y generarlo de manera natural.
+Su historia se remonta a mediados del siglo XX con los primeros experimentos en la traducción completamente automática de más de 60 oraciones rusas al inglés en el proyecto desarrollado por la Universidad de Georgetown e IBM. E
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+los 70’s se destacaron los sistemas basados en reglas gramaticales, que intentaban analizar el lenguaje a través de reglas sintácticas y semánticas definidas por expertos en el área. A partir de la disponibilidad de grandes cantidades de datos, el auge de la Web y la traducción automática se impulsó la necesidad de herramientas de NLP para buscar, organizar y recuperar información, siendo un ejemplo de avances significativos en la traducción automática sistemas como Google Translate.
+En la década del 2000 los enfoques basados en Machine Learning (categoría) y Deep Learning(técnica) comenzaron a dominar el campo.
+
+Machine Learning
+
+
+Frank Rosenblatt desarrolló un modelo de aprendizaje (Perceptrón) que se considera uno de los precursores de las redes neuronales, aunque tenía limitaciones en la capacidad para resolver problemas más complejos, marcó un hito en la historia del Machine Learning.
+El Machine Learning es el proceso de alimentar un ordenador con datos, el cual utiliza técnicas de análisis sobre estos, para aprender a realizar una tarea, no necesitando ninguna programación específica, por eso se denomina aprendizaje automático.
+
+Este puede ser supervisado, no supervisado y por refuerzo. El aprendizaje supervisado se basa en series de datos etiquetados, mientras que el aprendizaje no supervisado se basa en series de datos no etiquetados.
+
+
+
+
+
+
+
+
+
+
+
+
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Aprendizaje Supervisado
+
+
+Se le llama aprendizaje supervisado a una rama de machine learning en la que se usan algoritmos que aprenden iterativamente de los datos para conseguir que los ordenadores puedan localizar información escondida sin la necesidad de programar a cada uno de ellos para que sepan dónde buscar.
+
+Los modelos se construyen a partir de mediante algoritmos de machine learning y adquieren características de los datos de entrenamiento para que sea posible predecir el calor que utiliza cada uno de los datos de entrada. En este modelo, las máquinas generan las relaciones entre los valores en función de lo que ya había aprendido en los conjuntos de datos anteriores.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aprendizaje No Supervisado
+
+El aprendizaje no supervisado es un tipo de aprendizaje automático o machine learning en el que los modelos aprenden a partir de conjuntos de datos sin etiquetar sobre el que se les permite actuar sin supervisión.
+
+
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+No se puede aplicar directamente a un problema de clasificación o regresión porque, al contrario que en el aprendizaje supervisado, en el no supervisado disponemos de los datos de entrada, pero carecemos de los datos de salida. Su objetivo es encontrar la estructura oculta del conjunto de datos, agruparlos según sus semejanzas y devolver una representación útil del conjunto.
+
+
+
+
+
+
+
+
+
+
+
+
+Aprendizaje por Refuerzo
+
+
+El aprendizaje por refuerzo es una rama del machine learning en la cual la máquina guía su propio aprendizaje a través de recompensas y castigos. Es decir, consiste en un sistema de instrucción autónomo cuyo camino es indicado según sus aciertos y errores.
+
+Consta de un aprendizaje empírico, por lo que el agente informático está en constante búsqueda de aquellas decisiones que le premien de algún modo, a la par que evita aquellos caminos que, por experiencia propia, son penalizados.
+
+También, se puede decir que el aprendizaje reforzado es un concepto similar al que utilizan los seres vivos. Esto es, las máquinas aprenden qué decisiones tomar de acuerdo a la situación en la que se encuentren. Además, son capaces de desarrollar estrategias con una visión a largo plazo.
+
+
+
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deep Learning
+
+El Deep Learning está inspirado en la arquitectura de las neuronas del cerebro humano, Una red neuronal artificial está compuesta por múltiples capas, a través de las cuales se procesan los datos, permitiendo que la máquina profundice en su aprendizaje, identificando conexiones y alterando los datos introducidos para conseguir los mejores resultados.
+Durante las décadas de los 70s y 80s, las redes neuronales artificiales experimentaron un período de declive  debido a las limitaciones en el entrenamiento y la falta de avances significativos en la tecnología de la época. A finales de los 80s Geoffrey Hinton, junto con David Rumelhart y Ronald Williams, publicaron un artículo  sobre como entrenar redes neuronales profundas utilizando el algoritmo de retro propagación.
+En los 90s las redes neuronales recurrentes, que son efectivas en el procesamiento  de  secuencia  de  datos,  se  volvieron  prominentes  en aplicaciones como el procesamiento de lenguaje natural. Las redes neuronales
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+profundas comenzaron a utilizarse en una amplia gama de aplicaciones, incluyendo el reconocimiento de voz, la traducción automática, medicina, etc.
+
+El deep learning es un tipo de machine learning que entrena a una computadora para que realice tareas como las hacemos los seres humanos, como el reconocimiento del habla, la identificación de imágenes o hacer predicciones. En lugar de organizar datos para que se ejecuten a través de ecuaciones predefinidas, el deep learning configura parámetros básicos acerca de los datos y entrena a la computadora para que aprenda por cuenta propia reconociendo patrones mediante el uso de muchas capas de procesamiento.
+Los modelos de aprendizaje profundo tienden a funcionar bien con grandes cantidades de datos, mientras que los modelos de aprendizaje automático más tradicionales dejan de mejorar después de un punto de saturación
+
+Modelo Bert
+
+
+BERT (Bidirectional Encoder Representations from Transformers) es un algoritmo de Google basado en Inteligencia Artificial (Machine Learning) y que está  focaliza  en  el  procesamiento  natural  del  lenguaje.  Utiliza  PLN (Procesamiento  del  lenguaje  natural)  que  básicamente  es  un  sistema computacional de comprensión de lenguaje.
+
+La  innovación  técnológica  de  BERT  passage  indexing  es  aplicar  la capacitación  bidireccional del procesamiento del lenguaje usando redes neuronales. Esto contrasta con los esfuerzos anteriores que analizaban una secuencia de texto de izquierda a derecha, ahora aplica un procesamiento combinado de izquierda a derecha y de derecha a izquierda. Un modelo de lenguaje que se entrena bidireccionalmente puede tener un sentido más profundo del contexto y el flujo del lenguaje que los modelos de lenguaje unidireccionales.
+
+
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Transformers en Procesamiento de Lenguaje Natural(NLP)
+
+
+La arquitectura de Transformer se introdujo por primera vez en 2017 en el artículo “Atención es todo lo que necesitas” de Vaswani et. Alabama. Se destacó por su capacidad para capturar relaciones a largo plazo en secuencia de datos, lo que lo hizo ideal para tareas de procesamiento de lenguaje natural, como traducción automática, resumen de texto y análisis de sentimientos.
+
+Uno de los desarrollos más significativos en la aplicación de Transformers fue el  desarrollo  de  modelos  de  lenguaje  pre-entrenados,  como  BERT (Bidirectional Encoder Representations from Transformers) y GPT (Generative Pre-trained Transformers), Estos modelos se entrenan en grandes conjuntos de texto y luego se adaptan a tareas específicas.
+
+Los Transformers se utilizan en la extracción de información y el resumen de texto, lo que permite automatizar la identificación y extracción de información relevante de grandes cantidades de datos no estructurados.
+
+Large Language Model (LLM)
+
+
+Los grandes modelos de lenguaje son modelos de propósito general de inteligencia artificial desarrollados dentro del campo del Procesamiento de Lenguaje Natural que puede entender y generar texto
+
+III. JUSTIFICACIÓN
+Consiste en la exposición de motivos o razones para su investigación.
+
+
+La legislación laboral y los documentos relacionados suelen contener información en formato de texto, como contratos, políticas y otros documentos legales (información no estructurada), los algoritmos Transformers, proporcionaran la información relevante de estos documentos que se requiera una estructura específica, facilitando su aplicación.
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Los Transformers pueden capturar la relación y el contexto de las palabras y frases en un documento permitiendo identificar clausulas. Restricciones y derechos específicos. Siendo esencial para comprender correctamente los detalles de la legislación laboral, ya que las palabras y frases pueden tener significados específicos en un contexto legal.
+Al aplicar algoritmos Transformers, es posible automatizar tareas que de otro modo serían intensivas en tiempo y recursos, incluyendo la identificación de cambios en la legislación laboral, la detección de posibles violaciones o la comparación de políticas antiguas y nuevas. La automatización ahorra tiempo y recursos, lo que es particularmente valioso en el contexto administrativo de una institución educativa.
+La toma de decisiones basadas en datos con el análisis de datos no estructurados permite a la institución educativa basar sus decisiones en datos concretos y análisis objetivos en lugar de depender de evaluaciones subjetivas, mejorando la calidad y reduciendo el riesgo de errores costosos o incumplimientos legales.
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+
+
+Consiste en identificar los fenómenos, hechos o situaciones, que puestos en relación presentan  incongruencia,  obstáculos,  desconocimiento  o  discrepancia  y  que constituyen el objeto de estudio.
+En una institución educativa, se generan y almacenan grandes cantidades de datos no estructurados, como documentos, informes, registros de asistencia, etc. Estos datos contienen información valiosa sobre el personal administrativo, su desempeño, inquietudes y demás necesidades, pero son difíciles de analizar manualmente debido a su naturaleza no estructurada.
+La legislación laboral es un tema complejo que cambia con el tiempo y varía según la jurisdicción. El personal administrativo está sujeto a regulaciones específicas que deben cumplir la institución educativa. Evaluar si la institución está cumpliendo con estas regulaciones es un proceso complicado que requiere el seguimiento constante de los datos relacionados con los empleados y la legislación laboral. La efectividad en la toma de decisiones en relación con la legislación es crucial para evitar posibles problemas legales, garantizar el bienestar de los empleados y mejorar la gestión de recursos. La falta de datos estructurados puede llevar a decisiones erróneas o sub
+
+
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+óptimas. Analizar datos no estructurados manualmente es un proceso que consume mucho tiempo y recursos.
+
+
+
+V. COMITÉ DE BIOÉTICA
+
+
+Describir los temas y consideraciones éticas generadas por su estudio y si corresponde, cómo se propone afrontarlos.
+Como afrontar los problemas éticos que involucra el estudio (atención deficiente al usuario)
+Asegurar que los algoritmos utilizados para el análisis de datos no estructurados seas transparentes y explicables. Comprender como funcionan los algoritmos y como llegan a sus conclusiones, para garantizar la rendición de cuentas y la toma de decisiones informadas.
+Garantizar que se cumplan todas las regulaciones de privacidad y protección de datos al recopilar y analizar datos del personal administrativo. Los algoritmos utilizados para evaluar la legislación laboral deberán ser justos y se supervisara el proceso para identificar y mitigar cualquier sesgo algorítmico que pueda surgir en el análisis de datos y en la toma de decisiones.
+
+
+
+
+VI. PLANTEAMIENTO TEÓRICO (Hipótesis y/o supuestos, pregunta, etc.)
+
+
+El planteamiento se refiere a la elaboración de posibles explicaciones o soluciones a los problemas planteados.
+
+Preguntas de investigación
+¿Los algoritmos para la toma de decisiones eliminara los sesgos humanos?
+¿Qué algoritmo es más eficiente para la toma de decisiones en base a la legislación laboral de una institución educativa?
+¿Qué porcentaje de efectividad habrá de implementar algoritmos a la manera tradicional?
+
+14
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Hipótesis, Supuestos y/o proposiciones de investigación 1.- Hipótesis:
+La aplicación de algoritmos basados en la arquitectura Transformers en el análisis de datos no estructurados permitirá una evaluación más precisa y eficaz de la efectividad de la legislación laboral en el personal administrativo de una institución educativa.
+1.- Hipótesis Nula:
+No hay diferencia significativa en la efectividad de la toma de decisiones relacionadas con la legislación laboral del personal administrativo de una institución educativa cuando se utilizan algoritmos Transformers en comparación con el enfoque tradicional de análisis de datos no estructurados.
+
+VII. OBJETIVOS
+
+
+Los objetivos expresan las situaciones que se esperan resolver con la investigación.
+Objetivo general: medir la eficiencia del uso de algoritmos en la toma de decisiones
+
+Objetivos específicos: Evaluar la eficacia de la legislación laboral existente para el personal administrativo de la institución educativa, identificando patrones, tendencias y áreas de mejora a través de la aplicación de algoritmos Transformers, con el fin de optimizar la toma de decisiones y garantizar un entorno laboral más eficiente y equitativo.
+
+VIII. METODOLOGÍA
+
+
+Métodos a utilizar y pasos a seguir para el logro (camino para sistematizar la investigación). Se debe incluir:
+a) Recursos materiales y humanos: Relación del personal requerido, así como de los instrumentos necesarios para la realización de la investigación.
+•  Recopilación de datos: recolectar todos los documentos relacionados con la legislación laboral que afecta al personal administrativo de la institución educativa, como contratos, acuerdos laborales, etc.
+
+
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Procesamiento de datos: digitalizar los documentos que no están en formato  electrónico,  realizar  la  limpieza  de  texto,  como  caracteres especiales o formatos no deseados.
+•  Modelo de lenguaje TRANSFORMERS: uso de un modelo de lenguaje pre entrenado BERT, especializado en tareas legales, para comprender la terminología y el contexto particular de la legislación de la institución.
+•  Análisis de datos: utilizar el modelo Transformers para analizar los documentos y realizar tareas como extracción de información clave, resumen automático, identificación de cláusulas críticas, y análisis de similitud de documentos.
+•  Evaluación de la efectividad: se evalúa la efectividad de la metodología en función de métricas relevantes, como la precisión en la extracción de información  clave,  la capacidad de  resumir documentos de manera coherente, la identificación de problemas legales, y la capacidad para responder preguntas específicas relacionadas con la legislación laboral.
+•  Integración en la toma de decisiones: utilizar los resultados del análisis de datos para informar y respaldar la toma de decisiones relacionadas con la legislación laboral, como la redacción de contratos, la revisión de políticas internas, la identificación de riesgos legales, y la planificación de estrategias de recursos humanos.
+•  Hardware: acceso a computadoras para ejecutar modelos de algoritmos Transformers y realizar tareas de procesamiento de datos intensivas.
+•  Software: utilizar herramientas y software de aprendizaje automático, para entrenar y evaluar los modelos de procesamiento de lenguaje natural NLP.
+•  Base de datos: se necesitan conjuntos de datos relevantes que contengan información sobre la legislación laboral y datos no estructurados como textos legales.
+•  Almacenamiento: para almacenar grandes volúmenes de datos se requerirá una infraestructura, como servidores o servicios en la nube.
+
+
+
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Acceso a documentos: obtener acceso a los documentos legales que rigen la legislación laboral de la institución educativa, incluyendo contratos colectivos.
+•  Visualización de datos: para evaluar la efectividad de la toma de decisiones, se necesitarán herramientas de visualización de datos que permitan analizar y presentar los resultados de manera efectiva.
+
+b) Cronograma.
+
+
+
+
+
+
+
+
+
+
+
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO
+Impacto, proyección y trascendencia de la investigación, ya sea a nivel científico, tecnológico, económico, cultural o social. Los productos derivados de la investigación se deben incluir en este apartado.
+
+El uso de algoritmos Transformers permitirá el procesamiento y análisis eficiente de grandes cantidades de datos no estructurados relacionados con la legislación laboral y el personal administrativo de la institución educativa. Se esperaría que el proyecto pueda  identificar  patrones,  tendencias  y  relaciones  ocultas  en  los  datos  no estructurados para comprender mejor la dinámica laboral en la institución. Los algoritmos podrían generar recomendaciones accionables para mejorar la toma de decisiones relacionadas con la legislación laboral y el personal administrativo. El proyecto podría ayudar a garantizar el cumplimiento de las regulaciones laborales y evitar posibles infracciones.
+El proyecto podría utilizarse como una herramienta de monitoreo continuo para asegurarse de que las decisiones tomadas sean efectivas y se adapten a los cambios en el entorno laboral
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+X. INDICE TENTATIVO DE LA TESIS
+Este contenido debe adaptarse a la investigación en proceso.
+Dedicatorias. Agradecimientos. Índice.
+Índice de Figuras Índice de Tablas Abreviaturas y siglas Resumen en español Abstract.
+I.  Introducción / planteamiento del problema y justificación.
+II.  Antecedentes/estado del arte.
+III.  Fundamentación teórica.
+IV.  Hipótesis o supuestos
+V.  Objetivos.
+VI.  Material y Métodos o Metodología
+VII.  Resultados y discusión
+VIII.  Conclusiones.
+IX.  Bibliografía o Referencias.
+X.  Anexos.
+
+
+XI. REFERENCIAS BIBLIOGRÁFICAS
+Relación de libros y revistas consultadas para la colaboración de los antecedentes, así como material de consulta para el desarrollo de la investigación.
+
+Fundación Aquae. (2021, 9 diciembre). Ada Lovelace, pionera de la informática -
+
+Fundación AQuae. https://www.fundacionaquae.org/wiki/ada-lovelace-madre-de- la-programacion/
+
+
+
+
+18
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+European Liberties Platform. (2022, 25 marzo). ¿Son los algoritmos de toma de decisiones siempre fiables, justos y correctos o NO? Liberties.eu. https://www.liberties.eu/es/stories/algoritmos-toma-de-decisiones/44109
+¿Qué son los datos no estructurados? | NTT DATA. (s. f.). NTT DATA. https://es.nttdata.com/insights/blog/que-son-los-datos-no-estructurados
+Manual práctico de inteligencia artificial en entornos sanitarios. (s. f.). Google Books. https://books.google.es/books?hl=es&lr=lang_es&id=88nSDwAAQBAJ&oi=fnd&p
+g=PA35&dq=%22tipos+de+algoritmos%22&ots=6QcjKEVaOW&sig=ktC9krZJuH
+
+B9BDUVgIsqxC3fKaw#v=onepage&q=%22tipos%20de%20algoritmos%22&f=fal
+
+se
+
+Roman, V. (2021, 10 diciembre). Aprendizaje no supervisado en machine learning: agrupación. Medium. https://medium.com/datos-y-ciencia/aprendizaje-no-
+supervisado-en-machine-learning-agrupaci%C3%B3n-bb8f25813edc
+
+DEEP LEARNING introducci—n pr‡ctica con keras. (s. f.). Google Books. https://books.google.es/books?hl=es&lr=lang_es&id=ju1mDwAAQBAJ&oi=fnd&p
+g=PA78&dq=%22deep+learning%22&ots=k_WjQy95RN&sig=fPSQS4zUq2bW1
+
+RsCcrwy5OH85mU#v=onepage&q=%22deep%20learning%22&f=false
+
+Horev, R. (2018, 17 noviembre). BERT explained: State of the art language model for NLP. Medium. https://towardsdatascience.com/bert-explained-state-of- the-art-language-model-for-nlp-f8b21a9b6270
+
+
+
+
+
+
+
+
+19
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+Firma del alumno
+
+
+
+
+
+
+
+
+
+Nivel de revisión: 02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20
