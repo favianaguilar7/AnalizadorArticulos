@@ -54,9 +54,6 @@ function extractFirstWordAfterParenthesis(content) {
                                 followingSentences.push(sentences[i + 1].trim());
                                 i ++;
                             }
-                            if(i +1 < sentences.length - 1){
-
-                            
                             if(sentences[i + 1].trim().length > 1) {
                                 if(sentences[i + 1].trim().startsWith('http')) {
                                     let nextSentenceIndex = i + 1;
@@ -83,7 +80,6 @@ function extractFirstWordAfterParenthesis(content) {
                                     }
                                 }
                             }
-                            }
                         }
                     }
                 }
@@ -108,12 +104,32 @@ function printFrequencies(frequencies) {
     return output;
 }
 
+function generateCSV(content) {
+    let csvContent = 'data:text/csv;charset=utf-8,';
+    // Agregar encabezados
+    csvContent += 'Tipo,Item,Frecuencia\n';
+    // Agregar datos
+    Object.entries(content).forEach(([type, frequencies]) => {
+        Object.entries(frequencies).forEach(([item, frequency]) => {
+            csvContent += `${type},${item},${frequency}\n`;
+        });
+    });
+    // Codificar el contenido en formato URI
+    return encodeURI(csvContent);
+}
+
 async function displayTxtFiles() {
     const response = await fetch('/check-txt-files');
     const data = await response.json();
 
+    if (!data.success) {
+        alert(data.message || 'Error al obtener los archivos TXT.');
+        return;
+    }
+
     let content = '';
-    data.filesContent.forEach((fileContent, index) => {
+    const filesContent = data.filesContent;
+    filesContent.forEach((fileContent, index) => {
         const frequencies = countFrequencies(fileContent);
         const chartDivId = `chart_${index}`;
         content += `<h2>Resultados para archivo ${index + 1}</h2>`;
@@ -129,12 +145,32 @@ async function displayTxtFiles() {
 
         // Generar la gráfica combinada para el artículo actual
         drawCombinedChart(chartDivId, frequencies);
+
+        // Generar el contenido CSV
+        const csvContent = generateCSV({
+            'Autores': frequencies.authorFrequencies,
+            'Años': frequencies.yearFrequencies,
+            'Títulos': frequencies.titleFrequencies,
+            'Editoriales': frequencies.editorialFrequencies
+        });
+
+        // Crear un enlace de descarga
+        const downloadLink = document.createElement('a');
+        downloadLink.setAttribute('href', csvContent);
+        downloadLink.setAttribute('download', `frequencies_${index + 1}.csv`);
+        downloadLink.style.display = 'none';
+        document.body.appendChild(downloadLink);
+
+        // Simular clic en el enlace para iniciar la descarga
+        downloadLink.click();
+
+        // Eliminar el enlace después de la descarga
+        document.body.removeChild(downloadLink);
     });
 
     document.getElementById('resultados').innerHTML = content;
     document.getElementById('resultados').style.display = 'block';
 }
-
 function generateTable(title, frequencies) {
     let tableHtml = `<h3>${title}</h3>`;
     tableHtml += '<table class="table">';

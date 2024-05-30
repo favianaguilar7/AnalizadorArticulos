@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
 const favicon = require('serve-favicon');
+const { createObjectCsvWriter } = require('csv-writer');
 
 const app = express();
 const PORT = 3000;
@@ -94,6 +95,81 @@ app.get('/check-txt-files', (req, res) => {
     }
 });
 
+// Nueva ruta para procesar archivos TXT y generar un archivo CSV
+app.post('/process', async (req, res) => {
+    if (!req.files || Object.keys(req.files).length === 0) {
+        return res.status(400).send({ success: false, message: 'Ningún archivo cargado.' });
+    }
+
+    const filesContent = [];
+    for (const file of req.files.pdfs) {
+        const fileContent = fs.readFileSync(file.tempFilePath, 'utf-8');
+        filesContent.push(fileContent);
+    }
+
+    try {
+        const records = [];
+
+        filesContent.forEach((fileContent, index) => {
+            const frequencies = countFrequencies(fileContent);
+
+            Object.entries(frequencies.authorFrequencies).forEach(([author, frequency]) => {
+                records.push({ article: `Artículo ${index + 1}`, type: 'Autor', name: author, frequency });
+            });
+
+            Object.entries(frequencies.yearFrequencies).forEach(([year, frequency]) => {
+                records.push({ article: `Artículo ${index + 1}`, type: 'Año', name: year, frequency });
+            });
+
+            Object.entries(frequencies.titleFrequencies).forEach(([title, frequency]) => {
+                records.push({ article: `Artículo ${index + 1}`, type: 'Título', name: title, frequency });
+            });
+
+            Object.entries(frequencies.editorialFrequencies).forEach(([editorial, frequency]) => {
+                records.push({ article: `Artículo ${index + 1}`, type: 'Editorial', name: editorial, frequency });
+            });
+        });
+
+        const csvWriter = createObjectCsvWriter({
+            path: path.join(__dirname, 'output', 'frequencies.csv'),
+            header: [
+                { id: 'article', title: 'Artículo' },
+                { id: 'type', title: 'Tipo' },
+                { id: 'name', title: 'Nombre' },
+                { id: 'frequency', title: 'Frecuencia' }
+            ]
+        });
+
+        await csvWriter.writeRecords(records);
+
+        res.send({ success: true, message: 'Datos procesados y guardados en frequencies.csv.' });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send({ success: false, message: 'Error al procesar y guardar los datos.' });
+    }
+});
+
+
+function countFrequencies(content) {
+    const lines = content.split('\n');
+    const authorFrequencies = {};
+    const titleFrequencies = {};
+    const yearFrequencies = {};
+    const editorialFrequencies = {};
+
+    lines.forEach(line => {
+        const [author, title, year, editorial] = line.split(',');
+
+        if (author) authorFrequencies[author] = (authorFrequencies[author] || 0) + 1;
+        if (title) titleFrequencies[title] = (titleFrequencies[title] || 0) + 1;
+        if (year) yearFrequencies[year] = (yearFrequencies[year] || 0) + 1;
+        if (editorial) editorialFrequencies[editorial] = (editorialFrequencies[editorial] || 0) + 1;
+    });
+
+    return { authorFrequencies, titleFrequencies, yearFrequencies, editorialFrequencies };
+}
+
 app.listen(PORT, () => {
     console.log(`El servidor está funcionando en http://localhost:${PORT}`);
 });
+
