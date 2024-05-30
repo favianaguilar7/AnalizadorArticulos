@@ -54,6 +54,9 @@ function extractFirstWordAfterParenthesis(content) {
                                 followingSentences.push(sentences[i + 1].trim());
                                 i ++;
                             }
+                            if(i +1 < sentences.length - 1){
+
+                            
                             if(sentences[i + 1].trim().length > 1) {
                                 if(sentences[i + 1].trim().startsWith('http')) {
                                     let nextSentenceIndex = i + 1;
@@ -80,6 +83,7 @@ function extractFirstWordAfterParenthesis(content) {
                                     }
                                 }
                             }
+                            }
                         }
                     }
                 }
@@ -95,21 +99,134 @@ function extractFirstWordAfterParenthesis(content) {
     };
 }
 
+function printFrequencies(frequencies) {
+    let output = '<pre>';
+    for (const [item, count] of Object.entries(frequencies)) {
+        output += `${item}: ${count}\n`;
+    }
+    output += '</pre>';
+    return output;
+}
+
 async function displayTxtFiles() {
     const response = await fetch('/check-txt-files');
     const data = await response.json();
 
     let content = '';
-    data.filesContent.forEach(fileContent => {
-        const { filteredWords, specialWords, followingSentences, editorial } = extractFirstWordAfterParenthesis(fileContent);
-        content += `<h3>Autores:</h3><pre>${filteredWords}</pre>`;
-        content += `<h3>Años:</h3><pre>${specialWords}</pre>`;
-        content += `<h3>Titulos:</h3><pre>${followingSentences}</pre>`;
-        content += `<h3>Editorial:</h3><pre>${editorial}</pre>`;
+    data.filesContent.forEach((fileContent, index) => {
+        const frequencies = countFrequencies(fileContent);
+        const chartDivId = `chart_${index}`;
+        content += `<h2>Resultados para archivo ${index + 1}</h2>`;
+        content += `<div id="${chartDivId}" class="chart"></div>`;
+
+        // Generar una tabla para cada aspecto por artículo
+        content += generateTable('Autores', frequencies.authorFrequencies);
+        content += generateTable('Años', frequencies.yearFrequencies);
+        content += generateTable('Títulos', frequencies.titleFrequencies);
+        content += generateTable('Editoriales', frequencies.editorialFrequencies);
+
+        content += '<hr>'; // Agregar una línea divisoria entre cada artículo
+
+        // Generar la gráfica combinada para el artículo actual
+        drawCombinedChart(chartDivId, frequencies);
     });
 
     document.getElementById('resultados').innerHTML = content;
     document.getElementById('resultados').style.display = 'block';
+}
+
+function generateTable(title, frequencies) {
+    let tableHtml = `<h3>${title}</h3>`;
+    tableHtml += '<table class="table">';
+    tableHtml += '<tr><th>Item</th><th>Frecuencia</th></tr>';
+    Object.entries(frequencies).forEach(([item, frequency]) => {
+        tableHtml += `<tr><td>${item}</td><td>${frequency}</td></tr>`;
+    });
+    tableHtml += '</table>';
+    return tableHtml;
+}
+
+function countFrequencies(content) {
+    const { filteredWords, specialWords, followingSentences, editorial } = extractFirstWordAfterParenthesis(content);
+
+    const authorFrequencies = {};
+    const titleFrequencies = {};
+    const yearFrequencies = {};
+    const editorialFrequencies = {};
+
+    const authors = filteredWords.split('\n');
+    authors.forEach(author => {
+        authorFrequencies[author] = (authorFrequencies[author] || 0) + 1;
+    });
+    const titles = followingSentences.split('\n');
+    titles.forEach(title => {
+        titleFrequencies[title] = (titleFrequencies[title] || 0) + 1;
+    });
+    const years = specialWords.split('\n');
+    years.forEach(year => {
+        yearFrequencies[year] = (yearFrequencies[year] || 0) + 1;
+    });
+    const editorials = editorial.split('\n');
+    editorials.forEach(ed => {
+        editorialFrequencies[ed] = (editorialFrequencies[ed] || 0) + 1;
+    });
+
+    return {
+        authorFrequencies,
+        titleFrequencies,
+        yearFrequencies,
+        editorialFrequencies
+    };
+}
+
+function drawCombinedChart(chartDivId, frequencies) {
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(() => {
+        const data = new google.visualization.DataTable();
+        data.addColumn('string', 'Elemento');
+        data.addColumn('number', 'Autores');
+        data.addColumn('number', 'Años');
+        data.addColumn('number', 'Títulos');
+        data.addColumn('number', 'Editoriales');
+
+        const uniqueKeys = new Set([
+            ...Object.keys(frequencies.authorFrequencies),
+            ...Object.keys(frequencies.yearFrequencies),
+            ...Object.keys(frequencies.titleFrequencies),
+            ...Object.keys(frequencies.editorialFrequencies)
+        ]);
+
+        uniqueKeys.forEach(key => {
+            data.addRow([
+                key,
+                frequencies.authorFrequencies[key] || 0,
+                frequencies.yearFrequencies[key] || 0,
+                frequencies.titleFrequencies[key] || 0,
+                frequencies.editorialFrequencies[key] || 0
+            ]);
+        });
+
+        const options = {
+            title: 'Frecuencia de Elementos',
+            legend: { position: 'bottom' },
+            hAxis: {
+                title: 'Elemento'
+            },
+            vAxis: {
+                title: '',
+                textPosition: 'none' 
+            },
+            series: {
+                0: { lineDashStyle: [4, 4] },
+                1: { lineDashStyle: [2, 2] },
+                2: { lineDashStyle: [1, 1] },
+                3: { lineDashStyle: [5, 1] }
+            }
+        };
+
+        const chart = new google.visualization.LineChart(document.getElementById(chartDivId));
+        chart.draw(data, options);
+    });
 }
 
 document.getElementById('processBtn').addEventListener('click', displayTxtFiles);

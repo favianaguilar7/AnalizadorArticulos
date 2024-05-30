@@ -1,0 +1,1458 @@
+Universidad Auto´ noma de Quere´taro
+Facultad de Informa´tica
+C.U. a June 12, 2023
+Doctorado en Ciencias de la Computacio´ n
+
+Me permito presentar ante el H. Consejo Acade´mico de la Facultad de In- forma´tica la siguiente solicitud de titulacio´n por tesis de acuerdo con la fraccio´n VII, art´ıculos: 45-54 y 55-58 del reglamento de titulacio´n vigente.
+Nombre del Alumno: Adria´n Ernesto Lo´pez Jime´nez
+No. de Expediente: 218368
+No. CVU: 855278
+Correo electro´ nico: adrnlopez@gmail.com
+Tele´fono: (442) 385 - 8417
+
+
+L´ınea de investigacio´ n sobre la cual se desarrollara´ el trabajo: Inteligencia Arti- ficial y Redes Neuronales
+
+Responsable de la Asesor´ıa: Dr. Juvenal Rodriguez Resendiz.
+Programas educativos que apoya:Coordinador de la carrera de Ingenier´ıa en Au- tomatizacio´n Coordinador de la Maestr´ıa en Instrumentacio´n y Control Automa´tico Profesor-Investigador de tiempo completo en la UAQ
+L´ınea de investigacio´ n del responsable: Aplicada
+
+Firma de aceptacio´ n:
+
+
+
+
+
+
+
+Dr. Juvenal Rodr´ıguez Rese´ndiz
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+Nu´mero de veces que se a sometido esta propuesta al H. Consejo Acade´mico de la Facultad: Primera vez ( X ) 2da. ( ) Ma´s de 2 veces ( )
+Semestre o Cuatrimestre actual del alumno: Segundo Semestre Fecha de Ingreso al programa: 01/08/2022
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+CONTENTS
+
+
+
+
+1  GENERAL INFORMATION                               3
+2  INTRODUCTION                                      3
+3  JUSTIFICATION                                     10
+4  DESCRIPTION OF THE PROBLEM                         11
+5  BIOETHICAL COMMITTEE                              12
+6  JUSTIFICATION                                     12
+7  THEORETICAL FOUNDATION (STATE OF THE ART)             14
+7.1 Cʏᴄʟᴇ-ᴇʀɢᴏᴍᴇᴛᴇʀ                                    14
+7.1.1  Cycle-ergometer Instrumentation                    15
+7.1.2  Cardiopulmonary Exercise Testing                   15
+7.2 Sʏꜱᴛᴇᴍ Cᴏɴᴛʀᴏʟ                                     16
+7.2.1  Controllers                                 16
+7.2.2  Proportional integral derivative control (PID Control)        17
+7.2.3  Supervisory Control And Data Acquisition (SCADA)        17
+7.3 SENSORS                                           18
+7.3.1  Encoder                                   18
+7.3.2  Bio-potential sensors                           19
+7.4 Eᴍʙᴇᴅᴅᴇᴅ ꜱʏꜱᴛᴇᴍꜱ                                   20
+7.5 Cᴏᴍᴍᴜɴɪᴄᴀᴛɪᴏɴ ʙᴇᴛᴡᴇᴇɴ ᴅᴇᴠɪᴄᴇꜱ                         21
+8  HYPOTHESIS AND OBJECTIVES                          21
+8.1 Hʏᴘᴏᴛʜᴇꜱɪꜱ                                         21
+8.2 Oʙᴊᴇᴄᴛɪᴠᴇꜱ                                         21
+8.2.1  General Objectives:                            21
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+8.3 Sᴘᴇᴄɪꜰɪᴄ Oʙᴊᴇᴄᴛɪᴠᴇꜱ                                   22
+9  METHODOLOGY                                    22
+9.1 Mᴀᴛᴇʀɪᴀʟꜱ ᴀɴᴅ ʀᴇꜱᴏᴜʀᴄᴇꜱ                              22
+9.1.1  Human Resources                            22
+9.1.2  Materials and equipment                         23
+9.2 Eᴛʜɪᴄᴀʟ Cᴏɴꜱɪᴅᴇʀᴀᴛɪᴏɴꜱ                                24
+9.3 Lᴏᴄᴀᴛɪᴏɴ ᴀɴᴅ ᴄᴏɴᴅɪᴛɪᴏɴꜱ ᴏꜰ ᴛʜᴇ ᴘʀᴏᴊᴇᴄᴛ.                 24
+9.4 Fɪᴇʟᴅ ᴛᴇꜱᴛ ᴀᴄᴛɪᴠɪᴛɪᴇꜱ                                   24
+9.5 Hᴜᴍᴀɴ ᴛʀɪᴀʟꜱ                                        25
+9.6 Sᴄʜᴇᴅᴜʟᴇ ᴏꜰ ᴀᴄᴛɪᴠɪᴛɪᴇꜱ                                27
+10 EXPECTED RESULTS                                 27
+10.1 Sᴄɪᴇɴᴛɪꜰɪᴄ Iᴍᴘᴀᴄᴛ                                      27
+10.2 Exᴘᴇᴄᴛᴇᴅ Rᴇꜱᴜʟᴛꜱ                                    27
+11 REFERENCES                                      29
+12 APPENDIX A: FIGURES                                33
+13 APPENDIX B: TABLES                                 39
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+1. GENERAL INFORMATION
+
+• Project title: An Electroencephalogram control process for a feedback cycle- ergometer.
+• Name of student responsible: Adria´n Ernesto Lo´pez Jime´nez, MSc.
+
+• Thesis Director: Dr. Juvenal Rodr´ıguez Rese´ndiz.
+
+• Center o place where the invistagation will take place: Facultad de In- forma´tica, Universidad Auto´noma de Quere´taro
+• Type of investigation (basic, applied, technilogical: Applied, technilogical.
+
+• Line of investigation: Biomedical.
+
+
+2. INTRODUCTION
+
+The use of electroencephalograms or (EEG) for the diagnostic and treatments as well as the use of machines in particular the cycle-ergometer that aid in the rehabil- itation of patients all with the end goal of bettering the quality of life for these same patients has been around for a long time . Both EEG and the cycle-ergometer are a non-invasive means or tools which physicians and physical therapist restively use to better aid them in the treatment of their patients. Although there does exist a few types of EEG machines and cycle-ergometer in this work we will discuss the EMOTIV EPOC+ and the cyle-erogmeter model CAM-E by On-Motion as shown in Appendix A: figures 12.1 and 12.2 respectfully.
+There has also been a direct link between neurological disorders and/or injuries such as cerebral hemorrhage or commonly referred as a hemorrhagic stroke and the affect those have on the mobility and normal physical function of the patient not to mention the physical deterioration of the patient’s body which directly impacts the patient’s recovery and quality of life. In addition to the neurological disorders and/or traumatic brain injuries (TBI) which often cause physical disabilities, these patients are often
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+prone to secondary conditions Marge (2008) such as physical deterioration, loss of muscle mass, pain, depression and pressure ulcers, colloquially referred to as pressure sores or bedsores which progress over time and can be lessened with physical activity. Therefore, promoting physical activity participation or rehabilitation for people with disabilities is important Mulligan et al. (2012).
+Rehabilitation is care that can help you get back, keep, or improve abilities that will improve the quality of life of the patient. It is also important to mention that there does exist several forms or types of rehabilitation some of the most common is physical rehabilitation as the reader could imagined, there also exist mental, and/or cognitive. A few examples of treatments are as followed MedlinePlus (2022):
+
+• Assistive devices, which include tools, equipment, and products that assist pa- tients with disabilities move and function.
+• Cognitive rehabilitation therapy.
+
+• Mental health counseling.
+
+• Nutritional counseling.
+
+• Physical therapy to aid in building strength and improve mobility.
+
+• kinesitherapy.
+
+
+kinesitherapy or kinesiatrics is the therapeutic and corrective application of passive and active movements as by massage and of exercise merriam webster (2022) for patients who suffer from disease or disabilities. Generally speaking these two types can be defined as:
+
+• Active kinesitherapy - is termed active because the patient performs movement or exercise voluntarily with little or no external assistance from a rehabilitation devise or physical therapist.
+
+
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+• Passive kinesitherapy - are movements or exercises that are not or can not be performed voluntarily by the patient but require assistance of a physical therapist and often require the aid of some sort of rehabilitation device.
+
+In this work we will focus almost completely on the physical rehabilitation and specif- ically passive kinesitherapy. Now the next logical question is who or under what circumstances does a patient need, require, or could benefit from rehabilitation and a few of the most common causes may include:
+
+• Trauma/injury
+
+• Fractures.
+• Traumatic brain injury (TBI).
+• Spinal cord injuries.
+
+• Cerebra vascular accident or Stroke.
+
+• Major surgery.
+
+• Developmental disabilities.
+
+• Chronic pain.
+
+• Back pain.
+• Neck pain.
+
+
+All of which can limit or hinder the mobility and normal function of a patient to varying degrees from requiring little assistance to being bedridden both of which have a direct impact on quality of life of the patient. In either case the patient often requires the aid of some device, physical therapist, or both in conjunction. These devices can vary from medical tape, orthopedics braces, medical splints, specialized chairs or beds used for passive kinesitherapy, and cycle-ergometers just to name a few.
+In this project we will be using cycle-ergometer, this term is derived from the word
+ergometer which is defined as an apparatus for measuring the work performed (as
+
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+by a person exercising) Lundgren and Lichtneckert (1969); Merriam-Webster (2022). Information that can be obtain from measuring work (as by exercise) can vary usually depending on the type of instrumentation said ergometer has but often include:
+
+• V O₂ max, which measures the maximum oxygen rate is absorbed, transported, and consumed over progressive exercise Casajus et al. (2009). where V de- notes volume per unit of time and O₂ is as the reader may already know, oxy- gen.
+• Aerobic threshold (AeT) occurs approximately at 50-60% of maximum effort or 55-75% of functional threshold power Performance (2018).
+• Anaerobic threshold (AT) is the point during exercise when your body must switch from aerobic to anaerobic metabolism Cheri (2019).
+• Heart rate or pulse, is the number of times your heart beats per minute (bpm) Association (2021). Which is the most often used given its ease to measure.
+
+There exist several different types of cycle-ergometers that measure the distinct aforementioned information. The first existing patent of a cycle-ergometer was sub- mitted and registered to B.A SHOOR in 1955 Shoor (1955) which only measured the resistance of the motor when in use and was designed for rehabilitation, see figure in Appendix A: figure 12.12. Given the date that patent was registered one would think there would be great advances to this design but it is not the case it was not until the year 1990 that the first patent was register for a cycle-ergometer that measured heart rate that could be used in home but was designed for exercise and not rehabilitation Birrell et al. (1990). But that’s not to say there hasn’t been significant improvements on this design in the year 2000 a patent for an electromagnetic brake or electric force-resisters using eddy currents Manderbacka (2000) which is still being used for a wide array of different ergometers as of today.
+An exercise routine can usually be broken down into five basic categories:
+
+• Aerobic.
+
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+• Strength training.
+
+• Core Exercise.
+
+• Balance training.
+
+• Flexibility and stretching.
+
+
+And can be defined as a set of predefined movements for a group of persons with similar or distinct goals. Similarly there exist exercise routines which aim to rehabili- tate and improve the quality of life. Furthermore, cycle-ergometers are now equipped with pre-programmed exercise routines built in to the user interface these units are usually costly and are limited in scope, they also only monitor the most basic of in- formation i.e. heart rate, intensity, duration, etc. One of the first therapeutic or reha- bilitation methods that use pre-programmed exercise routines in a cycle-ergometer was in 1995 by S.T Anderson that require the user to repeat the pre-programmed exercise routine a number of times so that enough information is gathered (heart rate, V O₂max, etc) as feedback to determine whether the exercise routine needs to be modified or can be kept as is Anderson (1995).
+In actuality the main control of a cycle-ergometer and other exercise equipment is the speed or velocity of the motor itself and are usually controlled by the user by means of buttons or an interface that is built in to the cycle-ergometer itself. An example of one of these units would be by Paul LaStayo et al, which was patented in 2006, which has controls or allowed the user to control: Peddle speed, exercise time, start or end of exercise routine, and desired heart rate or physical excursion LaStayo et al. (2006).
+An additional control was the level of force or level of difficulty needed to move the pedal as was the case with the design which was created by Takuya Hashimoto and Kuzaki Kondo in 2008 Hashimoto et al. (2018). It is worth mentioning that this design was for a row machine that mimics the resistance one would encounter while rowing a kayak in water. In general terms this design consisted of detecting the angle
+
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+of the oar when the user engages or starts the exercise which in turn activates an electromagnetic brake that mimics the resistance.
+These types of controls usually need a torque sensor in order to operate which often raises the cost of the unit, but in 2004 researchers at the university of Seoul in South Korea proposed a sensorless admittance control which would lower the cost of these types of unitsJeong et al. (2014).
+In the first International Congress on Biomedicine held on 2017, a group of Chinese researchers lead by Rubin Zhang, presented their findings of a which functioned by new-designed magnetic-resistance generator which they designed and worked. which worked and measured workload measurements as well as maintain a constant workload independent of pedaling speed during the exercise routine. In order to test the validity of their design which was designed to asses the cardiopulmonary func- tion they compared their finding against a standard Monark cycle-ergometer which assessed the same cardiopulmonary functions Zhang et al. (2017).
+Another innovative control design was presented at an IEEE conference in 2010 that measured respiratory movement of a user that resulted by a said user operating or undergoing an exercise routine on a cycle-ergometer. What made this method inno- vative was that it accomplished this with no direct contact to the user but instead with the use of a dot-matrix pattern light projection on the thoracicoabdominal of the user with the aid of a front mounted CCD camera that detected the changes of the pro- jected dot-matrix and with these changes could measure respiratory movementAoki et al. (2010).
+Additionally two researchers from the National Cheng Kung University in Taiwan, Po-Wen Hsueh and Mi-Ching Tsai, designed and developed a dynamic model for a belt-driven cycle ergometer which addressed the problem of inherent resonance from a motorized cycle-ergometer and their cycling speed control presented in their research was composed of dual feedback control loops, specifically, the acceleration and velocity feedback loops. The main motivation for their research was because many patients who have suffered a stroke usually have little or no lower body mobility
+
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+and in turn suffer from muscular spasticity when undergoing rehabilitation with a cycle-ergometerHsueh and Tsai (2013).
+In September of 2012 at the Kansas State University researchers developed a sys- tem that simultaneously measures limb blood flow through the brachial artery and limb blood gas analysis via vein sampling, enabling the determination of metabolic rate by means of a LabVIEW Gude et al. (2012). They undertook this study in order to make data acquisition more efficient and of lower cost.
+At the Autonomous University of Quere´taro in Me´xico a student by the name of Santi- ago Lo´pez Heranandez developed a functional prototype of an motor assisted cycle- ergometer for patients who suffer from neuromotor impairment which he dubbed On Motion. His design was meant to be used on patients who are laying down or are horizontal which is quite innovative given most cycle-ergometer are designed to re- quire the patient/user be in a seated position Pere´z and Lo´pez (2018). It is also worth mentioning that this prototype is substantially more economical when compared to similar machines that are on the market.
+Kenneth J.Hunt et al. from the University of Applied Sciences in Switzerland devel- oped a unified heart rate control for a cycle-ergometer and treadmill which as the name implies measures heart rate all while using a common control. This was in- novative due to the fact that the manipulated variable differs in the sense that the control signal in a cycle-ergometer is a work-rate command while in the treadmill it is speed commandHunt et al. (2019).
+As could be imagined there exists a wide variety of cycle-ergometer both proto- type and commercial but the most famous or recognized commercial model is the MOTOmed®. This machine gained this recognition due to the fact that it is a well rounded in the sense that it is capable to offer exercise/rehabilitation to both lower- body and upper body simultaneously or independently of one another it also has a ample array of features such as: pre-programmed exercise routines, speed and workload controls, a user friendly control interface, as well as an incline control. They also offer a broad variety of derivatives of the original unit.
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+Next we will show a few tables of authors/researchers we have cited previously who have developed cycle-ergometer and the features they offer or have in common but in order to comply with the requirements set by the academic committee we have moved the table to Appendix B: 13-1, 13-2.
+3. JUSTIFICATION
+
+Seeing as how this work is based in Mexico we will give justification for this work with its focus in this country but can apply in any other country. Mexico but as disclosed by the Global Health Institute Mexico has seen massive increase in importation of medical equipment and devices in 2018 as compared to 2017 Hospital (2019). Mex- ico is also the second largest market for medical device in Latin America, first place being held by Brazil. Thanks to current administration lead by the President Andre´s Manuel Lo´pez Obrador, Mexico has increased health spending and acquiring of new technology Mexico has become the leading importer of medical equipment and de- vises and of all the medical devices sold in Mexico 90% are imported from different countries Emergo (2022).
+It is also worth mentioning that out of all the rehabilitation devises that are classified as cycle-ergometers that are on the market range in price from $83.46 to $334.82 USD and although these prices might seem like a ”reasonable” price for these de- vises but they are usually very basic and are not equipped with sufficient tools to con- trol and observe the progress/process of the rehabilitation of the patient and those devices that do count with sufficient tools are substantially more expensive.
+The National Institute of Statistics, Geography and Computing or as the acronym IN- EGI as it is known here in Me´xico reported that in 2021 that a total of 2,459,812 treat- ments were administered of which 15.4% (379,525) Instituto Nacional de Estad´ıstica Geograf´ıa e Informa´tica (2021)received physical therapy and 10.4% (254,823) re- ceived rehabilitation as reported to INEGI by health service providers. Therapeutic treatments that were administered to 719,159 patients but it should be noted that patients may have received more than one treatment. those patients who received physical therapy was 17.3% (124,376) and patients who received rehabilitation was
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+11.9% (85,860) Instituto Nacional de Estad´ıstica Geograf´ıa e Informa´tica (2021) as reported to INEGI by persons who received these treatments.
+According to two physical therapist when asked have mentioned that in Mexico it is quite difficult for a health service provider both public and private to procure cycle- ergometer designed for physical therapy and or rehabilitation due to the elevated cost of these same devices and because of this health care providers often have no other recourse then to resort to other means of rehabilitation even if these are antiquatedLechuga Ensastiga and Gomez Padilla (2020)-Lechuga Ensastiga and Trejo Oviedo (2020).Also one of these physical therapist mentioned that in their per- sonal experience in the state of Quere´taro (where this investigation will take place) they have only witness cycle-ergometers in the Comprehensive Rehabilitation Cen- ter of Quere´taro and System for the Comprehensive Development of the Family or CRIQ and DIF respectively as they are known here in Mexico Lechuga Ensastiga and Trejo Oviedo (2020).
+The acting director of the Comprehensive Rehabilitation Center of Quere´taro in 2020 mentioned at their center only counts with two cycle-ergometers one of which has been in their possession since 2012 and the other since 2016. They also stated both devices are almost entirely used for patients who suffer from diabetes and who also in large part also suffer from obesity and due to this these patients experience difficulty operating said devices. They also commented that these two devices are in use continuously which in turn reduces the lifespan of the cycle-ergometers. The director concluded that it would be of great benefit if the cycle-ergometers were equipped with pre-programmed exercise routines and could give real time feed back to better monitor the rehabilitation treatment Lechuga Ensastiga and Ruiz (2020).
+4. DESCRIPTION OF THE PROBLEM
+
+As previously mentioned in the previous chapter cycle-ergometers with the neces- sary features to be an effective rehabilitation tool are in short supply and are quite expensive which makes procurement difficult for health care providers and even more if not impossible for an individual patient to obtain for in home treatment.
+
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+The controls that are built into cycle-ergometers are rather rudimentary and are do not monitor the patient in real-time. Additionally, in order to regulate the speed of the cycle-ergometer the patient has to physically manipulate or manually input adjust- ments to the limited built in controls. In this project we are proposing and automation and control prototype that will regulate the intensity of the cycle-ergometer via bio- signals (EEG) obtained in real-time from the patient and that this information can be visible and accessible to the doctor, physical therapist, and patient.
+5. BIOETHICAL COMMITTEE
+
+In this project all of the procedures that will be used or carried out are going to be based on the Good Clinical Practices guidelines and will abide by the latest ver- sion of the Declaration of Helsinki. We also acknowledge that possible risks may be present, one of which could be that the patient(s) may experience mild to moderate discomfort during the testing phase. Another, although less probable risk is that the patient’s heart rate may be elevated too quickly, to avoid any possible risks and undo discomfort we will require the collaboration of one or more physical therapists. We will also ensure that the participation of the test subject(s) is completely voluntary and will attach a written letter of consent from the patient and/or the patient’s care- givers. We also will ensure that the personal information of said test subject(s) is kept private.
+6. JUSTIFICATION
+
+Seeing as how this work is based in Mexico we will give justification for this work with its focus in this country but can apply in any other country. Mexico but as disclosed by the Global Health Institute Mexico has seen massive increase in importation of medical equipment and devices in 2018 as compared to 2017 Hospital (2019). Mex- ico is also the second largest market for medical device in Latin America, first place being held by Brazil. Thanks to current administration lead by the President Andre´s Manuel Lo´pez Obrador, Mexico has increased health spending and acquiring of new technology Mexico has become the leading importer of medical equipment and de- vises and of all the medical devices sold in Mexico 90% are imported from different
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+countries Emergo (2022).
+
+It is also worth mentioning that out of all the rehabilitation devises that are classified as cycle-ergometers that are on the market range in price from $83.46 to $334.82 USD and although these prices might seem like a ”reasonable” price for these de- vises but they are usually very basic and are not equipped with sufficient tools to con- trol and observe the progress/process of the rehabilitation of the patient and those devices that do count with sufficient tools are substantially more expensive.
+The National Institute of Statistics, Geography and Computing or as the acronym IN- EGI as it is known here in Me´xico reported that in 2021 that a total of 2,459,812 treat- ments were administered of which 15.4% (379,525) Instituto Nacional de Estad´ıstica Geograf´ıa e Informa´tica (2021)received physical therapy and 10.4% (254,823) re- ceived rehabilitation as reported to INEGI by health service providers. Therapeutic treatments that were administered to 719,159 patients but it should be noted that patients may have received more than one treatment. those patients who received physical therapy was 17.3% (124,376) and patients who received rehabilitation was 11.9% (85,860) Instituto Nacional de Estad´ıstica Geograf´ıa e Informa´tica (2021) as reported to INEGI by persons who received these treatments.
+According to two physical therapist when asked have mentioned that in Mexico it is quite difficult for a health service provider both public and private to procure cycle- ergometer designed for physical therapy and or rehabilitation due to the elevated cost of these same devices and because of this health care providers often have no other recourse then to resort to other means of rehabilitation even if these are antiquatedLechuga Ensastiga and Gomez Padilla (2020)-Lechuga Ensastiga and Trejo Oviedo (2020).Also one of these physical therapist mentioned that in their per- sonal experience in the state of Quere´taro (where this investigation will take place) they have only witness cycle-ergometers in the Comprehensive Rehabilitation Cen- ter of Quere´taro and System for the Comprehensive Development of the Family or CRIQ and DIF respectively as they are known here in MexicoLechuga Ensastiga and Trejo Oviedo (2020).
+
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+The acting director of the Comprehensive Rehabilitation Center of Quere´taro in 2020 mentioned at their center only counts with two cycle-ergometers one of which has been in their possession since 2012 and the other since 2016. They also stated both devices are almost entirely used for patients who suffer from diabetes and who also in large part also suffer from obesity and due to this these patients experience difficulty operating said devices. They also commented that these two devices are in use continuously which in turn reduces the lifespan of the cycle-ergometers. The director concluded that it would be of great benefit if the cycle-ergometers were equipped with pre-programmed exercise routines and could give real time feed back to better monitor the rehabilitation treatment Lechuga Ensastiga and Ruiz (2020).
+7. THEORETICAL FOUNDATION (STATE OF THE ART)
+
+7.1 Cycle-ergometer
+
+
+In general a cycle-ergometer can be broken down into four types of resistance Yescas (2012):
+
+• Mechanical friction.
+
+• Electrical resistance.
+
+• Air resistance.
+
+• Hydraulic resistance.
+
+
+In the first type a strap is located around a flywheel is tightened or loosened to adjust the resistance when pedaling Yescas (2012) and thus the effort put forward by the user is proportional to the speed of the pedals. Which can be advantageous for athletes or those users that want to improve condition or overall strength but this method is of little use for a users/patients who seek rehabilitation given that have little or has lost substantial lower body mobility and could pose a difficult as they may not have the necessary strength or mobility to operate the cycle-ergometer.
+
+14
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+The second, electrical resistance which is also known as electronically braked cycle- ergometers operate by an electromagnetic field which is generated by an electric conductor determines the level of resistance when the pedals are in motion. The resistance can be increased or decreased as needed depending on the speed of the pedal by the user or with the correct focus can be designed to produce motion of the pedals automatically Yescas (2012). Something that is worth noting especially for when the rehabilitation of patients is in mind.
+
+
+7.1.1 Cycle-ergometer Instrumentation
+
+The basic instrumentation of a therapeutic cycle-ergometer consist of a system that is sufficiently sensitive to movements realized by the user and which is capable of changing the ratio of transmission when the applied torque exceeds a predetermined value Pe´rez (2009). This concept was used to administer the transmission of me- chanical power automatically with the goal of aiding the user/patient to maintain a constant toque or speed by means of increasing or decreasing the resistance in relation to the transmission of mechanical power applied to the cycle/wheel. The de- veloped system counts with a proportional integral derivative (PID) electric module control as seen in Appendix A: figure 12.3 Pe´rez (2009):
+
+
+7.1.2 Cardiopulmonary Exercise Testing
+
+According to Stanford Health care they define Cardiopulmonary Exercise Testing or (CPET) as an evaluation of the cardiopulmonary system, which consists of physical exercise that requires the patient’s interaction of the physiologic mechanisms that en- able the cardiovascular and respiratory systems to support the energy demands of the contracting muscles. Both systems are consequently stressed during exercise. Their ability to adequately respond to this stress is a measurement of the patien- t/users physiologic competence and/or limitsCenter (2017). Another use for CPET is as a bench mark to see if a patient in physical therapy and/or rehabilitation has improved during the course of their treatment.
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+7.2 System Control
+
+
+A system of control is defined as a system of devices that manages, commands, directs, or regulates the behavior of other devices or systems to achieve a desired result. A control system achieves this through control loops, which are a process designed to maintain a process variable at a desired set pointElectrical4U (2020).
+The two basic control loops can be separated into two basic types, see figure ??:
+
+
+Closed loop also known as or referred to as a feedback control system is a system that are interconnected in a cycle Astro¨ m and Murray (2009). The actuating error signal, which is the difference between the input signal and the feedback signal, is fed to the controller so as to reduce the error and bring the output of the system to a desired value Ogata (2010), See in Appendix A: figure 12.4.
+Open Loop: the output is neither measured nor fed back for comparison with the input, as a result, the accuracy of the system depends on calibration. Ogata (2010), See Appenidx A: figure 12.5
+
+
+7.2.1 Controllers
+
+As in the subsection before we will begin with a definition as to give the correct context given that the term control has a wide variety of definitions depending on the area the reader may be a part of but in this text we refer to a control as:
+Control: application of algorithms and feedback contained in engineering systems.
+Essentially, control is an information science and consist of information represented in both analog and digital form. In Appendix A: figure 12.6 we can observe a diagram of a closed loop control where we first have reference signal or desired signal which is first compared with an output signal from a sensor or observer. The output signal
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+containing the error signal which is the input signal to the plant and the response of the plant is monitored by an observer which is then again compared to the reference signal. The objective of a closed loop control is to make sure the output signal is zero or as close to zero as can be obtained in order to minimize errorAstro¨ m and Murray (2009)-Ogata (2010).
+As the reader may be aware there exist various forms of control but the most common are: Proportional and integral controllers (PI Controller), Proportional and derivative controllers (PD Controller), and Proportional integral derivative control (PID Con- troller)Ogata (2010).
+
+
+7.2.2 Proportional integral derivative control (PID Control)
+
+Is common controller for a wide verity of machinery such as robots, vehicles, and rockets. This controller has all the advantages of the previously mentioned PI and PD controllers which increases stability and speed of the system. But like in all things it does have disadvantages mainly it can output an infinite signal with minute oscillating values which can reduce the useful life of the system, See in Appendix A: figure 12.7.
+
+
+7.2.3 Supervisory Control And Data Acquisition (SCADA)
+
+A Supervisory Control And Data Acquisition is in essence a set of software and hardware that allow control, communicate, and supervise various devices as well as the ability to control processes. Some characteristics of a SCADA system are:
+
+• Data acquisition and storage.
+
+• Graphic representation of the variables.
+
+• Modification of execution controls.
+
+• Open and flexible architecture.
+
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+• Supervision of all information and controls.
+
+• Transmission of information.
+
+
+7.3 Sensors
+
+
+Like in the subsection of control, sensor as well could have a wide variety of defi- nitions depending on the area one is involved with. But we can generally define a sensor as an observer that monitors the behavior or state of an object or living thing.
+An example of a sensor that we see in our everyday life would be a security guard like we would see in a warehouse, this person makes sure that the norms and regulations are upheld in a variety of ways, personal, deliveries both incoming and outgoing. If something goes against the norms or regulations then the security guard acts accordingly or calls the necessary authority.
+In an engineering and/or digital system aspect a sensors is a devices that produce a measurable change in output to a known input stimulus. This stimulus can be a physical stimulus like temperature and pressure Stetter et al. (2006), speed, position, acceleration, or frequency.
+
+
+7.3.1 Encoder
+
+As the reader may be aware, encoders are usually optical or magnetic in large part. An optical encoder, see in Appendix A: figure 12.8, which is comprised of two opto- electronic devices one of which is a light emitter and the other is a receiver in between these two there is a slotted rotating disc. Every time the signal passes through the open slot it is detected as ”1” and on the contrary its read as ”0” logically speaking and the frequency of these will determine the speed of the disk axisRam´ırez et al. (2014).
+But to determine the position of an axis using this type of sensor some issues do
+
+
+18
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+arise, small interference in the system can cause major errors in determining the position as well as making it difficult to determining the direction of advances. In order to remedy these issues a few configurations can be employed such as incremental and absolute:
+
+• Incremental encoders - There are two sets of grating lines on two different cir- cles which detect direction of rotation, and one can also enhance the accuracy of the sensor. There is another circle, which contains only one grating mark. It is used for measurement of full circlesSaha et al. (2008).
+• absolute encoders - This sensor directly gives the digital output (absolute). The encoder is directly mounted on the motor shaft or with some gearing to enhance the accuracy of measurement. To avoid noise in this encoder, a gray scale is sometimes usedSaha et al. (2008).
+
+
+7.3.2 Bio-potential sensors
+
+Essentially bio-potential encoders or sensors are used to translate a wide variety of bio-signals obtained from the human body to electrical signals that can be un- derstood by an electronic instrument. Bio-potential encoders are used to measure electrocardiography (ECG), electromyography (EMG), and electroencephalography (EEG) systems that monitor and measure heart, muscle, and brain activity respec- tively during a period of time monitor or measure electric potentials on the surface of living tissue. Nervous stimuli and muscle contractions can be detected by measuring the ionic current flow in the body Lee and Kruse (2008). This is accomplished using these types of electrode.
+
+
+7.3.2.1 EEG Electrodes
+
+The most common method to capture EEG data are by the use of cup electrodes or sub-dermal needle electrodes as the reader may be aware the latter is an invasive
+
+19
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+method of monitoring EEG signal and although may be a bit more reliable but for the purpose of this project we will be avoided this method and we will be using the former. Cup electrodes are attached directly to the scalp using tape and will be filled with a conducting electrolyte gel to improve reliability of data acquisition. This method does have a few limitations giving that hair, oily scalp/skin can hinder good electrical contact to the patient/userEnderle (2012).
+
+
+7.4 Embedded systems
+
+
+Like has been the case in previous sections embedded systems have a varying number of definitions but as the author Steve Heath mentioned the best way to define an embedded system is to describe what an embedded system is not. In essence an embedded system is microprocessor-based system that is built to control a function or range of functions and is not designed to be programmed by the end user in the same way a PC is Heath (2002). Although it is worth noting that an embedded system is programmable it is programmed directly in an assembly language of a micro-controller or microprocessor, C or C++, or in hardware description language (HDL). On the contrary in the case of a PC the end user can precisely do this, in the sense that, for example in one instance a PC can be a word processor such as word and in another instance its a gaming machine by simple changing software. An embedded system is designed to achieve a specific task admittedly by choice and options.
+In the Appendix A: figure 12.9 we show a simplified diagram of what an embedded system consist of Miyara (2004).
+
+• Reduced Instruction Set Computer (RISC) processor 32-bit.
+
+• Flash memory used for persistent program storage.
+
+• Synchronous Dynamic Random Access Memory (SDRAM) memory where tem- porary values are stored for program execution.
+
+20
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+• Wireless access point.
+
+• Different interfaces for communication with external devices i.e. Universal Se- rial Bus (USB), Universal Asynchronous Receiver-Transmitter (UART), and Eth- ernet.
+
+
+7.5 Communication between devices
+
+
+As mentioned in section 4.3, sensors are responsible for measuring variables and this data is then transmitted to the embedded system which in turn is responsible for processing said data and carrying out a given process or control. The data trans- mitted by sensors come in different voltage signals or levels which can be a anolog signal or binary values ’0’ or ’1’
+8. HYPOTHESIS AND OBJECTIVES
+
+The hypothesis, general objectives, and specific objectives are as followed:
+
+
+8.1 Hypothesis
+
+
+Utilizing convolutional neural networks to interpret beta frequency bio-signals ob- tained via an electroencephalogram cap, propose and design an algorithm control process for a feedback cycle-ergometer that can improve the lower mobility and strength of a patient who suffers from a cerebral vascular accident by 10-36%.
+
+
+8.2 Objectives
+
+
+8.2.1 General Objectives:
+
+Develop an algorithm for a cycle-ergometer motor, which works based on the mea- surement of bio-signals from a patient obtained by the use of electroencephalogram
+
+21
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+device in order to potentially improve the lower strength and mobility of lower extrem- ities.
+
+
+8.3 Specific Objectives
+
+
+• Obtain bio-signals from a patient by means of an EEG device.
+
+• Study the different EEG signals that a patient can have and filter out any noise that can influence the optimal operation of our methodology.
+• Propose an algorithm using convolutional neural networks (CNNs) that will con- trol or regulate the cycle-ergometer motor.
+• With the aid of physical therapist, develop/design a reprogrammed plan an ex- ercise routine for the patient.
+• Run trials and analyse resulting data.
+
+• Compare reuslts.
+
+
+9. METHODOLOGY
+
+9.1 Materials and resources
+
+
+In this section we will list and describe the Material and equipment as well as the human resources that will be used throughout the investigation.
+
+
+9.1.1 Human Resources
+
+The staff involved in this research project will consist of:
+
+
+• Adria´n Ernesto Lo´pez Jime´nez, MSc. student interested in the project of inves- tigation.
+
+22
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+• Dr. Juvenal Rodr´ıguez Rese´ndiz, the director of this project.
+
+• A Physical therapist that has yet to be chosen.
+
+• A human patient who has chosen to remain anonymous.
+
+
+9.1.2 Materials and equipment
+
+For this project we will count with the following materials and equipment:
+
+
+• Hp Pavilion B&O laptop with the following specifications:
+
+• Intel Core i7 8ᵗʰ generation processor.
+• NVIDIA GeForce 940MX Video card.
+• 1 TB 5400 RPM HDD.
+• 16 GB DDR4 RAM.
+• Windows 10 Pro.
+
+• The EMOTIV EPOC+
+
+• 14 Channel EEG.
+• Wireless Connection.
+• 9 Axis Motions Sensors.
+• Internal Lithium Polymer Battery 64QmAh.
+
+• Cycle-ergometer Model CAM-E by On-Motion that has the following character- istics:
+• 4 Speeds.
+• 24 cm diameter circular movement.
+• Pedals for foot support.
+• Attachment for use with hands.
+
+23
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+9.2 Ethical Considerations
+
+
+In this project all of the procedures that will be used or carried out are going to be based on the Good Clinical Practices guidelines and will abide by the latest ver- sion of the Declaration of Helsinki. We also acknowledge that possible risks may be present, one of which could be that the patient(s) may experience mild to moderate discomfort during the testing phase. Another, although less probable risk is that the patient’s heart rate may be elevated too quickly, to avoid any possible risks and undo discomfort we will require the collaboration of one or more physical therapists. We will also ensure that the participation of the test subject(s) is completely voluntary and will attach a written letter of consent from the patient and/or the patient’s care- givers. We also will ensure that the personal information of said test subject(s) is kept private.
+
+
+9.3 Location and conditions of the project.
+
+
+The following project will be realized in the State of Quere´taro at the Autonomous University of Quere´taro Main campus. The experimental phase or data acquisition will be realized in Salvatierra, GTO with the help of a patient who has suffered a cerebral hemorrhage or commonly referred as a hemorrhagic stroke who we will be using as a test subject with the written consent of his/her caregivers.
+
+
+9.4 Field test activities.
+
+
+As mentioned before we will require the collaborations of one or more physical ther- apists that will supervise the experiment at all times so as to ensure the well-being of the patient(s). If the patient we have in mind at this time isn’t capable of partic- ipating in the experiment we will need the assistance of the physical therapist(s) in order to locate other possible test subject(s) that require or would benefit from this experiment. We will also explain with sufficient detail what our experiment will entail
+
+24
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+and consist of and will have a written letter of consent, only after the patient(s) sign the letter of consent will the experiment move forward. The patient or his/her care- givers have the right to stop the experiment at any time if they experience any pain or discomfort and have the option to decide if they choose to continue or not. We will also follow any and all instructions given by the physical therapist(s) who can also stop the experiment at any moment if he/she decides to do so.
+
+
+9.5 Human trials
+
+
+In this project we will use bio-potential sensors in order to obtain bio-signals from the patient afterwards this data will be processed so as to ensure correct reception of data, subsequently the data will pass through a control process so the patient’s output signal can produce a correct pulse width modulation (PWM) signal that will efficiently increase or decrease the speed or velocity of the cycle-ergometer, in Ap- pendix A: figure 12.10 we show a basic diagram of how this processes will be real- ized.
+With the aid of a physical therapist we will place the patient on a comfortable flat surface on his/her back with their lower extremities placed in the CAM-E cycle- ergometer by On-motion, see Appendix A: figure 12.11. The velocity or speed will be controlled by the patient via EMOTIV EPOC+.
+Next we will break down in general terms the steps that we will undertake when undergoing out field trails with out human patient.
+
+1. Lay the patient on their back.
+
+2. Under the supervision of a physical therapist we will place the patient’s lower extremities in the CAM-E cycle-ergometer.
+3. Using a noninvasive EMOTIV EPOC+ cap on the patient’s head so that the patient has control over the speed of the cycle-ergometer.
+
+25
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+4. Turn on the cycle-ergometer. The patient will start to feel how they have control over the speed of the peddles.
+5. Keep constant supervision of the patient with the help of the physical therapist.
+
+6. If the patient feels any discomfort or pain or at the behest of the physical ther- apist the trial will end.
+7. If there is any abnormal readings or signal from the EMOTIV EPOC+ that cause irregularity in the cycle-ergometer the trail will stop and we will examine the cause and correct it and reschedule the trail for another date.
+8. Every time the trial is stopped the physical therapist will examine the patient to ensure the well being of the patient is always above all else.
+9. Once the trail has concluded for the day, with the supervision of the physical therapist we will remove the patient’s lower extremities will be removed from the cycle-ergometer.
+10. The physical therapist will be present at all times and nothing will be preformed with out the green light from them.
+11. At the end of every trial the patient will be allowed to rest and will be observed by the physical therapist and nurse until they deem fit for the patient is stable.
+
+Although we see great potential in this project the well being of the patient will always be paramount and if at any moment their care giver, physical therapist, or nurse decides that they are not an adequate candidate for this trail then we will suspend the trials and look for another patient/volunteer and start the trail over as to not mix data.
+
+
+
+
+
+
+
+
+26
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+9.6 Schedule of activities
+
+
+In order to adhere to the requirements for submission of this protocol we have moved this to table to Appendix B: table 13-3 and 13-4.
+10. EXPECTED RESULTS
+
+10.1 Scientific Impact
+
+
+At the conclusion of our field trails and experiments we expect an improvement in strength and mobility of the patients lower body of at least 10-36% and that we can confirm that this is a feasible and practical alternative in the area of rehabilitation’s for patients with not only neurological damage but for a wide variety of other ailments that limit or restrict the mobility and/or strength of a patient’s lower body extremities. Other than the physical improvements or benefits we also expect this to be feasible alternative due its versatility, feedback feature, compactness, its ability to be portable, and its low cost as compared to similar treatments with larger, limited, and more expensive cycle-ergometers.
+
+
+10.2 Expected Results
+
+
+Our main expected result is the improvement of quality of life of our volunteer and that we indeed improve their lower body mobility and strength of at least 10-36% as well as count with sufficient preprogrammed exercise routines in order to keep the patient engaged and challenged so they do not lose interest but help them further on their road to rehabilitation. We also expect that the real time sensor readings will be of use to the patients physician, physical therapist so they may track their condition or improvements. Finally we expect that this be a cost effective alternative to more costly machines on the market that are out of reach for most patients due to their extremely high cost.
+Although this project is meant for patients that have suffered neurological
+
+27
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+damage we expect this to be a useful tool for all patients that have limited or reduced lower body strength or movement. We also hope that in the future this can be a viable alternative for athletes, as well in a later date add additional instrumentation and controls such as a oximeter or heart-rate monitor as well a blood pressure monitor in addition to the EEG control.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+11. REFERENCES
+
+Anderson, S. T. (1995). Method for conditioning or rehabilitating using a prescribed exercise program. Patent: US5410472A. (Cited on pages: 7, 40 y 41.)
+Aoki, H., Sakaguchi, M., Fujimoto, H., Tsuzuki, K., and Nakamura, H. (2010). Non- contact respiration measurement under pedaling motion with upright bicycle er- gometer using dot-matrix pattern light projection. In TENCON 2010-2010 IEEE Region 10 Conference, pages 1761–1765. IEEE. (Cited on pages: 8, 40 y 41.)
+Association, A. H. (2021). All about heart rate (pulse). (Cited on page 6.)
+
+Birrell, J. S., Armstrong, T. O., and Dalton, C. J. (1990). Exercise cycle. Patent: USD307782S. (Cited on page 6.)
+Casajus, J., Piedrafita, E., and Aragone´s, M. (2009). Criteria for maximal exercise test. Revista Internacional de Medicina y Ciencias de la Actividad Fisica y del Deporte, 9. (Cited on page 6.)
+Center, S. M. (2017). Cardiopulmonary exercise testing. (Cited on page 15.) Cheri (2019). The anaerobic threshold. (Cited on page 6.)
+Electrical4U (2020). What is a control system? (open loop amp; closed loop control systems explained). (Cited on page 16.)
+Emergo (2022). Mexico – overview of medical device industry and healthcare statis- tics. (Cited on pages: 10 y 13.)
+Enderle, J. (2012). Introduction to biomedical engineering. Academic press. (Cited on page 20.)
+Gude, D., Broxterman, R., Ade, C., Barstow, T., Nelson, T., Song, W., and Warren,
+S. (2012). Automated hand-forearm ergometer data collection system. In 2012 Annual International Conference of the IEEE Engineering in Medicine and Biology Society, pages 2379–2382. IEEE. (Cited on pages: 9, 40 y 41.)
+29
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+Hashimoto, T., Kondo, K., and Kikuchi, N. (2018). Development of kayak ergometer using electromagnetic brake for indoor training. In 12th France-Japan and 10th Europe-Asia Congress on Mechatronics, pages 342–345. IEEE. (Cited on pages: 7, 40 y 41.)
+Heath, S. (2002). Embedded systems design. Elsevier. (Cited on page 20.)
+
+Hospital, E. (2019). Me´xico encabeza importacio´n de equipos y dispositivos me´dicos en ame´rica latina en 2018. (Cited on pages: 10 y 12.)
+Hsueh, P.-W. and Tsai, M.-C. (2013).  Reactive torque monitoring and cycling speed control of a belt-driven cycle ergometer.  Control Engineering Practice, 21(11):1564–1576. (Cited on pages: 9, 40 y 41.)
+Hunt, K. J., Zahnd, A., and Grunder, R. (2019). A unified heart rate control approach for cycle ergometer and treadmill exercise.  Biomedical Signal Processing and Control, 54:101601. (Cited on pages: 9, 40 y 41.)
+Instituto Nacional de Estad´ıstica Geograf´ıa e Informa´tica (2021). Resultados de la Estad´ıstica de Salud en Establecimientos Particulares 2020. (Cited on pages: 10, 11 y 13.)
+Jeong, U., Park, D., and Cho, K.-J. (2014). Sensorless admittance control of cycle ergometer for rehabilitation. In 2014 14th International Conference on Control, Automation and Systems (ICCAS 2014), pages 1082–1086. IEEE.  (Cited on page 8.)
+LaStayo, P., Lindstedt, S., Hoppeler, H., Madden, H., Estoque, D. A., Stephens,
+W. B., and Volan, G. D. (2006). Method and apparatus for speed controlled eccen- tric exercise training. Patent: US7083547B2. (Cited on pages: 7, 40 y 41.)
+Lechuga Ensastiga, S. A. and Gomez Padilla, O. A. (2020). Interview about rehabil- itation devices (cycle-ergometer). (Cited on pages: 11 y 13.)
+Lechuga Ensastiga, S. A. and Ruiz, N. (2020). Interview about rehabilitation devices (cycle-ergometer). (Cited on pages: 11 y 14.)
+
+30
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+Lechuga Ensastiga, S. A. and Trejo Oviedo, L. R. (2020). Interview about rehabilita- tion devices (cycle-ergometer). (Cited on pages: 11 y 13.)
+Lee, S. and Kruse, J. (2008). Biopotential electrode sensors in ecg/eeg/emg sys- tems. (Cited on page 19.)
+Lundgren, C. E. G. and Lichtneckert, I. J. A. (1969).  Ergometer.  Patent: US3451674A. (Cited on page 6.)
+Manderbacka, M. (2000). Brake arrangement for magnetic or electric ergometer.
+Patent: US6485397B1. (Cited on page 6.)
+
+Marge, M. (2008). Secondary conditions revisited: examining the expansion of the original concept and definition. Disability and Health Journal, 2(1):67–70. (Cited on page 4.)
+MedlinePlus (2022). Rehabilitation. (Cited on page 4.) Merriam-Webster (2022). Ergometer. (Cited on page 6.) merriam webster (2022). Kinesitherapy. (Cited on page 4.) Miyara, F. (2004). Conversores d/a y a/d. (Cited on page 20.)
+Mulligan, H. F., Hale, L. A., Whitehead, L., and Baxter, G. D. (2012). Barriers to physical activity for people with long-term neurological conditions: a review study. Adapted Physical Activity Quarterly, 29(3):243–265. (Cited on page 4.)
+Ogata, K. (2010). Modern Control Engineering. Pearson. (Cited on pages: 16 y 17.)
+
+Pere´z, Valencia, I. and Lo´pez, Hernadez, S. (2018). On motion: Equipo biomeca´nico para terapias de rehabilitacio´n. (Cited on pages: 9, 40 y 41.)
+Pe´rez, I. H. M. (2009). Disen˜o de un prototipo de transmisio´n automa´tica para bi- cicleta. Bacholor’s thesis, Universidad Nacional Auto´noma de Me´xico. (Cited on page 15.)
+Performance, B. M. (2018). Aerobic and anaerobic threshold: Explained. (Cited on page 6.)
+31
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+Ram´ırez, L. G. C., Jime´nez, G. t. A., and Carren˜o, J. M. (2014). Sensores y actu- adores. Grupo Editorial Patria. (Cited on page 18.)
+Saha, S. K. et al. (2008). Introduction to Robotics. Tata McGraw-Hill Education. (Cited on page 19.)
+Shoor, B. A. (1955). Cycle ergometer. Patent: US2784591A. (Cited on page 6.)
+
+Stetter, J. R., Hesketh, P. J., and Hunter, G. W. (2006). Sensors: engineering struc- tures and materials from micro to nano. The Electrochemical Society Interface, 15(1):66. (Cited on page 18.)
+Yescas, F. B. (2012). Ergo´metro para evaluacio´n cinesiolo´gica de usuarios de silla de ruedas,. Master’s thesis, Instituto Politecnico Nacional. (Cited on pages: 14 y 15.)
+Zhang, R., Liu, J., Yan, K., Peng, W., and Zhan, L. (2017). Validity of a new designed constant workload cycle ergometer for assessing cardiopulmonary function. In 2017 10th International Congress on Image and Signal Processing, BioMedical Engineering and Informatics (CISP-BMEI), pages 1–5. IEEE. (Cited on pages: 8, 40 y 41.)
+Astro¨ m, K. J. and Murray, R. M. (2009). Feedback Systems. Princeton University Press. (Cited on pages: 16, 17 y 34.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+32
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+12. APPENDIX A: FIGURES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 12.1 EMOTIVE EPOC+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 12.2 Cycle-ergometer Model CAM-E by On-Motion
+
+
+
+
+
+
+
+
+
+
+
+33
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+GND               GND
+
+
+
+
+Voltage Generator
+E(s)
++
+-
+PID
+Control
+U(s)
+DC Motor   Potentiometer
+
+R(s) (5v)
+
+
+C(s)
+
+
+
+Observer
+GND
+Voltage
+
+Figure 12.3 General diagram of PID electric module control for a cycle-ergometer.
+
+
+System 1 u
+System 2   y
+
+
+
+
+
+Figure 12.4 Closed Loop Astro¨ m and Murray (2009)
+
+
+System 1 u
+System 2    y
+
+
+
+
+
+
+Figure 12.5 Open Loop Astro¨ m and Murray (2009)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+R   +     E       Controler   U
+-
+
+Plant
+
+
+C
+Observer
+Figure 12.6 Closed loop control system diagram.
+
+Where:
+
+R = Desired signal o signal reference.
+
+E = Error signal.
+
+U = Input signal to plant.
+
+C = Output signal from plant.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+35
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+Kp
+
+
+
+R(s)
+E(s)
++
+-
+Kds
+U(s)
+
+Plant
+
+
+
+
+
+C(s)
+K i s
+
+Observer
+Figure 12.7 PID Control.
+
+Where:
+
+R(s) = Desired signal or reference signal in the Laplace domain.
+
+E(s) = Error signal in the Laplace domain.
+
+U (s) = Plant input signal in the Laplace domain. C(s) = Plant output signal in the Laplace domain. s = Independent variable in the Laplace domain. Kp = Proportional control gain.
+Kd = Derivative gain.
+
+Ki = Integral gain.
+
+
+
+
+
+
+
+
+
+
+
+
+
+36
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+Light emitter
+
+
+
+Receiver
+
+
+
+
+
+
+slotted disc
+
+
+
+Figure 12.8 Optical encoder.
+
+
+Flash
+
+SDRAM
+802.11
+Chip Set
+
+
+32-bit RISC Processor
+
+
+Serial UART
+USB CONTOLLER
+Ethernet Controller
+
+
+Serial Port
+
+USB
+Figure 12.9 Embedded system components.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+37
+Ethernet (LAN)
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+
+
+
+
+
+Acquisition of biosignal
+
+
+
+
+Bio-signal translated into an analog electrical signal
+
+
+Cycle-ergometer
+
+ADC
+1
+
+
+0
+Digital signal
+
+
+
+
+
+Time
+Signal Processing
+
+
+
+
+
+Contol Process
+
+
+
+
+
+
+
+DC Motor
+PWM output
+
+Figure 12.10 Data acquisition of bio-signals from patient for cycle-ergometer control.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 12.11 Cycle-ergometer in use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+38
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 12.12 Image of Cycle ergometer patent
+
+
+
+
+13. APPENDIX B: TABLES
+
+
+
+
+
+
+
+
+
+
+
+39
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+
+
+
+
+
+
+
+
+
+Table 13-1 Comparative table of different investigations on Cycle-ergometers.
+
+
+Authors who have conducted investigation on cycle-ergometers
+Hunt J.K
+Hunt et al. (2019) Lopez S.
+Pere´z and Lo´pez (2018) Hsueh P. & Tsai M. Hsueh and Tsai (2013) Gude D.
+Gude et al. (2012) Aoki H.
+Aoki et al. (2010) Zhang R.
+Zhang et al. (2017) Hasimoto T.
+Hashimoto et al. (2018) Lastayo P.
+LaStayo et al. (2006) Anderson S. Anderson (1995)
+
+Focused on medicine
+
+Bio-signal control
+
+Measurement of heart rate
+
+Measurement of blood pressure
+Measurement of carbon dioxide production (VO2 MAX)
+
+
+
+
+
+
+
+
+
+
+
+
+40
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+
+
+
+
+
+
+
+
+
+Table 13-2 Comparative table of different investigations on Cycle-ergometers.
+
+
+Authors who have conducted investigation on cycle-ergometers Hunt J.K
+Hunt et al. (2019) Lopez S.
+Pere´z and Lo´pez (2018) Hsueh P. & Tsai M. Hsueh and Tsai (2013) Gude D.
+Gude et al. (2012) Aoki H.
+Aoki et al. (2010) Zhang R.
+Zhang et al. (2017) Hasimoto T.
+Hashimoto et al. (2018) Lastayo P.
+LaStayo et al. (2006) Anderson S. Anderson (1995)
+
+Work-Load control
+
+Pre-programmed exercise routine
+
+Speed Control
+With built in user interface
+
+Easy transportation
+
+
+
+
+
+
+
+
+
+
+
+
+
+41
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+
+
+
+
+
+
+
+Table 13-3 Schedule of Activities.
+
+
+Activity
+Bibliographic investigation. Review of the state of the art and registry of
+doctoral protocol.
+Begin the design of prototype.
+Begin redaction of first article to be submitted to index journal.
+Start redaction of doctoral thesis.
+Aug-Sep 2022
+Oct-Nov 2022
+Dec-Jan 2023
+Feb-Mar 2023
+Apr-May 2023
+Jun-Jul 2023
+
+Activity
+Conclude redaction of first article and submit
+to index journal.
+Continue redaction of doctoral thesis.
+Continue prototype design. Contact necessary personal (physical therapist).
+Obtain consent from patient.
+Commence preliminary field trials.
+Aug-Sep 2023
+Oct-Nov 2023
+Dec-Jan 2024
+Feb-Mar 2024
+Apr-May 2024
+Jun-Jul 2024
+
+
+
+
+
+
+
+
+
+
+
+42
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+
+
+
+
+
+
+
+Table 13-4 Schedule of Activities.
+
+
+Activity
+Conclude field test with human patient.
+Review preliminary results. Continue redaction of doctoral thesis.
+Finalize prototype.
+Begin and conclude redaction of second article to be submitted to an indexed journal. Find a potential undergraduate or postgraduate student.
+Begin directing undergraduate/postgraduate thesis.
+Aug-Sep 2024
+Oct-Nov 2024
+Dic-Jan 2025
+Feb-Mar 2025
+Apr-May 2025
+Jun-Jul 2025
+
+Activity Finish redacting Doctoral
+thesis. Obtention of Doctoral
+grade.
+Conclude directing undergraduate/postgraduate thesis and obtention
+of grade of student.
+Aug-Sep 2025
+Oct-Nov 2025
+Dic-Jan 2026
+Feb-Mar 2026
+Apr-May 2026
+Jun-jul 2026
+
+
+
+
+
+
+
+
+
+
+
+43
+
+F-50-01 PROTOCOLO DE INVESTIGACIO´ N
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Adria´n Ernesto Lo´pez Jime´nez Tel: (442) 385 - 8417
+Exp: 218368
+Email: adrnlopez@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+44

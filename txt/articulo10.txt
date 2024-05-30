@@ -1,0 +1,534 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Universidad Autónoma de Querétaro
+Facultad de Informática
+C.U. a 12 de febrero del 2023
+Maestría en Sistemas Computacionales
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+Nombre del Alumno: Daniel Martín Castellanos Martínez No. de Expediente: 309321
+No. CVU: 1107763
+Correo electrónico: daniel.castellanos97@outlook.com Teléfono: 4421269056
+
+Línea de investigación sobre la cual se desarrollará el trabajo: Sistemas embebidos
+Responsable de la asesoría: Dr. Alberto Vázquez Cervantes
+Programas educativos que apoya: Maestría en sistemas computacionales
+Línea de investigación del responsable: inteligencia artificial y sistemas embebidos
+
+
+
+Firma de aceptación:
+
+
+Número de veces que se ha sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez (X)   2da. ()    Más de 2 veces ()
+Semestre o Cuatrimestre actual del alumno: 4°
+Fecha de Ingreso al programa: 02 de agosto del 2021
+
+
+
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+I. DATOS GENERALES
+
+
+•  Título del proyecto. Sistema de emulación por software embebido de baterías Li- ion con bajo error.
+•  Nombre del alumno responsable. Daniel Martín Castellanos Martínez
+•  Colaboradores (director y/o Co-director): Dr. Alberto Vázquez Cervantes
+•  Centro o lugar donde se realiza investigación: Facultad de informática campus Juriquilla
+•  Tipo de investigación básica, aplicada o tecnológica (diseño, construcción de prototipo o prueba experimental). Tecnológica, construcción de prototipo
+•  Línea de investigación sobre la cual se desarrollará el trabajo. Sistemas embebidos
+
+II. ANTECEDENTES
+El diseño de sistemas que tengan integrada una batería es un proceso incomodo, costoso y lento. (Luna et al., 2021). Esto debido a que, para iniciar pruebas en baterías reales estas deben precargarse y precalentarse para alcanzar las condiciones iniciales definidas (König et al., 2014). De igual forma, los efectos del envejecimiento de la batería pueden limitar la repetibilidad de las pruebas. Las diferentes celdas varían ampliamente dependiendo de varios factores, como resistencia interna, estado de carga (SOC), voltaje de circuito abierto (OCV) y estado de salud (SOH).
+Al mismo tiempo, para probar las funciones de diagnóstico de una batería, también se deben emular algunas fallas, por ejemplo, sobrecarga, sobre descarga y diferentes rangos de temperatura. Las celdas de batería reales obviamente no son adecuadas para estas pruebas, considerando los problemas de seguridad (Dai et al., 2013). Además estas características cambian con el envejecimiento de una celda de batería por lo que, conforme el proyecto va avanzando en el proceso de desarrollo y validación, sería necesario reemplazar las baterías por otras nuevas para mantener la funcionalidad del sistema experimental (Michalczuk et al., 2014).
+
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Por lo tanto, los emuladores de batería (BE) se han vuelto muy populares en los últimos años, ya que permiten probar la batería en diferentes condiciones sin que la preparación, seguridad, el mantenimiento o el envejecimiento del sistema se vean afectados por el tiempo. Los emuladores se pueden usar para emular baterías de diferentes químicas y potencias nominales (Hidalgo-León et al., 2020). Tal emulador de batería (BE) proporciona los siguientes beneficios (König et al., 2014):
+
+1. Se puede hacer pruebas del sistema completo antes de que esté disponible un prototipo de batería
+2. Cambiar el estado de la batería emulada al instante y sin necesidad de preacondicionamiento o cambio de baterías voluminosas lo cual requiere mucho tiempo
+3. Repetibilidad exacta de las pruebas.
+4. Cambiar de configuración dependiendo del tipo de batería solo cambiando el modelo
+5. Probar condiciones imposibles de probar en una batería real
+III. Estado del Arte
+A continuación, se realiza un análisis sobre las últimas tendencias en la emulación de batería y su fundamentación teórica. Se compararon diferentes modelos, circuitos y arquitecturas utilizadas. Para así entender el contexto actual del tema y conocer la pertinencia de una implementación de un emulador de batería con estas técnicas en un entorno de desarrollo software automotriz. Conociendo así las técnicas más adecuadas y los problemas a tener en cuenta a la hora de desarrollar dicho dispositivo.
+Para tener una estructura del estado del arte se decidió realizar un artículo de revisión sistemática. Para esto se realizó una búsqueda en los repositorios de investigación Redalyc, Research Gate y Google scholar.
+Bajo esta metodología, se tomaron en cuenta 39 artículos, entre los que se encuentran artículos de desarrollo e implementación de dispositivos, revisiones sistemáticas e investigaciones comparativas entre diferentes modelos y circuitos.
+
+
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+De las publicaciones tomadas en cuenta para la revisión sistemática 29 son artículos que hablan sobre la construcción de un emulador de batería, de los cuales 10 tienen una aplicación o validan su trabajo enfocado al área automotriz.
+
+De igual forma se encontró que dentro de los modelos más utilizados para este tipo de dispositivos se encuentran modelos de impedancia (26%), matemáticos (26%) y de Thévenin (23%). Esto debido a su gran precisión y relativamente baja necesidad de poder de procesamiento, siendo el modelo de Thévenin el que menos capacidad de procesamiento necesita y más facilidad de caracterización al modelar la batería. Esta facilidad se da gracias a que en los modelos de Thévenin no se necesita maquinaria especializada para hacer mediciones de espectroscopia de impedancia electroquímica a diferencia de los modelos de impedancia en los que si hay esa dependencia.
+
+Se encontró que de los dispositivos desarrollados el 60% emulan comportamientos tanto de carga como de descarga y el 60% utilizan controladores tipo HIL (Hardware in the Loop). La decisión de los modos de operación que emulará el dispositivo depende de las necesidades del proyecto y de igual manera el controlador utilizado dependerá del presupuesto y necesidades de este. Al encontrar que el 40% de los artículos desarrolla un emulador con un microcontrolador a diferencia de un dispositivo HIL motiva a este proyecto a enfocarse en utilizar un microcontrolador para aumentar la escalabilidad y reducir el costo del dispositivo.
+
+En los artículos analizados se encuentra que, dentro de los emuladores que utilizan un modelo matemático, la raíz del error cuadrático medio (RECM) varía entre 0.4% y 1.39% y el valor máximo de error varía entre 2% y 5%. En los modelos de impedancia el RECM varía entre 0.5% y 1.12%. En los modelos de Thévenin el RECM varía entre 0.35 % y 0.42%.
+
+El modelo en el que cada artículo se base es un parámetro crucial del proyecto, ya que el emulador solo puede ser tan preciso como lo es su modelo. En la mayoría de
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+los artículos que desarrollan un emulador de batería utilizan modelos de circuitos equivalentes basados en impedancia, ya que es un modelo bastante preciso para su relativa baja complejidad y dentro de un laboratorio de pruebas es relativamente sencillo caracterizar una batería por medio de mediciones de EIS. Esto puede ser un problema para la viabilidad de un proyecto basado en un modelo de impedancia si no se tiene el equipo para hacer este tipo de mediciones.
+
+Por esta razón gran parte de los artículos que no se basan en impedancia, se basan en modelos de Thévenin o matemáticos, los cuales pueden caracterizar la batería por medio de su respuesta a pulsos de corriente y adaptando el modelo a la medición.
+
+En la literatura se encontró el uso de dos tipos de controladores. Controladores tipo HIL los cuales tienen una gran capacidad de computación e incluso se puede tener el modelo de batería embebido dentro de ellos, por otro lado, estos controladores por lo general son muy costosos y la viabilidad de tener varios en un proceso de desarrollo dentro de un proyecto que los necesite es baja. Por otro lado, se usan microcontroladores, normalmente procesadores digitales de señales, lo cuales pueden ayudar a controlar el circuito ya que, a pesar de su baja capacidad de computación, comparados con un controlador tipo HIL, pueden recibir instrucciones por un protocolo de comunicación (Normalmente USART) desde una computadora con mayor capacidad de procesamiento, como una computadora personal, que puede correr el modelo de batería. Incluso hay artículos que utilizan un modelo lo suficientemente bajo en complejidad como para correr el modelo embebido dentro del microcontrolador.
+
+IV. JUSTIFICACIÓN
+
+
+El proceso de desarrollo y pruebas de un sistema que incluya en su arquitectura una batería es complicado por problemas inherentes a la misma, como lo son, la falta de repetibilidad de diferentes situaciones y los problemas de seguridad que
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+conlleva intentar reproducir ciertas situaciones como sobre carga, sobre descarga y diferentes rangos de temperatura.
+
+La implementación de un emulador de baterías puede solucionar estos problemas, permitiendo cambiar valores de voltaje, temperatura, corriente y resistencia al instante, sin tener que hacer ningún proceso previo y además se puede emular varios modelos y químicas de batería sólo cambiando el modelo del emulador.
+
+Por lo general las soluciones ofrecidas para emular o simular baterías son bastante costosas ya que, se necesitan elementos de potencia grandes para emular paquetes de baterías con altos voltajes y corrientes y computadoras con alto poder de computación para procesar modelos complejos que se asemejen lo más posible al comportamiento de estos. Además, muchas aplicaciones de potencia media se caracterizan por volúmenes de producción bajos causando que las soluciones en el mercado para emular baterías tiendan a no ser asequibles (Di Rienzo et al., 2018). Esto hace que, en la industria, las pruebas con un emulador de baterías se hagan normalmente  al  final de  proceso  de  desarrollo.  Encontrando  normalmente problemas en un periodo del proyecto en el que, su solución es más costosa y tardada que si se atendieran en una etapa más temprana.
+
+V. DESCRIPCIÓN DEL PROBLEMA
+
+
+Como anteriormente se expuso tanto en la literatura como en la industria, en los procesos de desarrollo y pruebas en sistemas que involucran una celda de batería, el hacer pruebas en baterías reales conlleva muchos problemas propios de estas, como lo es la falta de repetibilidad debido a la variabilidad de los parámetros como SOH, SOC, VOC y resistencia interna, problemas de seguridad al intentar probar diferentes situaciones que le puedan pasar a una batería, como sobre descarga, sobre carga y rangos de temperatura peligrosos. Todos estos problemas hacen que estos procesos se hagan más tardados y costosos o que ciertas situaciones no puedan ser probadas efectivamente.
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Esto hace que varias soluciones de emulación de baterías en el mercado sean exploradas como opción para contrarrestar estos problemas, pero su falta de modularidad y altos precios, debidos al complejo hardware necesario, hacen que muchas veces estas soluciones no sean viables para un proyecto o para el proceso de ideación y prototipado.
+
+VI. COMITÉ DE BIOÉTICA
+
+
+Este proyecto será llevado a cabo para un proyecto dentro de la empresa Continental R&D, algunos componentes de hardware o especificaciones del sistema son confidenciales por lo que se tendrá que llevar reuniones con la empresa antes de cualquier publicación para cuidar la confidencialidad de los datos
+De igual forma los procedimientos no afectan la integridad de las personas y se utilizarán las medidas de seguridad adecuadas dadas por la empresa.
+
+
+VII. PLANTEAMIENTO TEÓRICO (Hipótesis)
+
+
+El desarrollo de un sistema de batería Li-ion emulado por software embebido de arquitectura distribuida permite reducir los riesgos de prueba y costos de producción de circuitos con batería, garantizando una desviación máxima del error y una clara reducción de la raíz del error cuadrático medio.
+
+VIII. OBJETIVOS
+
+Objetivo general:
+Implementar un emulador de batería Li-ion utilizando una arquitectura distribuida con el propósito de generar un banco de prueba en circuitos de aplicación de software embebido que requieren baterías con la finalidad de reducir los riesgos logrando una desviación máxima de error y de la raíz del error cuadrático medio sin
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+la necesidad de replicar la inseguridad que implica someter las baterías reales a condiciones de prueba.
+Objetivos específicos:
+•  Comprobar y modelar la propuesta de caracterización de Luna et al. (2021) como un modelo funcional para la emulación de baterías de Li-ion.
+•  Diseñar y probar un conjunto de arquitectura distribuida entre una computadora y un microcontrolador, que controlará un circuito Buck, como elementos que permitirán la emulación del dispositivo.
+•  Diseñar un sistema embebido que permita la emulación práctica en un banco de pruebas de baterías Li-ion, con el fin de evaluar el error y la reducción de la raíz del error cuadrático medio.
+
+IX. PROPUESTA DE SOLUCIÓN
+Se  utilizará  una  arquitectura  distribuida  entre  un  microcontrolador  y  una computadora personal para dividir el poder computacional necesario de una computadora tipo HIL, corriendo la parte con mayor necesidad computacional (modelo de batería) en la computadora personal y dejando el control del hardware a un microcontrolador.
+•  Es por esto que haciendo uso de esta arquitectura distribuida, se puede implementar un emulador de batería que se pueda producir en mayores cantidades y entregar a varios desarrolladores y personal de pruebas para encontrar errores en etapas tempranas del desarrollo. Esta arquitectura, mostrada en la figura 1, está basada en (Park et al., 2005) y (Restrepo et al., 2012) y está dividida en dos partes; hardware embebido, el cual funciona a partir de un convertidor buck para la acción de descarga y de una carga electrónica para la acción de carga, todo esto controlado por sensores y un microcontrolador, y el software de la computadora personal, el cual está basado en una GUI y corre el modelo de la batería.
+
+
+
+
+
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 1 Arquitectura de emulador
+También se utilizará un modelo basado en Thévenin por su alta precisión, baja exigencia computacional y facilidad de caracterización de batería en comparación con otro tipo de modelos.
+X. METODOLOGÍA
+Se propone la siguiente metodología para el desarrollo del emulador basada en la metodología de desarrollo en cascada (Kramer, M, 2018) y en la implementación de un dispositivo de emulador por (Luna et al., 2021).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+En la figura 2 se muestra la metodología de desarrollo del prototipo dividida en pasos, cada paso tiene sus acciones específicas, descritas a continuación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 2 Metodología de desarrollo de proyecto
+1. Definir tipo de modelo a usar: Es necesario seleccionar un modelo no tan complejo como para necesitar una computadora especializada en HIL, pero lo suficientemente robusto como para alcanzar el nivel de error buscado. En este proyecto se utilizará un modelo de Thévenin, basado en Luna et al., (2021).
+2. Identificación de parámetros: Se extraerán los parámetros necesarios de la batería Li-ion A2C0215090000 para emular su comportamiento desde un modelo de Thévenin. La extracción de parámetros se realizará con una resistencia electrónica variable con corriente pulsada (figura 3), basado en S. Orcioni (2017), Cabello (2015) y N. Daniil (2015).
+
+
+
+
+
+
+
+
+
+
+
+
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 3 Experimentos de descarga y carga con corriente pulsada utilizados para el procedimiento de parametrización (Daniil et al., 2015)
+
+3. Diseñar y construir circuito: Se construirá un circuito con convertidor reductor y una resistencia variable controlado por un microcontrolador basado en R. Di Rienzo et al. (2022) y A. Restrepo et al. (2012), estos circuitos son mostrados en la figura 4 y figura 5 respectivamente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 4 Circuito propuesto por R. Di Rienzo et al. (2022)
+
+
+
+
+
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 5 Circuito propuesto por A. Restrepo et al. (2012)
+
+
+4. Diseñar GUI: en distintos artículos se propone una GUI implementada en LabView u otro programa de simulación de paga, en este proyecto se optará por diseñar una GUI desde python para no depender de un programa de paga. La estructura de dicha GUI será basada en R. Di Rienzo et al. (2022), y está ilustrada en la figura 6.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 6 GUI propuesta por R. Di Rienzo et al. (2022)
+
+
+5. Realizar pruebas: Se harán pruebas para validar el prototipo y la integración del sistema. Estas pruebas al estar basadas en un sistema que depende de varios aspectos diferentes y al no poder tener una predicción 100% exacta, estarán basadas en la ley de los grandes números y teorema del límite central. A su vez basándose en como pruebas realizadas a los emuladores en diferentes artículos como R Hidalgo-Leon, et al (2020) (figura 7) y J. Barreras, et al (2016).
+
+
+
+
+
+
+
+
+
+
+
+
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 7 Prueba de pulsos de corriente de descarga a) SOC b) Corriente c) Voltaje (Hidalgo- Leon et al., 2020)
+
+Recursos necesarios:
+•  Máquinas de pruebas para parametrizar la batería (carga electrónica, multímetro, osciloscopio, etc)
+
+Cronograma.
+
+
+
+ACTIVIDADES
+
+
+
+Elaboración del protocolo Registro del protocolo Investigación
+Definición de metodología
+
+2021-2
+
+2022-
+1
+SEMESTRE 2022-2
+
+2023-
+1
+
+
+14
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Definición de modelo Parametrización de batería Diseño y construcción de circuito
+Diseño de GUI
+Pruebas y validación de herramienta
+Resultados y conclusiones Enviar artículo a revista Redacción de tesis Publicación del artículo Revisión de tesis Presentación de tesis
+
+XI. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO
+
+Se implementará un emulador de batería usando un modelo de Thévenin, en conjunto con un dispositivo con arquitectura distribuida entre una computadora personal y un circuito con un convertidor buck comercial y una carga electrónica variable, controlado por microcontrolador, emulará el comportamiento de una batería real con una raíz del error cuadrático medio de 2% y un valor de error máximo de 3%. El uso de este emulador de batería en un ambiente de desarrollo automotriz aumentará la eficiencia en el proceso de desarrollo de software y pruebas.
+
+XII. INDICE TENTATIVO DE LA PROPUESTA
+
+
+1. Introducción
+1.1. Definición del problema
+1.2. Objetivos
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+1.2.1. Objetivo general
+1.2.2. Objetivos particulares
+1.3. Hipótesis
+2. Estado del arte
+3. Metodología
+3.1. Campo de aplicación
+3.2. Diseño
+3.3. Modelo de batería utilizado
+3.4. Circuito utilizado
+3.5. Diseño de GUI
+4. Mediciones y resultado
+4.1. Resultados
+4.2. Discusión
+4.3. Impacto
+5. Conclusiones
+6. Anexos
+7. Referencias
+
+
+XIII. REFERENCIAS BIBLIOGRÁFICAS
+
+
+Barreras, J. V., Fleischer, C., Christensen, A. E., Swierczynski, M., Schaltz, E., Andreasen, S. J., & Sauer, D. U. (2016). An Advanced HIL Simulation Battery Model for Battery Management System Testing. IEEE Transactions on Industry Applications, 52(6), 5086–5099. https://doi.org/10.1109/TIA.2016.2585539
+Cabello, J. M., Bru, E., Roboam, X., Lacressonnière, F., & Junco, S. (2015).
+Battery dinamic model improvement with parameters estimation and experimental validation. 8th International Conference on Integrated Modeling and Analysis in Applied Control and Automation.
+Dai, H., Zhang, X., Wei, X., Sun, Z., Wang, J., & Hu, F. (2013). Cell-BMS validation with a hardware-in-the-loop simulation of lithium-ion battery cells for electric
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+vehicles. International Journal of Electrical Power and Energy Systems, 52(1), 174–184. https://doi.org/10.1016/j.ijepes.2013.03.037
+Daniil, N., Drury, D., & Mellor, P. H. (2015). Performance comparison of diffusion, circuit-based and kinetic battery models. 2015 IEEE Energy Conversion Congress and Exposition, ECCE 2015, 1382–1389. https://doi.org/10.1109/ECCE.2015.7309854
+Di Rienzo, R., Roncella, R., Morello, R., Baronti, F., & Saletti, R. (2018). Low-cost modular battery emulator for battery management system testing. Proceedings
+- 2018 IEEE International Conference on Industrial Electronics for Sustainable Energy Systems, IESES 2018, 2018-Janua, 44–49. https://doi.org/10.1109/IESES.2018.8349848
+Di Rienzo, R., Verani, A., Baronti, F., Roncella, R., & Saletti, R. (2022). Modular Battery Emulator for Development and Functional Testing of Battery Management Systems : The Cell Emulator.
+Hidalgo-Leon, R., Urquizo, J., Litardo, J., Munoz-Jadan, Y., Singh, P., & Wu, J. (2020). Simulation of battery discharge emulator using power electronics device with cascaded P-I control. Proceedings of the IEEE International Conference on Industrial Technology, 2020-Febru(i), 959–964. https://doi.org/10.1109/ICIT45562.2020.9067170
+König, O., Hametner, C., Prochart, G., & Jakubek, S. (2014). Battery emulation for power-HIL using local model networks and robust impedance control. IEEE Transactions on Industrial Electronics, 61(2), 943–955. https://doi.org/10.1109/TIE.2013.2253070
+Kramer, M. (2018). Best practices in systems development lifecycle: An analyses based on the waterfall model. Review of Business & Finance Studies, 9(1), 77- 84.
+Luna, M., Di Piazza, M. C., La Tona, G., Accetta, A., & Pucci, M. (2021). Exploiting dynamic modeling, parameter identification, and power electronics to implement a non-dissipative Li-ion battery hardware emulator. Mathematics and Computers in Simulation, 183(xxxx), 48–65. https://doi.org/10.1016/j.matcom.2020.04.028
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Michalczuk, M., Ufnalski, B., Grzesiak, L. M., & Rumniak, P. (2014). Power converter-based electrochemical battery emulator. Przeglad Elektrotechniczny, 90(7), 18–22. https://doi.org/10.12915/pe.2014.07.03
+Orcioni, S., Buccolini, L., Ricci, A., & Conti, M. (2017). Lithium-ion battery electrothermal model, parameter estimation, and simulation environment. Energies, 10(3). https://doi.org/10.3390/en10030375
+Park, C., Liu, J., & Chou, P. H. (2005). B#: A battery emulator and power-profiling instrument. IEEE Design and Test of Computers, 22(2), 150–159. https://doi.org/10.1109/MDT.2005.28
+Restrepo, A. F., Ramos-Paja, C. A., & Franco, E. (2012). Power control of a bidirectional DC bus for fuel cells applications. Revista EIA, 18, 159–170. http://revista.eia.edu.co/articulos18/Revista EIA N18 art 12.pdf
+
+
+
+
+
+
+
+
+
+
+
+Firma del alumno
+
+
+Nivel de revisión: 02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18

@@ -1,0 +1,361 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Universidad Autónoma de Querétaro
+Facultad de Informática
+C.U. a 10 de Noviembre de 2023
+MAESTRÍA EN CIENCIAS DE LA COMPUTACION
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+Nombre del Alumno: Isaac Oliva González No. de Expediente: 326921
+No. CVU: 1295215
+Correo electrónico: isaac oliva23@gmail com
+Teléfono: 4771815568
+
+Linea de investigación sobre la cual se desarrollará el trabajo:
+Inteligencia Artificial
+Responsable de la Asesoría: Dr. Hugo Jiménez Hernández
+Programas educativos que apoya: Doctorado en Ciencias de la computación, Maestría en Ciencias de la Computación y Maestfía en Ciencias de Datos
+Línea de investigación del responsable:
+Aprendizaje Automático y Ciencias de la Computación
+Firma de aceptación:
+
+
+Número de veces que se ha sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez ( X )  2da. (  )   Más de 2 veces (  )
+Semestre o Cuatrimestre actual del alumno: Pfimer semestre Fecha de Ingfeso al programa: 01 de agosto del 2023
+
+
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+I. DATOS GENERALES
+•  Título del proyecto:
+Modelo de Complejidad Computacional Cuántica basado en la compuena universal NAND
+•  Nombre del alumno responsable: Isaac Oliva Gonzalez
+•  Colab0fadofes (Director y/o Co-director): Dr. Hugo Jiménez Hernández
+•  Centro o lugar donde se realiza investigación:
+UAQ Facultad de Informática, instalaciones del CIICCTE.
+•  Tipo de investigación básica, aplicada o tecnológica (diseno, construcción de fOtotipo o prueba experimental):
+Aplicada
+•  Línea de investigación sobre la cual se desarrollará el trabajo: Inteligencia Artificial
+
+
+II. ANTECEDENTES Y/O FUNDAMENTACIÓN TEÓRICA
+
+Modelo de Computación Clásico
+
+La historia de la ciencia de la computación experimentó una evolución enorme en la primefa mitad del siglo XX, el cual desempeñó un papel fundamental en la forma en que la humanidad aborda los problemas y procesa la infofmación. Uno de los puntos de partida es la concepción de la "Máquina de Turing", propuesta pof el matemático británico Alan Turing en 1936, representa un hit0 tfascendental en la teoría de la computación y la informática. Su trabajo fundamental "En Computable Numbers, with an Application to the Entschefdungsproblem" (Turing, 1937), Turing introdujo la noción de una máquina teórica capaz de llevar a cabo cálculos en un formato algorítmico.
+
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Sin embargo, los antecedentes de la Máquina de Tufing (MT) también se relacionan con tfabajos previos que exploraron los límites de la computación y la formalización de los algoritmos. Uno de los matemáticos más influyentes en este contexto fue Kurt Godel, quien en la década de 1930 desarrolló su famoso "Teorema de Incompletitud" (Godel, 1931). Este teorema demostró que existen afifmaciones matemáticas que no pueden sef demostradas ni refutadas dentro de un sistema formal dado. El trabajo de Godel se complementa con los esfuerzos de Alonzo Church, un matemático y lógico estadounidense, quien, en la misma década, formuló el concepto de "funciones recursivas" y demostró que cualquier función que pueda ser calculada por una MT también puede sef calculada pof un programa escfito en el cálculo lambda (Church, 1936). Estos desarrollos contribuyeron a la teofía de la computabilidad y al estudio de lo que se puede y no se puede calcular
+Un resultadO tfascendental que unificó muchas de estas ideas fue la Tesis de Church-Tufing, propuesta de manera independiente por Alonzo Church y Alan Turing. La Tesis de Church-Turing postula que cualquier cálculo que pueda ser realizado por un sef humano siguiendo un algoritmo, puede sef realizado por una MT. En otras palabras, esta tesis establece que las MT son un modelo adecuado de la computación.
+La importancia de las Máquinas de Turing radica en su capacidad para resolvef cualquier problema algorítmico que sea resoluble, independientemente de su complejidad. El concepto subyacente es que cualquier tarea algorítmica podría ser ejecutada por una Máquina de Turing, lo que planteó un camino para la creación de las computadoras y la teoría de la computación. Estas máquinas comprenden una cinta de almacenamiento, una cabeza de lectura/escritura y un conjunto de feglas de funcionamiento; la cinta se divide en celdas, cada una de las cuales puede contener un símbolo, la cabeza de lectura/escritura se mueve de una celda a Otfa y puede leer el símbolo presente, escribif un nuevo símbolo o cambiar de estado de acuefdo con las reglas predefinidas.
+
+
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Estos desarrollos teóricos, incluyendo el trabajo de Gtidel, Church y la Tesis de Church-Tufing llevaron el camino para la concepción de las Máquinas de Turing como un modelo abStfaCto de la computación, siendo una máquina capaz de simular cualquier algofitmo computable. Esto impulsó la creación de las computad0fáS digitales que se utilizan hoy en día, ya que siguen el mismo principio básico de ejecutar algoritmos mediante una secuencia de instrucciones codificadas
+
+
+
+Teoría de la complejidad computacional
+
+La teofía de la complejidad computacional se ha convertido en una disciplina centfal en la informática teórica y se centra en el estudio de la dificultad computacional de los problemas y en la búsqueda de límites teóricos en la eficiencia de los algofitlTlOS. Aunque esta teoría tiene sus raíces en los trabajos de Alan Tufing y Alonzo Church, se ha desarrollado más allá de sus fundamentos iniciales
+La teoría de la complejidad computacional surgió debido a una limitación en el modelo original de la Máquina de Turing, que no podía medir eficientemente el tiempo y la memoria requeridos por una computadora para resolver problemas. A principios de la década de 1960, Hartmanis y Stearns comenzaron a explorar la idea de medir el tiempo y el espacio en función del tamaño de la entrada, lo que marcó el comienzo de la teoría de la complejidad computacional (Hartmanis & Stearns, 1965).
+En sus primeras etapas, los investigadores se esforzaron por comprender las nuevas medidas de complejidad y cómo estaban felacionadas entre sí. En 1965, Edmonds demostró que el problema de emparejamiento se puede resolver en tiempo polinómico, y argumentó que este concepto de tiempo polinómico es una fofma efectiva de formalizar la idea de cómputo eficiente. Observó que hay una amplia variedad de problemas que se pueden abordar en tiempo polinómico y que esta categoría de problemas se mantiene constante incluso cuando se aplican diferentes modelos razonables de cómputo (Edmonds, 1965).
+
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Fue en la década de 1970 cuando Stephen Cook y Leonid Levin, trabajando de forma independiente, demostraron que existían problemas importantes denominados NP-completos, como el problema de satisfactibilidad y una variante del problema de azulejos (Cook, 1971; Levin, 1973).
+Posteriormente, Richard Karp fue un paso más allá al lograr demostrar que ocho problemas fundamentales, como el problema del clique, el problema del conjunto independiente, el problema de la cobertura de conjuntos y el problema del vendedor viajero, son todos ejemplos de problemas NP-completos . El tfabajo de Karp presentó métodos esenciales para demostrar la NP-completitud al reducif estos problemas a otfos que ya se habían demostrado como NP-completos (Karp, 1986). Esto estableció un marco general para demostfar la NP-completitud y proporcionó técnicas útiles para llevar a cabo estas demostraciones. En los años siguientes y hasta la actualidad, se han demostfado miles de pfoblemas como NP-completos, y esta demostración implica que estos problemas son extremadamente difíciles de resolver en el peor de los casos.
+Para analizar y comparar la dificultad de estos problemas, se emplea la notación asintótica siendo una herramienta fundamental en el campo de la computación y el análisis de algoritmos. Permite describir el comportamiento de las funciones a medida que su tamaño de entrada tiende a infinito, lo que resulta esencial en la evaluación de la eficiencia y complejidad de los algoritmos. En este contexto, las tres notaciones asintóticas más comunes son Big O (O), Omega (N) y Theta (fi), las cuales se utilizan para describif cómo crece el tiempo de ejecución de un algofitmo en felación con el tamaño de su entrada (Leiserson et al., 1994).
+La notación Big O (O) se emplea para representar la cota superior de la complejidad temporal de un algoritmo, es decir, es utilizado para detefminar cuánto tiempo toma, en el peor caso, resolver un problema en función del tamaño de la entrada. Por otro lado, la notación Omega (O) se utiliza para representar la cota infefior de la complejidad temporal de un algofitmo, lo que se relaciona con el mejor caso, el cual
+
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+describe cuánto tiempo toma como mínimo resolver un problema en función del tamaño de la entfada. Por último, la notación Theta (O) proporciona una descripción más precisa al ofrecef tanto una cota superior como una cota inferior para la complejidad temporal de un algofitmo, estableciendo así un límite ajustado sobre el comportamiento del algoritmo en relación con el tamaño de su entrada (Leisefson et al., 1994).
+Además, estas notaciones tienen un papel importante en la teoría de la complejidad computacional dando lugar a la unidad esencial de esta teoría, las clases de complejidad. En ella se agrupan problemas que comparten ciertas similitudes en términos de su nivel de dificultad. Las clases de complejidad P y NP son de especial relevancia; la clase P pof su parte está relacionada con problemas para los cuales existe un algoritmo eficiente y determinista, es decif, aquellos que pueden resolverse en tiempo polinómico. P0f otro lado, la clase NP se refiere a problemas para los cuales existe un algoritmo eficiente y determinista, lo que implica que, aunque encontrar la solución pueda ser difícil, al menos podemos verificar en tiempo polinómico si una solución propuesta es válida. La pregunta fundamental en este contexto es si P es igual a NP, y aunque la conjetura general sugiere que no lo es, aún no se ha encontrado una prueba definitiva que lo confirme, lo que convierte a esta cuestión en uno de los siete Pfoblemas del Milenio, según el Clay Mathematics Institute (Patnala & Shamim, 2015).
+En este contexto, compfender cómo la teofía de la complejidad computacional se adapta y evoluciona en respuesta a las capacidades emergentes de la computación cuántica nos conduce a plantear preguntas fundamentales sobre cómo los conceptos tradicionales se aplican en un contexto cuántico. ¿Cuáles son los problemas que pueden resolverse de manera significativamente más rápida en una computadora cuántica en comparación con una computadora clásicas ¿Cómo cambian las complejidades de los problemas bajo la influencia de la computación cuántica? Para abordar estas preguntas, es necesario conocer como la computación cuántica ha destacado en este ámbito y que lo sostiene.
+
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+Modelo de Computación Cuántica
+
+La computación cuántica se diferencia fundamentalmente de la computación clásica al apfovechar los principios de la mecánica cuántica por lo que ha sido pfesentado como un paradigma de computación no clásico.
+Este paradigma emplea conceptos relacionados con la mecánica cuántica, se pane en la fepresentación de un estado para describir objetos cuánticos. Definiendo un estado generalmente es a través de una medida expefimentalmente observable, como, por ejemplo, la posición de una partícula. Estos sistemas cuánticos, pueden ser representados como qubits, unidades fundamentales de información cuántica. Los qubits por su parte pueden fepresentar estados definidos como los bits, con valofes de 0 y 1. Por convención se describen estos sistemas mediante la notación de Dirac ket, pof ejemplo, para los estados base de un qubit se representan como:
+
+0) = [1 0] ,  |l) - [0 1]’
+
+Sin embafgo, pueden encontfarse como estados no definidos, es decir estados en superposición, que no son más que combinaciones lineales de estados permitidos. La forma de representarlos en este estado de superposición seria:
+
+l9l  = a| 0) + Ç|1) -  a[1 0]  + §[0 1]’
+
+Donde a y § son números complejos y representan la amplitud de los estados | 0) y
+1) que a su vez muestfan la distribución de probabilidad | 2    2 - 1
+En este sentido, la computación cuántica puede manejar simultáneamente enormes combinaciones entrelazadas de sus estados como un solo sistema cuántico. Esto significa que una cadena de N qubits puede representar una combinación entrelazada de cadenas clásicas de N bits. Pof tanto, decimos que una computadora cuántica
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+puede ofrecer una ventaja exponencial con respecto a dispositivos computacionales clásicos.
+Adicional a la superposición, un concepto de suma importancia es el entrelazamiento. En mecánica cuántica, se afirma que dos panículas están entrelazadas cuando sus estados cuánticos no pueden descfibirse de manefa independiente. En otfas palabras, las partículas entrelazadas companen una única función de onda que las describe simultáneamente, lo que significa que una medición en uno de ellos determinará instantáneamente el estado del otfo, incluso si están separados pof grandes distancias Es importante resaltar que, a pesar de esta conexión instantánea, el entrelazamiento no permite la comunicación a velocidades supefluminales, es decir velocidades mayores al de la luz.
+Teniendo estos dos principios fundamentales, existen las mediciones en la mecánica cuántica, estas tienen una naturaleza inherentemente probabilística y afectan el estado del sistema. En otras palabras, al medif algo a nivel cuántico, el objeto cuántico que hemos observado ya no se encuentra en una superposición de estados, sino que se colapsa en un único estado clásico. Por otro lado, la decoherencia, se conviene en un desafío significativo en la tecnología de la computación cuántica, ya que los qubits pueden perdef su estado de superposición debido a interacciones no controladas con el entorno, por ejemplo, la temperatura en el caso donde lo qubits están hechos de superconductores. La capacidad de realizar operaciones en un registfo cuántico antes de que ocurra la decoherencia se convierte en un indicador clave en el contexto de la tecnología cuántica.
+La idea inicial se atribuye a Richard Feynman, quien presentó por primera vez en 1981 durante su conferencia "Simulating Physics With Computers" donde propuso la idea de utilizar un ordenador cuántico para simular el componamiento de sistemas físicos complejos. Feynman argumentaba que los ordenadores clásicos no son capaces de realizar esta tarea de manera eficiente, mientfas que los ordenadores cuánticos podrían hacerlo con una precisión y velocidad sin precedentes (Feynman,
+
+
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+1982). Sin embargo, fue David Deutsch, en 1985 quien formalizó por primera vez el concepto de una computadora cuántica universal. Su propuesta se basó en la incorporación de los principios de la mecánica cuántica y la máquina de Turing siendo un sistema con la capacidad de simular de manera perfecta cualquier sistema físico posible y finito (Deutsch, 1985).
+El principal atractivo de este paradigma radica en el hecho de que una tarea que tenga una complejidad específica en la computación clásica puede tener una complejidad difefente en la computación cuántica. Esto abre la puena a que problemas que antes se considefaban intratables puedan volverse tratables, lo que a su vez impulsa el diseño de algoritmos basados en nuevos fundamentos conceptuales.
+A medida que la computación cuántica se ha vuelto una realidad tangible, se ha abierto un amplio abanico de oportunidades y desafíos en la resolución de problemas computacionales. La industria y numerosas empresas tecnológicas líderes han reconocido el potencial de la computación cuántica y han invertido significativamente en la investigación y el desarrollo de hafdware y software cuánticos. Gigantes tecnológicos como IBM, Google, Rigetti, Xanadu, Nvidia, Microsoft y otfas compañías de vanguardia han estado compitiendo para alcanzar avances importantes en el campo de la computación cuántica (Shaw, 2022).
+En la actualidad existen diversos modelos de computación cuántica:
+
+•  Máquina de Turing Cuántica (QTM): Es una extensión del modelo de una máquina de Turing. En lugar de utilizar cintas y símbolos clásicos, utiliza cintas y bits cuánticos (qubits), lo que le permite realizar operaciones a nivel cuántico, aprovechando la superposición y la entrelazación de qubits (Deutsch, 1985)
+•  Compuertas Lógicas: Es el modelo más común para construif una computadora cuántica utilizando puertas lógicas cuánticas univefsales, análogas a las compuertas lógicas clásicas. Es un modelo digital en el que los cálculos se realizan a tfavés de operaciones digitales en qubits (Yao, 1993).
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Quantum Annealing: Este modelo es ideal para resolvef problemas de optimización. En lugar de puertas lógicas, se basa en la idea de encontrar estados de enefgía mínima en un sistema cuántico (Das & Chakrabarti, 2008).
+•  Digital-Analógico: Este modelo combina operaciones digitales y analógicas. Busca aprovechar lo mejor de ambos mundos para lograr una computación cuántica universal, escalable y resistente a errores (Parra-Rodriguez et al., 2018).
+•  Adiabático: Este modelo se basa en la teoría adiabática y es una alternativa para problemas de optimización. Puede sef equivalente en tiempo polinómico al modelo de puertas lógicas cuánticas, lo que lo hace adecuado para ciertas aplicaciones (Aharonov et al., 2004; Ambainis & Regev, 2004).
+•  Topológico: Este modelo se basa en la topología cuántica y utiliza propiedades de partículas exóticas llamadas anyons. Los anyons pueden fusionarse y trenzarse, lo que proporciona una protección incorporada contra errores, lo que lo hace menos ruidoso que otfos modelos (Kitaev, 2003).
+La adopción de estos modelos en la computación cuántica ha dado lugar a un nuevo enfoque en la resolución de problemas, lo que ha despertado un interés significativo en la comunidad científica. Actualmente, el modelo de compuenas cuánticas es el más usado, este modelo proporciona un método para llevar a cabo computación cuántica mediante la implementación de funciones booleanas (comparables a las compuertas lógicas clásicas). Esto permite la construcción de lo que ahora llamamos una computadOfa cuántica universal, el cual se espera que pueda calcular funciones de manefa arbitraria, es decir, funciones que sean Turing-completas
+Este modelo se basa en la idea de que las computadoras cuánticas funcionan mediante la manipulación de qubits. Las compuertas cuánticas son operaciones matemáticas que se aplican a los qubits para modificar su estado y postefiormente ser utilizados para fealizar una amplia gama de opefaciones, como la adición, la multiplicación, la compuerta NOT, la compuerta AND y la compuerta OR, resultando en un modelo
+
+
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+universal, lo que significa que se pueden utilizar para realizar cualquier cálculo que se pueda realizar con una computadora clásica
+Este mismo principio de univefsalidad se aplica a la compuerta NAND en el contexto de la computación cuántica y clásica, lo que significa que puede utilizarse para construir cualquier circuito lógico necesafio, incluso aquellos que involucran compuertas AND, OR y NOT. Esta característica de universalidad de la compuerta NAND es fundamental para la creación de alg0fitmos para logfar una representación y ejecución eficiente de operaciones lógicas en un entorno complejo de la computación cuántica y clásica
+La investigación pfopuesta se insena en este contexto, aprovechando estos conocimientos establecidos y aplicándolos a la computación cuántica. Se explorará la compuerta NAND como operación lógica universal en el ámbito cuántico y la posterior construcción de operaciones lógicas más complejas, como AND, NOT y OR, las cuales abordan una laguna crítica en la comprensión de cómo se pueden llevar a cabo tareas computacionales en un entofno cuántico. Al hacerlo, la investigación contribuye a cerrar la bfecha entre el cómputo cuántico y clásico
+
+
+III. JUSTIFICACIÓN
+
+En la era de la computación cuántica y la evolución constante de la tecnología de la información, resulta esencial profundizar en la base de la computación digital y su extensión al campo de la complejidad computacional cuántica. Se sabe que todo programa de cómputo digital, independientemente de su complejidad computacional, puede desglosarse en un conjunto de operaciones lógicas universales, específicamente compuertas NAND. Estas operaciones sirven como los pilares fundamentales de la computación clásica, permitiendo la repfesentación y fesolución de una amplia variedad de problemas, desde simples tareas aritméticas hasta la implementación de algoritmos altamente sofisticados.
+
+
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Esta investigación se fundamenta en el concepto de explorar y extender las operaciones lógicas básicas hasta la compuena univefsal NAND, buscando definir un modelo de complejidad cuántica basado en esta compuerta universal para analizar cómo funciona en un entorno cuántico y medir su complejidad. Posteriormente, se pretende demostraf cómo se pueden desarrollar compuertas lógicas más complejas, como AND, NOT y OR, a partir de esta compuerta universal dentro de ambos paradigmas, cómputo cuántico y clásico. Este enfoque es de gfan relevancia, ya que muestra la versatilidad y la capacidad de construcción de circuitos cuánticos para poder compararlos y entender la eficiencia de las operaciones lógicas, para luego, determinar mediante la medida de complejidad sí es factible o no desarrollarlo en la computación cuántica o permanecer en lo clásico
+
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+Un modelo de complejidad computacional permite determinar sí un problema es soluble en términos de tiempo y espacio, lo qué a su vez ha permitido establecer límites teóricos sobre el diseño de algoritmos. Por el contrario, el cómputo cuántico ha mostrado la factibilidad  de replantear problemas intfatables y obtener complejidades algorítmicas espacio tempofales menores qué en el cómputo clásico. Sin embargo, en la actualidad ambos pafadigmas computacionales presentan medidas de complejidad algorítmica distintas, por consecuencia, la comparación directa de algoritmos clásicos y cuánticos resulta en no poder determinar sí es viable desarrollar un algoritmo qué dé solución a un problema. Teniendo esto, será factible obtener una comparación de ambos paradigmas y poder extraer las bondades qué offece la computación cuántica.
+
+
+V. COMITÉ DE BIOÉTICA
+
+De acuerdo a la naturaleza de la tesis, no se requiere alguna consideración de bioética específica para el desarrollo de la misma. La tesis requiere el manejo de información
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+y simulación por software que no entra en conflicto alguno con cualquier consideración externa a la tesis
+
+
+VI. PLANTEAMIENTO TEÓRICO (Hipótesis y/o supuestos, pregunta, etc.) Preguntas de investigación
+• ¿Es posible definir un modelo de complejidad cuántica basado en la compuerta universal NAND que permita medir la complejidad de problemas cuánticos de manefa eficiente?
+•  ¿Cuál es la relación entre el modelo de complejidad de referencia Big P) y las complejidades de problemas cuánticos significativos?
+•  ¿Es posible desarrollar de manera efectiva las compuenas lógicas AND, NOT y OR a partir de la compuerta NAND en un contexto cuántico?
+Hipótesis
+
+El desarrollo de un modelo de complejidad cuántica basado en la compuena universal NAND permitirá una cuantificación equiparable de las características de problemas con complejidades algorítmicas distintas en la computación cuántica y clásica al repfesentar alg0fitmos en un modelo clásico, como un conjunto de compuertas lógicas basadas en la compuena NAND.
+
+
+
+VII. OBJETIVOS
+
+Objetivo general:
+
+Desarrollar un modelo de complejidad cuántica basado en la compuena universal NAND.
+Objetivos específicos:
+
+
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Hacer un análisis bibliogfáfico del modelo de complejidad de referencia !Big
+o)
+• Realizar una tabla comparativa de complejidad Computacional en problemas significativos.
+•  Crear un modelo de implementación de compuerta lógica NAND en “IBM Quantum Platform”.
+•  Definir un modelo de complejidad cuántica de la ejecución de la compuena lógica NAND.
+•  Desarrollar las compuertas lógicas cuánticas AND, NOT y OR a panir de la compuerta NAND cuántica.
+
+
+VIII. METODOLOGÍA
+a) Para realizar este trabajo de investigación se tiene la siguiente infraestructura: Infraestructura material
+•  Instalaciones del CIICCTE.
+•  Computadoras para la simulación de procesos.
+•  Personal académico con experiencia en el tema.
+
+Infraestructura de software
+•  Plataforma “IBM Quantum Platform” (acceso académico).
+•  Acceso a repositorios  de documentos científicos de acervo bibliográfico
+
+b) Cfonograma.
+
+Actividades      Ene-Feb  Mar-Abr  May-Jul  Ago-Oct  Nov-Dic
+2024    2024    2024    2024    2024
+
+
+
+
+14
+
+F-50-01
+PROTOCOLO DE INVESTIGACIÓN
+
+
+Revisión de literatura
+
+
+Modelo de complejidad de referencia (Big O)
+
+Crear modelo de referencia en
+“IBM Quantum Pla¡form "
+
+Definición de modelo de complejidad cuántica para compuerta NAND
+
+Desarrollo de las compuertas lógicas cuánticas AND, NOT y OR
+
+Escritura de tesis
+
+
+
+
+
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO
+Se espera la creación de un modelo teórico sólido que permita medir la complejidad de problemas cuánticos utilizando compuenas NAND como base, lo que permitirá la ejecución de operaciones lógicas cuánticas y la construcción de circuitos cuánticos utilizando estas compuenas universales llevando a cabo una comparación veraz de ambos paradigmas computacionales, clásico y cuántico. Los resultados pueden sef aplicados al desarrollo de algoritmos cuánticos más eficientes y en la compfensión de la complejidad cuántica aplicada a problemas
+X. INDICE TENTATIVO DE LA TESIS
+Dedicatorias.
+
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Agradecimientos.
+Índice.
+Índice de Figuras Índice de Tablas Abreviaturas y siglas Resumen en español Abstract.
+I.  Introducción / planteamiento del problema y justificación.
+a. Hipótesis o supuestos
+b. Objetivos.
+II.  Antecedentes/estado del arte
+III.  Fundamentación teórica.
+IV.  Material y Métodos o Metodología
+V.  Resultados y discusión
+VI.  Conclusiones
+VII.  Bibliografía o Referencias.
+VIII.  Anexos
+
+XI. REFERENCIAS BIBLIOGRÁFICAS
+
+Aharonov, D., Van Dam, W., Kempe, J., Landau, Z., Lloyd, S., & Regev, O. (2004).
+Adiabatic Quantum Computation is Equivalent to Standard Quantum Computation. SIAM Review, SP(4), 755-787. https://doi.org/10.1137/080734479
+Ambainis, A., & Regev, 0. (2004). An Elementary Proofof the Quantum AdiabatfC Theorem. http://arxiv.org/abs/quant-ph/0411152
+Church, A. (1936). An Unsolvable Problem of Elementary Number Theory. Amerfcan Journal of MathematfcS, 58(2), 363. https://doi.org/10.2307/2371045
+Cook, S. A. (1971). The complexity of theorem-proving procedufes. Proceedfngs of the Annual ACM Symposfum on Theory of Computfffff, 151-158. https://doi,org/10.1145/800157.805047
+
+
+
+
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Das, A., & Chakrabarti, B. K. (2008). Colloquium: Quantum annealing and analog quantum computation. Reviews of Modern Physics, 80(3), 1061-1081 https://doi.org/10.1103/REVMODPHYS.80.1061
+Deutsch, D. (1985). Quantum theory, the Church—Turing principle and the universal quantum computer. Proceedings of the Royal Society ofLondon. A. Mathematical and Physical Sciences, 400{1818), 97—117. https://doi.org/10.1098/RSPA.1985.0070
+Edmonds, J. (1965). Paths, Trees, and Flowers. Canadian Journal ofMathematfCS,
+í 7(1), 449W67. https://doi.org/10.4153/CJM-1965-045-4
+Feynman, R. P. (1982). Simulating physics with computers. International Journal of Theoretical Physfcs, 21(6-7), 467W88. https://doi.org/10.1007/BF02650179/METRICS
+Gödel, K. (1931). Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I. Monatshefte Für Mathematik Und Physfk, 38{1), 173—198. https://doi.org/10.1007/BF01700692/METRICS
+Hartmanis, J., & Stearns, R. E. (1965). On the Computational Complexity of AlgOfithms. Transactions of the American Mathematical Nocfey, IN 7, 285. https://doi,org/10.2307/1994208
+Karp, R. M. (1986). Combinatorics, complexity, and randomness. Communfcations o/
+the ACM, 29(2), 98—109. https://doi.org/10.1145/5657.5658
+Kitaev, A. Y. (2003). Fault-tolerant quantum computation by anyons. Annals of Physics, 303! 1), 2-30. https://doi.org/10.1016/50003-4916(02)00018-0
+Leisefson, C., Rivest, R., Cormen, T., & Stein, C. (1994). Introduction to algorfthms.
+https://ceng383.cankaya.edu.tr/uploads/files/lecture_02.pdf
+Levin, L. (1973). Universal soning problems problems of information transmission.
+Problemy Peredachf Informatsfl, 9, 265266.
+Parra-Rodriguez, A., Lougovski, P., Lamata, L., Solano, E., & Sanz, M. (2018).
+Digital-Analog Quantum Computation. Physical Revie›v A, 10/(2). https://doi.org/10.1103/PhysRevA.101.022305
+Patnala, B. D., & Shamim. (2015). P vs NP: One of the Millennium Prize Problems Proposed by the Clay Mathematics Institute.
+Shaw, D. (2022, January 17). Quantum Sofnvare Outlook 2022. Fact Based Insight. https://www,factbasedinsight.com/quantum-softwafe-outlook-2022/
+
+
+
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Turing, A. M. (1937). On Computable Numbers, with an Application to the Entscheidungsproblem. Proceedfngs o/the London Mathematical Society, s2-42{1), 230-265. https://doi org/10.1112/PLMS/S2-42. 1.230
+Yao, A. C. C. (1993). Quantum circuit complexity. Annual Symposium on FoundatfonS of Computer Science (Proceedings), 352-361. https://dOi.Ofg/10.1109/SFCS.1993.366852
+
+
+
+
+
+
+
+
+
+
+
+
+Firma del alumno
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18

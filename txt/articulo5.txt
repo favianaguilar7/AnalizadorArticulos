@@ -1,0 +1,1212 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Universidad Autónoma de Querétaro
+Facultad de Informática
+
+
+
+C.U. a 20/10/2023
+
+Doctorado en Ciencias de la Computación
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+Nombre del Alumno: Kenneth Mejía Pérez No. de Expediente: 258807
+No. CVU: 1077850
+Correo electrónico: ickennethmp@gmail.com Teléfono: 773 119 89 26
+Línea de investigación sobre la cual se desarrollará el trabajo: Visión por computadora y su procesamiento embebido
+Responsable de la asesoría: Dra. Diana Margarita Córdova Esparza Co-director: Dr. Juan Ramón Terven Salinas
+Programas educativos que apoya: Ingeniería en Computación, Ingeniería en Telecomunicaciones y Redes, Maestría en Ciencias de la Computación, Doctorado en Ciencias de la Computación
+Línea  de  investigación  del  responsable:  Visión  por  computadora  Firma  de  aceptación:             
+Dra.  Diana  Margarita  Córdova  Esparza  Firma  de  aceptación:               
+Dr. Juan Ramón Terven Salinas
+Número de veces que se a sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez (X)   2da. ( )   Más de 2 veces ( )
+Semestre o Cuatrimestre actual del alumno:  3° Fecha de Ingreso al programa:  09/08/2022
+
+
+
+
+
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+LINEAMIENTOS GENERALES
+1.  Documentos PDF editable
+2.  Mínimo 18 cuartilla
+3.  Máximo 25 cuartillas incluyendo índice y referencias
+4.  Los anexos no forman parte de las 25 cuartillas
+5.  Espaciado a 1.5
+6.  Párrafos justificados.
+7.  Tipo y tamaño de letra: Arial o Times New Roman tamaño 12, en todo el documento
+8.  En caso de usar palabras en latín y/o griego o en otro idioma diferentes al de la escritura de la tesis, utilizar cursivas.
+9.  Márgenes: izquierdo 4 cm, derecho 2 cm, inferior y superior 3 cm.
+10. Citas y referencias bibliográficas de acuerdo al formato APA 7
+11. Utilizar sólo letra en negritas en los títulos
+
+
+
+
+I. DATOS GENERALES
+•  Título del proyecto: Reconocimiento automático de gestos y análisis querológico para la interpretación de la Lengua de Señas Mexicana • Nombre del alumno responsable: Kenneth Mejía Pérez
+• Colaboradores:
+o Directora de tesis, Dra. Diana Margarita Córdova Esparza o
+Codirector de tesis, Dr. Juan Ramón Terven Salinas
+
+
+•  Centro o lugar donde se realiza investigación: Universidad Autónoma de Querétaro, Facultad de Informática, Campus Juriquilla.
+•  Tipo de investigación básica, aplicada o tecnológica: Aplicada.
+•  Línea de investigación sobre la cual se desarrollará el trabajo: Visión por computadora y su procesamiento embebido
+
+
+
+
+
+
+II. ANTECEDENTES Y/O FUNDAMENTACIÓN TEÓRICA
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+La comunicación es una herramienta fundamental para el acceso a la información, la participación social y el desarrollo de la vida en comunidad. Entre las diferentes formas de comunicación, se destaca la expresión oral como la más común e importante, en consecuencia, como lo mencionan los autores Serafín, M. y González, R., (2011) si esta vía de comunicación se ve suprimida por condiciones médicas se imposibilita la realización social, influyendo en otros aspectos de la vida personal, como: el desarrollo educativo, profesional y humano. Las personas pertenecientes a la comunidad sorda presentan una dificultad para la comunicación oral en una o ambas direcciones (como receptores o emisores), por tal motivo la comunidad ha desarrollado su propia lengua, es decir la lengua de señas.
+Desde inicios de la década pasada podemos encontrar trabajos en el estado del arte sobre desarrollo de sistemas para el reconocimiento automático de la LSM, como lo menciona Solís (2016), podemos agrupar estos trabajos por los métodos de obtención de datos en dos grupos, el grupo 1 son dispositivos electrónicos y sensores que se llevan puestos como prendas de vestir, los cuales capturan información precisa sobre las manos, dedos y brazos, por otro lado, tenemos al grupo 2, los cuales son dispositivos de obtención de datos ópticos como lo son cámaras de color o cámaras de profundidad, estos se apoyan de técnicas de visión artificial para clasificar las señas.
+Ambos grupos presentan ventajas y desventajas uno respecto a otro, ya que por una parte, los sistemas pertenecientes al grupo 1 presentan una alta precisión en la captura de datos del movimiento de las manos., como se puede observar en el trabajo de Saldaña-González (2018) en el cual se crea un guante traductor para la LSM, en el cual se utilizan sensores electrónicos como lo son de flexión acelerómetro y giroscopio para obtener el nivel de inclinación, posición de la mano, nivel de flexión de los dedos entre otras mediciones necesarias para clasificar las señas, sin embargo, como lo menciona Solís (2016) la desventaja que tienen estos dispositivos es que el usuario debe de llevarlos todo el momento al ejecutar la lengua de señas y esto afecta la naturalidad con la que se expresa.
+
+
+
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Por otra parte, los sistemas pertenecientes al segundo grupo cuentan con la ventaja de que el usuario pueda realizar las señas con mayor naturalidad al no necesitar llevar algún dispositivo puesto consigo, sin embargo como desventaja en muchos casos, las cámaras de color y profundidad pueden llegar a presentar ruido durante la captura de los datos, por lo que para ello en la mayoría de casos se requiere capturar los datos en ambientes controlados, en donde se debe encontrar un escenario libre de objetos, con fondos de color sólido, ropa sin variaciones de color y en donde se encuentre únicamente el participante en escena mirando a la cámara, Algunos ejemplos de esto son los trabajos de Solís (2015, 2016), Cervantes (2016) y Martínez (2016), este tipo de ambientes reducen las posibles aplicaciones en un ambiente natural.
+Para el presente trabajo de investigación se ha optado por realizar el proyecto utilizando cámaras de profundidad como dispositivo de adquisición de datos por lo que a continuación se muestra una breve investigación documental sobre el estado del arte de trabajos de investigación similares pertenecientes al grupo 2.
+Tabla 1
+Dispositivos de adquisición de datos pertenecientes al grupo 2, Cámaras convencionales
+
+Una/
+Autor,                                         Tasa de Modo de    dos   Estático/  Tipo de
+referencia                            Técnica utilizada   reconocimient
+adquisición  mano  dinámico  seña
+y año                                           o
+s
+
+
+
+
+Solís et al. (2015)
+
+
+Cámara   Una mano
+
+
+
+Estático  Letras
+Preprocesamiento
+: Momentos  de Jacobi-Fourier Clasificador: Redes neuronales
+
+
+
+95%
+
+
+
+
+
+
+
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+Cervante s et al. (2016)
+
+
+
+Cámara
+
+
+Dos mano s
+
+
+Estático y dinámico
+
+
+
+Palabras
+Obtención   de características: algoritmo genético. Clasificador: Máquina    de soporte
+
+
+
+97%
+vectorial
+(SVM)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5
+
+
+F-50-01
+Técnicas básicas de procesamiento de
+
+Martínez
+PROTOCOLO DE INVESTIGACIÓNimágenes.
+
+et al. (2016)
+Cámara   Una mano
+Estático  Letras
+Identificación mediante   la comparación  de imágenes.
+75%
+
+
+
+
+
+
+
+Solís et   Cámara al. (2016)
+
+
+
+
+Dos mano s
+
+
+
+
+
+Estático  Letras
+Obtención   de características mediante momentos normalizados Clasificación:
+Redes Neuronales artificiales   (ANN por sus siglas en inglés)
+
+
+
+
+
+97%
+
+
+
+
+
+
+Pérez et   Cámara al. (2017)
+
+
+
+
+Una  Estático  Letras mano
+Segmentación: Fuzzy C-Means (FCM). Extracción de características: Momentos de Hu.
+Clasificación:
+Redes    neuronales artificiales (ANN).
+
+
+
+
+91%
+
+
+
+
+
+
+
+
+Mancilla et al. (2019)
+
+
+
+
+
+
+
+Cámara
+
+
+
+
+
+
+
+Una  Estático  Letras mano
+Extracción   de características: Momentos de Hu, Momentos   de
+Zernike     e Histogramas  de gradientes orientados (HOG). Clasificación: Máquina    de Soporte Vectorial (SVM)   Redes Neuronales Multicapa.
+
+
+
+
+
+
+
+98.7%
+
+
+
+
+
+Martínez- Seis et al. (2019)
+
+
+
+Cámara (smartphone)
+
+
+
+Una mano
+
+
+
+Estático y dinámico
+
+
+
+
+Letras
+Descripción:
+Canny y Camshift para señas
+dinámicas. Clasificación: Redes neuronales convolucionales
+
+
+
+
+92%
+
+Fuente: Córdova-Esparza D.M., et Al. (2020).
+
+Tabla 2
+Dispositivos de adquisición de datos pertenecientes al grupo 2, Cámaras de profundidad o RGB-D
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+Autor, referenci a y año
+
+
+
+
+
+Galicia et al.
+Modo de adquisició n
+Una/ dos mano s
+
+
+
+
+
+Amba
+Estático/ dinámic o
+
+Tipo de seña
+
+Tiemp o real
+
+Técnica utilizada
+
+Extracción de característica
+s:   Bosque aleatorio Clasificador: Redes
+
+Tasa de reconocimient o
+
+(2015)   Kinect
+s   Estático  Letras   Si
+neuronales    76.19%
+
+
+
+
+
+
+
+
+
+Sosa- Jiménez et al.
+(2017)   Kinect
+
+
+
+
+
+
+
+
+
+Amba s
+
+
+
+
+
+
+
+
+
+Dinámic o
+
+
+
+
+
+
+
+
+
+Palabras
+/ frases   Si
+Preprocesami ento de las imágenes: Filtro de color Binarización Extracción de contorno Clasificador: Modelos
+Ocultos   de Markov
+
+
+
+
+
+
+
+Especificidad 80%
+Sensibilidad 86%
+
+
+
+García- Bautista et al. [15]
+(2017)   Kinect
+
+
+
+Amba s
+
+
+
+Dinámic
+o   Palabras   Si
+Deformación dinámica del tiempo (DTW, por sus siglas
+en inglés)     98.57%
+
+
+
+Jiménez,
+J. et al. [16]
+(2017)   Kinect   Una  Estático
+
+
+
+
+Letras y números  No
+Extracción de característica s tipo Haar 3D. Clasificador: Adaboost
+
+
+
+
+
+95%
+
+Obtención de las coordenadas 3D  de
+la
+
+Martínez
+-
+Gutiérrez
+M. et al. [17]
+(2019)
+
+
+
+Intel Realsens
+e f200   Una  Estático
+
+
+
+
+Letras y palabras  No
+mano. Clasificador: Red neuronal perceptrón multicapa
+
+
+
+
+
+80.11%
+
+Fuente: Córdova-Esparza D.M., et Al. (2020).
+
+
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+En total se reportaron 12 trabajos de reconocimiento de la LSM pertenecientes al grupo 2, de los cuales, 7 utilizan cámaras convencionales como medio de adquisición de datos, mientras que 5 utilizan cámaras de profundidad.
+
+Como se puede interpretar de esta información recopilada, existe una tendencia en la literatura entre el uso de modelos neuronales para la clasificación de la información, por otra parte, en la literatura se encuentran diversas bases de datos que se utilizan para el reconocimiento automático del lenguaje de señas en diferentes  países  del  mundo  las  cuales  contienen  datos  sobre  personas expresándose en la respectiva lengua de señas de su país, generalmente esta información se presenta en forma de videos o imágenes RGB, y en algunas ocasiones incluyen algún tipo de dato adicional, como etiquetas o distancias cuando se tienen imágenes de profundidad adquiridas con cámaras RGB-D.
+
+Conjuntos de datos para el reconocimiento automático de las lenguas de señas en México y el mundo utilizando métodos de visión por computadora
+Tabla 3
+Conjuntos de datos de acceso libre para el reconocimiento de diversas lengas de señas
+
+Nombre de la Lengua de Categoría     Total, de  Perspecti  Dispositiv    Tipos de datos base de     señas     s       capturas  va      o    de adquiridos
+datos y (Señas adquisició referencia distintas) n de
+datos
+
+
+RWTHPHOENIX-Alemán    1,200    45,760   Personas    Cámara Videos     de
+
+Weather. Forster
+J. et
+al, 2012
+ejemplos
+viendo de color hacia  el frente
+resolución 210 x
+260
+
+
+PSL  Kinect 30
+Kapuscinski T, 2015
+Polaco    30     300
+videos
+Personas  Kinect viendo
+hacia  el frente
+Nubes de puntos Videos    de profundidad 320x240 px
+
+PSL TOF 84
+Polaco    84     1680
+Personas Cámara con Video  de  176
+
+Kapuscinski
+videos
+ropa ToF
+x144 fotogramas
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+T, 2015                         negra
+viendo hacia el frente
+a       50
+fotogramas/segu ndo Las nubes de puntos varían según el ejemplo
+
+SIGNUM
+Von Argis et. al, 2007
+
+Alemán   825  (45 señas básicas,7 80
+oraciones
+)
+
+33,210
+secuenci as  de video 5,970,45
+0
+imágene s Aprox.
+55.3 hrs de video
+
+Personas viendo hacia el frente
+
+Cámara de color
+
+Video de color resolución 775x578 Imagen de color 24bpp
+
+
+LSA64
+Ronchetti F. et. al, 2016
+Argentino   64     3,200 videos
+Cuerpo de frente y uso de guantes de color
+Cámara RGB
+Videos de color resolución 1920x1080
+
+
+ASLLVD
+Neidle,  C, 2012
+Americano  Mayor
+3300
+a Más de 9800
+videos
+Cuerpo completo de frente y
+pe rfil, enfoque en ambas manos
+Cámara RGB
+Videos de color 640 x 480 pixeles
+2020 fotogramas por video
+
+
+MS-ASL
+Joze H. et. al, 2018
+Americano  1,000    25,513 videos
+Personas viendo hacia el frente
+Obtenció n   por
+recortes de videos públicos
+Procesamiento para ajustar a 24 x 24 pixeles
+
+
+Rivas dataset Rivas-Perea al, 2019
+Mexicano   10     3,000 imágene s
+Enfoque
+en  una mano
+Kinect V1  Imágenes   de
+color 115x151 pixeles
+
+Base   de
+Mexicano   21     6,300
+Enfoque
+Cámara
+Imágenes   de
+
+datos Morales E. et al, 2019
+imágene s
+en  una RGB mano
+color 20 x 20 pixeles
+
+
+ArASL
+Arabe    32     54,049
+Enfoque
+Cámara
+Imágenes
+
+dataset Ghazanfar L. et. al, 2018
+imágene s
+en  una RGB mano
+en escala de grises 64 x 64 pixeles
+
+
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+BosphorusSi gn22k Özdemir
+O,
+2020
+Turco     744     22,542
+videos
+Personas viendo hacia el frente
+Kinect V2  Videos de color
+1920x1080 pix,
+30 FPS Videos de  profundidad 512x424 pixeles Información de la posición de los cuerpos
+
+
+How2Sign Duarte A. et. al, 2020
+Americano  Mas  de
+16,000
+palabras
+35,000
+(83
+horas de video)
+Personas
+Cámara de frente RGB  y y perfil  sensor de
+profundid ad
+Videos de color resolución 1280x720
+
+
+WLASL
+Americano  2,000
+21,083
+Personas
+Videos y poses
+
+Li, D et. al,
+palabras
+videos
+Cámaras viendo del esqueleto en
+
+2020
+de       2D
+hacia  el profundid frente    ad y de
+color
+
+ASL-LEX  2.0Americano  2,723    2,723    Personas    Cámara Archivos    en
+
+Sehyr Z. et. al, 2021
+videos
+viendo de color hacia  el frente
+formato  webm, sin  información de resolución
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Córdova-Esparza D.M., et Al. (2020).
+Estructura de la lengua de señas Querología:
+La querología es el término de la teoría fonológica usado para describir las unidades combinatorias elementales o queremas que constituyen las palabras y signos de las
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+lenguas de señas. La querología puede considerarse una rama de la fonología abstracta, El termino se acuño por William C. Stokoe en 1960, como lo describe Maher, J. (1966)
+Los queremas son la equivalencia a los parámetros fonológicos o fonemas de la lengua de señas, de acuerdo con Ibarra J. et al (2006) estos parámetros se pueden describir de la siguiente forma:
+1. Queirema (configuración): Configuración manual de cada seña.
+2. Kinema (movimiento): Tipo de movimiento de las manos (circular, zig zag, lineal, etc.)
+3. Toponema (ubicación): Ubicación en relación con el cuerpo.
+4. Kineprosema (dirección): Dirección del movimiento de las manos.
+5. Queirotropema (orientación): Orientación de la mano con respecto al cuerpo.
+6. Prosoponema (rasgos no manuales): Todos aquellos rasgos que no utilizan las manos, principalmente movimiento corporal y expresiones faciales.
+
+
+
+
+
+
+
+
+
+Fuente: Mejía-Pérez et.Al (2022)
+
+La lengua de señas puede clasificarse por el uso de una o dos manos, esto se conoce como el uso de señas unimanuales o bimanuales respectivamente como se indica en el trabajo de Stark, T y Aldrete, M. C (2009), cada señante tiene una mano base y una dominante, estas pueden alternarse entre izquierda y derecha y no pierde el sentido de la palabra o el significado.
+Las señas unimanuales se pueden categorizar como estáticas y dinámicas. Las señas estáticas son aquellas que no requieren de movimiento para interpretarse, mientras que las dinámicas sí; las señas bimanuales son dinámicas es decir, requieren el movimiento de la mano dominante, o incluso de la mano base, estas
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+señas a su vez pueden ser simétricas o asimétricas, esto se atribuye a que ambas manos tengan o no la misma configuración, a su vez las señas pueden contener movimiento simultaneo o alternado; las señas simultaneas son aquellas que tienen un movimiento inversamente proporcional, como si se tratara de un espejo. Por otra parte, las señas alternadas tienen movimientos idénticos inversos.
+
+Redes neuronales
+Dentro de los métodos más utilizados para la clasificación automática de señas son aquellos basados en redes neuronales, además de ser muy utilizados, de acuerdo con la revisión del estado arte son los que han aportado una mayor tasa de efectividad en la clasificación. Sin embargo, en su gran mayoría, estos modelos son implementados para señas estáticas, es decir, son señas que no cambian a través del tiempo, y de las cuales cada fotograma representa una única unidad de información, por lo que, para la clasificación de información que cambia en el tiempo se requiere de un modelo distinto de red neuronal.
+Enseguida se presenta una descripción del modelo de perceptrón simple, lo que es equivalente a una neurona artificial clásica, que es la base de los modelos neuronales existentes.
+El modelo matemático-computacional de una neurona artificial recibe este nombre debido a que su estructura fue inspirada en los procesos sinápticos de una neurona biológica, Como se mención en el trabajo Abdi,H (1994), En la década de 1960 el científico Frank Rosenblatt, creó el modelo del perceptrón, tomando base el trabajo de Warren McCulloch y Walter Pitts. Este modelo hace la analogía entre los procesos biológicos de una neurona y los traduce a un modelo matemático que puede ser interpretado por una computadora, su estructura y equivalencia computacional se describe de la siguiente manera:
+1. Axón de entrada – Entradas de datos
+2. Sinapsis – Pesos de los datos
+3. Cuerpo – Función de aprendizaje y umbralización de los datos
+4. Cuello del axón – Función de activación
+5. Axón de salida – Salida de datos
+
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+A continuación, se muestra en la Figura 1 el modelo de una neurona computacional. Figura 1. Modelo de una neurona computacional.
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Mejía-Pérez, K. (2022). (en que autor se basa)
+En una red neuronal existe una cantidad 𝑖 de neuronas, denotadas como 𝑵𝒊 Cada una de las neuronas recibe "𝒏“ cantidad de entradas simples denotados como vector de entrada (𝒙𝒊𝟏, 𝒙𝒊𝟐 … 𝒙𝒊𝒏), este conjunto de datos es el mismo para cada entrenamiento, Cada uno de los valores entrada tiene un peso correspondiente denotado como 𝒘𝒊, estos pesos determinan el nivel de importancia del dato que se está analizando, estos valores suelen iniciarse de forma aleatoria, este conjunto de datos varía entre cada neurona de la red.
+Junto al conjunto de datos se incluye un valor de umbral 𝑩𝒊𝒂𝒔, (𝒙𝟎 𝒐 𝚯𝐢) quien suele tener el valor de -1 o 0, sin embargo, puede variar según el modelo de función de activación, este valor pude delimitar que tanto le creemos al resultado de la propagación. Los datos de entrada son tratados como un único valor llamado “entrada global” y es denotado como 𝒈𝒊𝒏𝒊 (global input). El siguiente paso es utilizar la función de sumatoria para procesar los datos de entrada, y se representa por la ec. (1).
+𝑛
+
+𝑔𝑖𝑛𝑖   (𝑤𝑖𝑗𝑥𝑖𝑗) + 𝜣 ec.(1)
+𝑗
+
+
+
+
+
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Posteriormente se evalúa la función de activación, analógicamente una neurona biológica puede estar activa (excitada) o inactiva (no excitada); es decir, que tiene un “estado de activación, la función activación calcula el estado de actividad de una neurona, transformando la sumatoria de entradas pesadas en un valor (estado) de activación, cuyo rango normalmente va de (0 𝑎 1) o de (−1 𝑎 1), esto es así, porque una neurona puede estar totalmente inactiva (0 𝑜 − 1) o activa (1).
+Dentro de los modelos de activación más frecuentes se encuentra la activación lineal, sigmoidea y el tangente hiperbólico (𝑡𝑎𝑛ℎ). La función de activación lineal se representa por la ec. (3).
+
+
+
+𝑓
+
+
+
+En donde:
+•  𝑥 = 𝑓(𝑔𝑖𝑛𝑖); 𝑎 > 0.
+𝑎
+
+𝑎    𝑎
+
+{    𝑥  𝑎
+
+•  𝑔𝑖𝑛𝑖 es la entrada global
+
+•  𝑎 es un valor arbitrario para su activación
+
+La representación gráfica de la función de activación lineal se muestra en la Figura 2.
+
+Figura 2: Representación gráfica de la activación lineal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+14
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Fuente: Elaboración propia.
+La función de activación sigmoidea es denotada por la expresión dada en la ec. (4):
+1
+𝜎(𝑥) = 1     + 𝑒−𝑔𝑥
+
+ec(4) En donde:
+
+•  𝑥 = 𝑓(𝑔𝑖𝑛𝑖)
+
+•  𝑔 es un valor arbitrario que modifica la pendiente de la función de activación
+
+Los valores de salida están comprendidos entre 0 y 1 y están representados gráficamente de la siguiente forma (ver Figura 3):
+Figura 3: Representación gráfica de la activación sigmoidea.
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Elaboración propia.
+La función de tangente hiperbólica se denota por la ec. (5):
+𝑒𝑔𝑥 − 𝑒−𝑔𝑥
+𝑡𝑎𝑛ℎ(𝑥) = 𝑒       𝑔𝑥 + 𝑒−𝑔𝑥  ec.(5)
+
+Sea
+•  𝑥 = 𝑓(𝑔𝑖𝑛𝑖)
+
+•  g es un valor arbitrario que modifica la pendiente
+
+En este caso los valores de salida están comprendidos entre -1 y 1, y la función de activación se comporta de la siguiente manera, ver Figura 4.
+
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Figura 4: Representación gráfica de la función de tangente hiperbólica.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Elaboración propia.
+Finalmente, para saber si la neurona aprendió o no, se puede calcular el error restando la salida deseada 𝛿 y la salida obtenida 𝑦, mediante la ec. (9):
+𝑒𝑟𝑟𝑜𝑟 = (𝛿 − 𝑦) ec(9)
+
+El último componente del modelo neuronal es la función de salida que indica el resultado de cada neurona 𝑁𝑖, esta función establece el valor se transfiere a las neuronas conexas, de tal modo que la salida de una neurona es una de las entradas de otra neurona, si la función de activación está por debajo del umbral determinado
+𝛩𝑖, ninguna salida se transfiere a la neurona subsiguiente.
+
+Aprendizaje de una neurona
+Para saber si una neurona está aprendiendo se puede comparar los resultados obtenidos en comparación del vector de salidas deseadas, de ser necesario se pueden volver a recalcular los pesos 𝑤, este proceso de aprendizaje puede utilizar una tasa de aprendizaje 𝛼 que se encuentra entre 0 y 1 (0 < 𝛼 < 1). Como se muestra en la ec. (10)
+
+
+𝑤(𝑗)
+′ = {𝑤(𝑗) + 𝛼(𝛿 − 𝑦)𝑥(𝑗) ec(10)
+
+𝑤(𝑗) + (𝛿 − 𝑦)𝑥(𝑗)
+
+
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Propagación hacia atrás (Backpropagation):
+Este es un modelo basado en el perceptrón multicapa, en donde se realiza el proceso de entrenamiento de la misma forma, sin embargo, la evaluación del error y actualización de los pesos dependen de la salida final de la red, esto puede ser calculado como se muestra en la ec. (11).
+
+𝑚
+
+𝐸𝐶𝑀 = 𝐸(𝑥; 𝑊1,𝑊2)                .
+𝑖
+
+
+Tal que
+•  E es el Error Cuadrático Medio (ECM)
+•  𝑊1,𝑊2,… , 𝑊𝐹 son las derivadas parciales del error con respecto a los pesos de cada capa, considerando este ejemplo para una red de 2 capas
+•  m la cantidad de neuronas en cada capa
+•  𝜹 salida deseada
+•  𝐲𝐹 es la salida final obtenida
+
+El perceptrón simple está definido por la estructura básica de una red neuronal, en donde se tienen datos de entrada y datos de salida, el perceptrón multicapa o red neuronal está definido por salidas de perceptrones simples interconectadas a las entradas de otros perceptrones simples como se muestra en la Figura 8.
+Figura 8. Estructura de una red neuronal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Elaboración propia.
+Como se observa en la Figura 8, en la estructura de una red neuronal multicapa se encuentran cuatro componentes principales: la capa de entrada, la capa oculta, la capa de salida y finalmente la predicción.
+Capa de entrada: En esta capa se encuentran los datos que ingresaran a las neuronas para iniciar el proceso de aprendizaje.
+Capa oculta: una vez que las primeras neuronas procesan los datos de entrada, sus salidas serán conectadas a las entradas de nuevas neuronas, cabe destacar que pueden tener más de una capa oculta, según el modelo de la red neuronal y su aplicación.
+Capa de salida: se encuentran los valores finales de la red neuronal, esta capa puede tener una única salida o varias según el modelo requerido.
+Predicción: Es el resultado final de la red neuronal y puede calcularse por diversos métodos, el más común de ellos es simplemente obtener el valor máximo de todas las funciones de salida.
+
+III. JUSTIFICACIÓN
+En este trabajo de investigación se realizará el diseño e implementación de un sistema para el reconocimiento de la LSM que ofrece una propuesta de solución para tratar de reducir las barreras de comunicación de la comunidad sorda en México. Mediante el sistema es posible identificar un conjunto de palabras del Lenguaje de Señas Mexicano, haciendo uso de un algoritmo de aprendizaje
+18
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+automático y una cámara de profundidad (RGB-D) como medio de obtención de datos, ya que como se observa en el estado del arte es un dispositivo que permite obtener datos de profundidad que son invariantes a cambios de iluminación en la escena, color de piel y de ropa de la persona señante, etc.
+
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+
+
+En la actualidad las personas con discapacidades o deficiencias auditivas tienen barreras de comunicación en su vida cotidiana, siendo incluso imposible establecer una comunicación con aquellos que desconocen por completo el lenguaje de señas. De acuerdo con datos de la OMS (OMS, 2019) 466 millones de personas en el mundo padecen una discapacidad auditiva, de las cuales 34 millones son niños, en México existen alrededor de 498,640 personas con discapacidades auditivas (INEGI 2010), mientras que se estima un total de 87,000 a 100,00 usuarios de alguna lengua viso-gestual (ILV, 2014).
+
+Como se describió en las secciones anteriores, los trabajaos registrados en el estado del arte procuran reconocer un conjunto de datos obtenidos de imágenes de video o profundidad para realizar el proceso de aprendizaje, sin embargo el tratamiento de esta información se centra en seccionar al participante del entorno en donde se encuentra y posteriormente tomar los datos del cuerpo o incluso únicamente de las manos para realizar la investigación, por otra parte, este proyecto propone describir la lengua de señas por medio de su estructura querológica y utilizar estos parámetros como descriptores principales para el proceso de aprendizaje automático.
+
+V. COMITÉ DE BIOÉTICA
+Durante el desarrollo de este proyecto de investigación se contará con la participación de diferentes personas para la realización de captura de los datos iniciales; Los datos personales proporcionados por los participantes serán tomados como confidenciales y pertenecerán anónimos durante el desarrollo de esta
+19
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+investigación, sin embargo, podrán tomarse datos generales de referencia como lo son edad, género, estatura entre otros
+
+VI. PLANTEAMIENTO TEÓRICO (Hipótesis y/o supuestos, pregunta, etc.) Preguntas de investigación
+1. ¿Cuál es la forma más eficiente de describir e interpretar la LSM?
+2. ¿Cuáles técnicas de reconocimiento automático nos permitirán clasificar los queremas de la LSM?
+3. ¿Es posible clasificar los queremas de la LSM a través de aprendizaje automático?
+4. ¿Es posible reconocer las señas de la LSM a través de su descripción querológica?
+Hipótesis, Supuestos y/o proposiciones de investigación
+•  Hipótesis: La caracterización computacional de la lengua de señas a través de la descripción querológica permitirá reconocer un conjunto de señas de la lengua de señas mexicana.
+
+VII.  OBJETIVOS Objetivo general:
+Desarrollar una metodología que permita reconocer de manera automática un conjunto de señas de la LSM con base en su descripción querológica, aplicando técnicas de Inteligencia Artificial y Visión por Computadora, como base de un motor para la traducción de la lengua de señas.
+
+Objetivos específicos:
+1. Capturar datos de la lengua de señas mexicana utilizando una cámara de profundidad.
+2. Realizar la caracterización de queremas de la LSM utilizando algoritmos computacionales y/o técnicas de inteligencia artificial.
+3. Realizar la clasificación individual de los queremas pertenecientes a la LSM
+4. Realizar la clasificación de un conjunto de palabras pertenecientes a la LSM utilizando la clasificación de queremas individuales.
+
+
+20
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+VIII. METODOLOGÍA
+Para la metodología de desarrollo de este proyecto de investigación se secciono en 5 etapas: Investigación documental, Obtención de los datos, Procesamiento de los datos, Experimentación y Análisis de resultados.
+1. Investigación documental:
+Esta es una tarea que se realizara continuamente a lo largo del proyecto, consiste en 2 subtareas principales
+1.1  Actualización del estado del arte.
+1.2  Investigar modelos de clasificación.
+2. Obtención de los datos:
+2.1  Captura de los datos utilizando cámaras de profundidad
+2.2  Realizar la descripción querológica de las señas capturadas
+3. Procesamiento de los datos
+3.1  Caracterización de las imágenes de profundidad
+3.2  Realizar la caracterización de los queremas
+4. Experimentación
+4.1  Clasificar individualmente los queremas
+4.2  Clasificar las señas basándose en los queremas
+5. Análisis de resultados
+5.1  Probar los modelos aprendidos
+5.2  Graficar resultados
+6. Producción científica
+6.1  Escritura de artículos científicos
+6.2  Publicación de artículos científicos
+6.3  Participación en actividades académicas
+6.4  Escritura de tesis
+
+Diagrama de la metodología de desarrollo:
+
+
+
+
+
+
+
+21
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+Producción cientifica
+Escritura de artiuclos cientificos Publicación de articulos cientificos Participación en actividades academicas Escritura de tesis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Cronograma de actividades.
+
+
+
+
+# 1.1
+1° Semestre
+2° Semestre
+3° Semestre
+4° Semestre
+5° Semestre
+6° Semestre
+7° Semestre
+8° Semestre
+1.2
+
+2.1
+
+2.2
+
+3.1
+
+3.2
+
+4.1
+
+4.2
+
+5.1
+
+5.2
+
+6.1
+
+6.2
+
+6.3
+
+6.4
+
+
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO Como
+resultado se pretendo obtener un método para la clasificación de lengua de señas mexicanas basado en la descripción querológica de la LSM, utilizando métodos computacionales de inteligencia artificial y visión por computadora.
+• Productos académicos:
+− Participación en congreso internacional.
+− Artículo en revista indexada JCR.
+
+X. INDICE TENTATIVO DE LA TESIS
+Dedicatoria Agradecimientos Índice
+Índice de Cuadros Índice de Figuras
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Abreviaturas y siglas Resumen en español Abstrac
+Introducción
+I.   Planteamiento del problema
+II.  Justificación
+III.  Antecedentes
+IV.  Hipótesis
+V.  Objetivo
+VI.  Metodología
+VII.  Resultados y discusión
+VIII.  Conclusiones
+IX.  Referencias
+XI. REFERENCIAS BIBLIOGRÁFICAS
+Abdi, H. (1994). A neural network primer. Journal of Biological Systems, 2(03), 247-281.
+Cervantes, J., García-Lamont, F., Rodríguez-Mazahua, L., Rendon, A. Y., & Chau, A. L. (2016). Recognition of Mexican sign language from frames in video sequences. In International Conference on Intelligent Computing, pp. 353-362.
+Springer, Cham.
+Córdova-Esparza D.M., et Al. (2020): Sistemas de reconocimiento automático de la Lengua de Señas Mexicana (LSM): Revisión Sistemática.
+Duarte, A., Palaskar, S., Ghadiyaram, D., DeHaan, K., Metze, F., Torres, J., Giroi-Nieto, X. How2Sign: a large-scale multimodal dataset for continuous American sign language. arXiv preprint arXiv:2008.08143 (2020).
+Forster, J., Schmidt, C., Hoyoux, T., Koller, O., Zelle, U., Piater, J. H., Ney, H. RWTH-PHOENIX-Weather: A Large Vocabulary Sign Language Recognition and Translation Corpus. In LREC, Vol. 9, pp. 3785-3789 (2012)
+Galicia, R., Carranza, O., Jiménez, E. D., & Rivera, G. E. (2015). Mexican sign language recognition using movement sensor. IEEE 24th International Symposium on Industrial Electronics (ISIE), pp. 573-578.
+
+
+
+24
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+García-Bautista, G., Trujillo-Romero, F., & Caballero-Morales, S. O.: Mexican sign language recognition using kinect and data time warping algorithm. In 2017 International  Conference  on  Electronics,  Communications  and  Computers (CONIELECOMP) pp. 1-5. IEEE (2017).
+Ghazanfar, L., Jaafar, A., Nazeeruddin, M., Roaa, A., Rawan, A. Arabic alphabets sign language dataset (arasl). Mendeley Data, v1 (2018)
+Ibarra, J. L., Barba, M. D. R. R., & Picazo, V. T. (2006). SENSor foto-eléctrico aplicado al movimiento de los dedos de las manos. Computación y Sistemas, 10(1), 57-68.
+Jiménez, J., Martin, A., Uc, V., & Espinosa, A.: Mexican sign language alphanumerical gestures recognition using 3D Haar-like features. IEEE Latin America Transactions, 15(10), 2000-2005 (2017).
+Joze, H. R. V., Koller, O. Ms-asl: A large-scale data set and benchmark for understanding american sign language. arXiv preprint arXiv:1812.01053 (2018)
+Kapuscinski, T., Oszust, M., Wysocki, M., Warchol, D. Recognition of hand gestures observed by depth cameras. International Journal of Advanced Robotic Systems, 12(4), 36 (2015)
+Li, D., Rodríguez, C., Yu, X., Li, H. Word-level deep sign language recognition from video: A new large-scale dataset and methods comparison. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, pp. 1459-
+1469 (2020)
+Mancilla, E., Vázquez, O., Arguijo, P., Meléndez, R., & Vázquez, A.: Traducción del lenguaje de señas usando visión por computadora. Research in Computing Science, 148, 79- 89 (2019).
+Martínez, M., Rojano-Cáceres, J., Bárcenas I., & Juárez, F. (2016). Identificación de lengua de señas mediante técnicas de procesamiento de imágenes. Res. Comput. Sci., 128, 121-129.
+Martínez-Gutiérrez, M. E., Rojano-Cáceres, J. R., Benítez-Guerrero, E., & Sánchez-Barrera, H. E. Data Acquisition Software for Sign Language Recognition. Research in Computing Science, 148, 205-211 (2019).
+
+
+25
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Martinez-Seis,  B.,  Pichardo-Lagunas,  O.,  Rodríguez-Aguilar,  E.,  & SaucedoDíaz, E. R.: Identification of Static and Dynamic Signs of the Mexican Sign Language Alphabet for Smartphones using Deep Learning and Image Processing. Research in Computing Science, 148, 199-211 (2019).
+Mejía-Pérez, K. et. Al,(2022) Automatic Recognition of Mexican Sign Language Using a Depth Camera and Recurrent Neural Networks.
+Mejía-Pérez, K. (2022). Sistema de reconocimiento del Lenguaje de Señas Mexicano basado en una cámara RGB-D y aprendizaje automático.
+Morales, E. M., Aparicio, O. V., Arguijo, P., Armenta, R. A. M., López, A. H. V.
+´ Traducción del lenguaje de señas usando visión por computadora. Research in Computing Science, 148, 79-89 (2019)
+Maher, J. (1996). Seeing language in sign: The work of William C. Stokoe.
+Gallaudet University Press.
+Neidle, C., Thangali, A., Sclaroff, S. Challenges in development of the american sign language lexicon video dataset (asllvd) corpus. In 5th Workshop on the Representation and Processing of Sign Languages: Interactions between Corpus and Lexicon, LREC (2012)
+Ozdemir, O., Kındıroglu, A. A., Camgoz, N. C., Akarun, L. Bosphorussign22k sign
+¨ language recognition dataset. arXiv preprint arXiv:2004.01283 (2020)  Rivas-Perea P. Desarrollo de un intérprete básico del lenguaje de señas para dactilología empleando inteligencia artificial. Tecnológico Nacional De México,
+Instituto Tecnológico De Nogales, https://www.reev.us/pdfs/rivas2019desarrollo.pdf (2019)
+Ronchetti, F., Quiroga, F., Estrebou, C. A., Lanzarini, L. C., Rosete, A.
+LSA64: an Argentinian sign language dataset. In XXII Congreso Argentino de Ciencias de la Computaci´on (CACIC 2016) (2016)
+Saldaña González, G., Cerezo Sánchez, J., Bustillo Díaz, M. M., & Ata Pérez,
+A. (2018). Recognition and classification of sign language for spanish. Computación y Sistemas, 22(1), 271-277.
+Sehyr, Z. S., Caselli, N., Cohen-Goldberg, A. M., Emmorey, K. The ASL- LEX 2.0 Project: A Database of Lexical and Phonological Properties for 2,723
+
+26
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Signs in American Sign Language. The Journal of Deaf Studies and Deaf Education, 26(2), 263-277 (2021)
+Serafín, M., González, R. (2011). Manos con voz, diccionario de lenguaje de señas mexicana. Consejo Nacional para Prevenir la Discriminación, 15-19.
+Solís, F., Martínez, D., & Espinoza, O. (2016). Automatic mexican sign language recognition using normalized moments and artificial neural networks.
+Engineering, 8(10), 733-740.
+Solís, F., Toxqui, C., & Martínez, D. (2015). Mexican sign language recognition using jacobifourier moments. Engineering, 7(10), 700.
+Sosa-Jiménez, C. O., Ríos-Figueroa, H. V., Rechy-Ramírez, E. J., MarinHernandez, A., & González-Cosío, A. L. S.: Real-time mexican sign language recognition. In 2017 IEEE International Autumn Meeting on Power, Electronics and Computing (ROPEC), pp. 1-6, IEEE (2017).
+Stark, T. C. S., Aldrete, M. C. (2006). La morfología en la Lengua de Señas mexicana. In Conferencia magistral preparada para el II Congreso Internacional de Logogenia México.
+Von Agris, U., Kraiss, K. F. Towards a video corpus for signer-independent continuous sign language recognition. Gesture in Human-Computer Interaction and Simulation, Lisbon, Portugal (2007)
+
+
+
+
+
+
+M.C. Kenneth Mejía Pérez
+
+
+Nivel de revisión: 02
+
+
+
+
+
+
+
+
+
+
+
+
+
+27

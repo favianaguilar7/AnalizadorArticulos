@@ -1,0 +1,1041 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Universidad Autónoma de Querétaro
+Facultad de Informática
+C.U. a 22 de septiembre de 2023
+DOCTORADO EN CIENCIAS DE LA COMPUTACIÓN
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+Nombre del Alumno: Francisco Miguel García Herrera No. de Expediente: 300442
+No. CVU: 902135
+Correo electrónico: francisco.mgh94@gmail.com Teléfono: 4131219319
+
+Línea de investigación sobre la cual se desarrollará el trabajo: Inteligencia Artificial
+
+Responsable de la Asesoría: Dr. Hugo Jiménez Hernández
+Programas educativos que apoya: Doctorado en Ciencias de la Computación Línea de investigación del responsable: Inteligencia Artificial
+
+Firma de aceptación:
+
+
+
+Número de veces que se ha sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez (X)   2da. (  )    Más de 2 veces (  )
+Semestre o Cuatrimestre actual del alumno: Tercero Fecha de Ingreso al programa: 1 de agosto de 2022
+
+
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+I. DATOS GENERALES
+•  Título del proyecto: Desarrollo de un autómata celular modelador y predictor de tráfico peatonal: estudio de vecindarios no conexos combinados con reglas probabilísticas.
+•  Nombre del alumno responsable. Francisco Miguel García Herrera
+•  Colaboradores (Director y/o Co-director): Dr. Hugo Jiménez Hernández.
+•  Centro o lugar donde se realiza investigación: Facultad de Informática – Universidad Autónoma de Querétaro
+•  Tipo de investigación básica, aplicada o tecnológica (diseño, construcción de prototipo o prueba experimental). Aplicada.
+•  Línea de investigación sobre la cual se desarrollará el trabajo. Inteligencia artificial.
+
+
+II. ANTECEDENTES Y/O FUNDAMENTACIÓN TEÓRICA
+Un autómata celular es un modelo matemático que puede ser adaptado a una forma computacional, surgido hacia finales de la década de los cuarenta, de la mano de Jon Von Neumann. Consiste en dividir un espacio (bidimensional, preferentemente) en una cuadrícula, dentro de algunos bloques de dicho espacio se colocan algunos puntos denominados células, los cuales, a partir de su disposición, de sus vecindarios (celdas que les rodean) y de reglas definidas, pueden propiciar la aparición (o desaparición) de otras células. Tómese como referencia la Figura 1.
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 1. Ejemplificación de autómata celular. Fuente: Elaboración propia.
+Algunos usos históricos de este modelo han sido el juego de la vida (propuesto por John Horton Conway, en 1970) y la teoría de Wolfram (actualmente vigente). No obstante, también pueden ser utilizados para modelar distintos aspectos como la mecánica de fluidos, el comportamiento de virus o microorganismos, así como para
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+redes neuronales, estados del tiempo y tráfico y peatones. Sin embargo, diversos estudios han demostrado la utilidad del autómata celular como predictor, en una extensión de su objetivo original.
+El modelar y predecir el comportamiento humano es una tarea que involucra un número que puede ser alto, dependiendo del objetivo del investigador: saber que una persona va a desmayarse, o que está a punto de cometer un acto delictivo con solo observarle un poco, se vuelve muy complicado si sólo se toma en cuenta su trayectoria y no su vestimenta o su lenguaje verbal. Sin embargo, conocer estos aspectos puede conducir a la prevención y corrección de incidentes en tiempos más cortos sin necesidad de que se exponga o interfiera un observador físico (generalmente personal de seguridad), a diferencia del método tradicional en el que se actúa una vez ha acontecido el siniestro, provocando un retraso que puede costar una vida o limitar el margen de maniobra.
+Este proyecto de investigación contempla emplear un autómata celular para modelar y predecir el tráfico peatonal, realizando una comparativa entre un modelo que emplee reglas determinísticas y otro que utilice reglas probabilísticas, ambos utilizando vecindarios no conexos y clasificadores binarios para la detección de seres humanos por medio de cámaras de videovigilancia tradicionales.
+
+II.1.-FUNDAMENTACIÓN TEÓRICA
+En este apartado se abordan los conceptos básicos de un autómata celular: vecindarios, reglas de transición (probabilísticas y determinísticas) y, en el caso particular de este problema: clasificadores binarios. Así como una breve discusión sobre su empleo.
+
+II.1.1.-Apuntes adicionales al concepto de autómata celular
+De acuerdo con (Wolfram, A New Kind of Science, 2019), (Wolfram, Cellular Automata and Complexity, 1994) y con (Ilachinski, 2001), en términos más formales: un autómata celular está basado en un arreglo (una malla o latice), similar a una matriz que se puede extender al infinito; en su interior se encuentran algunas variables discretas, conocidas como células.
+Si se considera un estado inicial como 𝑡 = 𝑡₀, siguiente:
+
+
+
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 2. Ejemplificación del primer estado de un autómata celular. Fuente: Elaboración propia.
+
+
+Donde las células son de color rojo. Si se toman en cuenta sus vecindarios (en este caso las casillas que rodean a las células (las cuales pueden o no contener otras células), y unas reglas predefinidas (conocidas como reglas de transición), en el siguiente estado finito, algunas células desaparecerán y otras surgirán. Por ejemplo, siguiendo las reglas del juego de la vida de Conway (Conway, 1970). Se obtendrán los posteriores estados:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figura 3. Ejemplificación de la sucesión de pasos de un autómata celular basado en las reglas de transición del juego de la vida de Conway. Fuente: Elaboración propia.
+
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+En donde cada paso se identifica como 𝑡𝑥, donde 𝑥 es la iteración.
+En términos matemáticos, se puede ver un autómata celular como una cuádrupla de la forma C(Γ, q, V, δ) (Flores Cortés, 2012) , que involucra a los cuatro elementos principales:
+•  Γ: Representación de la malla, tal que Γ = {c ∈ Cᵈ} (las células sean elementos de este espacio) siendo que d ∈ Z⁺ es la dimensión. Para este proyecto limitándose a un espacio bidimensional.
+•  q: Conjunto finito de posibles estados de las células: para este caso se manejan estados binarios. Se ejemplifica el estado de la celda estudiada como 𝑞₀, mientras que es 𝑞𝑗 ∧ j ∈ ℝ el de las celdas adyacentes (sean vecinas o no).
+•  V: Vecindarios conformados por una colección de celdas que se considera tienen influencia para la célula estudiada, de modo que ∀c ∈ Γ, 𝑉𝑐 =
+{𝑘1, 𝑘2, … , 𝑘𝑛|𝑘𝑗 ∈ Γ ∧ j = 0,1,2, … , n} donde 𝑘0 es la celda estudiada, (las celdas
+también pertenecen a la retícula y pueden o no ser otras células).
+•  δ: Expresión dedicada a las reglas de transición, las cuales se aplican de forma simultánea a todas las celdas de la retícula. Las reglas de transición involucran los estados pertinentes de los vecindarios y células. Siendo δ(q₀, q₁, … , qn).
+Integrado en una única función, sería de la forma siguiente, de acuerdo con
+(Wolfram, A New Kind of Science, 2019):
+𝐶(𝑡, 𝑖) = 𝑓(𝐶(𝑡 − 1, 𝑖 − 1), 𝐶(𝑡 − 1, 𝑖 + 1), 𝐶(𝑡 − 1, 𝑖 + 1))
+En donde t es el tiempo finito o paso y t es la posición de una celda. Así, se puede interpretar que el estado de la celda actual depende de los estados anteriores tanto de ella misma, como de las celdas que se encuentran en posiciones vecinas.
+La principal utilidad de un autómata celular está en la representación visual de los modelos que representa. Así, una sucesión de pasos finitos, bajo determinadas reglas que rigen a los vecindarios en los que se encuentran las células, es capaz de funcionar como una representación de un comportamiento.
+Si bien, es cierto que existen autómatas celulares con más de dos dimensiones, el presente trabajo se limita a estudiar un modelo bidimensional.
+
+
+
+
+
+
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+II.1.2.- Vecindarios
+En su concepción más pura, los vecindarios rodean a las células, (aquí se estudiarán los efectos de que distintos vecindarios no estén conectados entre sí, para observar si tienen efectos en el estado siguiente de la célula). Se ha señalado que no tienen ni restricción ni tamaño (Flores Cortés, 2012), (Ilachinski, 2001). A pesar de ser identificadas como 𝐶𝑖, donde i es la posición; en dos dimensiones se dice que una celda
+tiene la posición i, j, y la celda se identifica con k (donde k=0, para la celda estudiada),
+tal que: 𝐶𝑘 , en este sentido, un vecindario se define como:
+𝑉 𝑘 (𝑑) = {𝐶¹    , 𝐶²    , 𝐶³    , … , 𝐶𝑑      } ,   a, b, 𝛽 ∈ ℝ
+
+𝐶𝑖,𝑗
+𝑖+𝑎,𝑗+𝑎
+𝑖+𝑎,𝑗+𝑏
+𝑖+𝑏,𝑗+𝑏
+𝑖+𝛽∗𝑎,𝑗+𝛽∗𝑏
+Donde d es el número de celdas involucradas en el vecindario.
+Los vecindarios se pueden construir de acuerdo con el problema a solucionar, no obstante, dos son los más comunes y se muestran a continuación:
+
+Vecindario Von Neumann:
+Considerando en un arreglo de 9x9, la celda central (sobre la cual se determina el siguiente estado) se encuentra en la posición i, j, el vecindario se compone de una celda al norte, una al sur, otra al este y otra más al oeste, tal que:
+1    2    3    4
+𝑉𝐶0 (𝑑) = {𝐶𝑖+1,𝑗, 𝐶𝑖−1,𝑗, 𝐶𝑖,𝑗+1, 𝐶𝑖,𝑗−1}
+De forma gráfica se puede percibir tanto este vecindario como el vecindario de tipo Moore, en su modalidad bidimensional con cuatro y ocho celdas, respectivamente, en la Figura 4:
+
+
+
+
+
+
+
+
+Figura 4. Vecindarios más comunes en autómatas celulares a) Von Neumann, b) Moore. Fuente: Elaboración propia.
+También es posible representar este vecindario en una modalidad más grande, tal que:
+1    2    3    4    5    2    3    4
+𝑉𝐶0 (8) = {𝐶𝑖+1,𝑗, 𝐶𝑖−1,𝑗, 𝐶𝑖,𝑗+1, 𝐶𝑖,𝑗−1, 𝐶𝑖+2,𝑗, 𝐶𝑖−2,𝑗, 𝐶𝑖,𝑗+2, 𝐶𝑖,𝑗−2}
+
+
+
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Vecindario Moore:
+El vecindario de Moore envuelve todo el contorno, es decir, todas las celdas adyacentes, como se observa en la Figura 4, para un entorno de 9x9. En términos matemáticos viene a ser:
+1    2    3    4    5      6      7      8
+𝑉𝐶0 (8) = {𝐶𝑖+1,𝑗, 𝐶𝑖−1,𝑗, 𝐶𝑖,𝑗+1, 𝐶𝑖,𝑗−1, 𝐶𝑖+1,𝑗+1, 𝐶𝑖−1,𝑗−1, 𝐶𝑖−1,𝑗+1, 𝐶𝑖+1,𝑗−1}
+Pudiendo también representarse para 24 celdas o más celdas, considerando que el contorno interno se ve envuelto por el externo y así, sucesivamente.
+En este proyecto se buscarán proponer vecindarios no específicos, dinámicos y visualizar posibles efectos entre ellos y las células.
+
+II.1.3.-Reglas de transición
+Atendiendo a la nomenclatura de (Wolfram, A New Kind of Science, 2019), y de (García Baños, 2019), al conjunto de reglas de transición se le conoce como configuración y se representa como 𝐶𝑖 = 𝛿(𝐶₀) y es una función que determina el siguiente estado i, a partir de un estado inicial 0, dependiendo de la configuración de los
+estados de las celdas que conforman el vecindario de la célula estudiada. Sin embargo, es importante considerar que las reglas de transición no sólo afectan a las células, también pueden tener incidencia en las celdas vacías ya que, en determinados casos, pueden aparecer nuevas células en dichos lugares, en estados posteriores. Como se vio en el caso de la Figura 3.
+Al igual que en el caso de los vecindarios, se pueden crear tipos específicos de reglas, dependiendo del autor y del problema a resolver, algunas de las clasificaciones más importantes son:
+•  Reglas deterministas: El estado futuro de una celda se determina a partir de los estados de las celdas vecinas en el paso anterior. No se da aleatoriedad con este tipo de reglas.
+•  Reglas estocásticas: El estado futuro de una celda se determina de manera probabilística a partir de los estados de las celdas vecinas. Se presenta aleatoriedad en el proceso de transición.
+•  Reglas totalísticas: El nuevo estado de una celda depende de la suma total de los estados de las celdas vecinas, en oposición a las configuraciones específicas de los estados vecinos.
+
+
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Reglas de bordes (condiciones de frontera): Definen el comportamiento de las celdas que se ubican en los bordes de la cuadrícula.
+•  Reglas de vecindad extendida: Toman en cuenta celdas más alejadas al vecindario para determinar el estado futuro de la celda (efectos de vecindarios no conexos).
+•  Reglas isotrópicas: Tipo específico para autómatas bidireccionales, aplican la misma regla de transición en todas direcciones uniformemente.
+Para este proyecto, estas son los tipos de reglas sobre los que se van a hacer trabajos exploratorios, en especial sobre las reglas estocásticas, con condiciones de frontera, de vecindad extendida.
+Como ejemplo, para este documento se presenta el conjunto de reglas para el juego de la vida, las cuales determinaron los estados sucesivos en la Figura 3, considerando un vecindario de Moore de 8 celdas (extraído de (García Baños, 2019)):
+8
+⎛  𝑞0 𝑠𝑖 ∑ 𝑞𝑖 = 2
+
+⎪
+𝛿(𝑞0, 𝑞1, 𝑞2, 𝑞3, 𝑞4, 𝑞5, 𝑞6, 𝑞7, 𝑞8) =
+⎨
+⎪
+𝑖=1 8
+1 𝑠𝑖 ∑ 𝑞𝑖 = 3
+𝑖=1
+
+
+II.1.4.-Revisión bibliográfica
+{0 𝑐𝑢𝑎𝑙𝑞𝑢𝑖𝑒𝑟 𝑜𝑡𝑟𝑜 𝑐𝑎𝑠𝑜
+A continuación, se presentan algunos trabajos esenciales que han de servir de guía para mostrar el panorama sobre los autómatas celulares, en concreto, en autómatas aplicados al tráfico peatonal, sus vecindarios y reglas de transición, haciendo uso de distintas metodologías:
+
+Referencia
+(Clarke et al., 1997)
+Título
+A  self-modifying  cellular automaton   model   of historical urbanization in the San Francisco Bay area
+Contribución Paradigma de creación de reglas   de   transición. Propone un modelo que se modifica   así   mismo, mediante       reglas probabilísticas basadas en métodos de Monte Carlo.
+
+
+
+
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+(Garcia-Garcia  et  al., 2020)
+
+
+
+
+(Liang et al., 2021)
+
+
+
+
+
+
+
+
+(Gani y Qadir, 2021)
+
+
+
+
+
+
+
+
+
+
+
+
+(Zhai et al., 2023)
+Background subtraction in real      applications: Challenges,     current models   and   future directions
+Mixed-cell     cellular automata: A new approach for simulating the spatio- temporal  dynamics  of mixed land use structures
+
+A novel method for digital image copy-move forgery detection and localization using  evolving  cellular automata and local binary patterns
+
+
+
+
+Using       spatial
+heterogeneity      to
+strengthen       the neighbourhood effects of urban  growth  simulation models
+Aborda la sustracción de fondo en el tráfico urbano, destacando    trabajos enfocados en autómatas celulares.
+Propone un acercamiento basado en celdas mixtas (agrupadas)  para  poder evaluar las células y crear reglas de transición con base en sus resultados.
+Utiliza  a  un  autómata celular para la detección de plagio empleando un conjunto de celdas locales en   patrones   binarios (similar  al  formato  de información sobre la cual se  trabajará:  videos  de patrones binarios)
+Aborda  el  concepto  de vecindarios espacialmente heterogéneos: el conjunto de celdas adyacentes que afectan al estado de una celda no es uniforme, en términos de la influencia que  ejercen  las  celdas vecinas.   Estudia   los efectos de vecindad.
+
+
+
+
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+III. JUSTIFICACIÓN
+¿Qué hará el ser humano a continuación? Es una pregunta filosófica que el individuo difícilmente podrá contestar, incluso para su caso particular. Esto debido a la cantidad de acciones posibles que puede realizar (o abstenerse de) dependiendo de sus conocimientos, su contexto, experiencia previa, comportamiento, capacidades físicas, etc. Esto limitado a un solo ser. Ahora, sociólogos expertos nos han asignado del mote de ”animal social”, esto debido a nuestra inherente e inesquivable interacción con otros seres humanos. Por sí mismo estas variables intangibles pueden acomplejar a cualquier modelo que pretenda modelar al ser humano y su accionar. ¿Todos son iguales?
+En términos prácticos, el INEGI se encarga de recopilar la información de México, información sobre el comportamiento de los seres humanos y de sus condiciones, siendo parte de esta información los delitos ocurridos (delitos definidos por la ONU y la CNDH), no hay delito sin que existan (por lo menos) una víctima y un victimario, es decir debe haber una interacción (INEGI, 2023).
+En este sentido, entre los años 2022 y 2023, en su Encuesta Nacional de Victimización y Percepción sobre Seguridad Pública (ENVIPE), registró una tasa de 28,701 delitos por cada 100,000 habitantes, de esta tasa, destaca lo siguiente: si se agrupan los delitos:
+•  Robo o asalto en calle o transporte público – 19.8%
+•  Amenazas verbales – 10.3%
+•  Robo total o parcial del vehículo – 10.0%
+•  Otros delitos (secuestro o secuestro exprés, delitos sexuales) – 7.7%
+•  Robo en casa habitación – 5.9%
+•  Otros robos (robos distintos a los listados anteriormente y que no incluyen Fraude ni extorsión) – 4.7%
+•  Lesiones – 3.8%
+Si se agrupan, constituyen un 62.2% del total de los delitos. ¿Por qué se han destacado estos delitos? Todos ellos tienen en común una interacción humana directa, la cual puede ser captada en cámara y puede ser susceptible de ser modelada o clasificada como una anomalía en un comportamiento ordinario (personas transitando o interactuando en una calle). Si bien es cierto que no puede haber una cámara de
+
+
+
+
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+vigilancia que atestigüe la totalidad de los delitos, sí que se puede atacar a un buen porcentaje de estas situaciones, si se consigue predecir esta clase de comportamientos.
+Otras situaciones que se pueden modelar, y posteriormente predecir, son los accidentes viales relacionados con peatones.
+Aquí es inherente la necesidad de diseñar un autómata celular que pueda diseñar y actualizar sus propias reglas, para que no solo modele, sino que también prevenga. Esto permitirá que el propio sistema se adapte a las variaciones en el flujo peatonal, para predecir en el tan ansiado tiempo real. De esta forma, el presente trabajo busca abordar tal problemática, explorando distintos enfoques para el diseño y la evolución de reglas y vecindarios no conexos en autómatas celulares aplicados al modelado de tráfico peatonal (Clarke et al., 1997), (Hou et al., 2023).
+La forma de trabajar de estos modelos, basada en el tiempo discreto y la distribución de elementos supervisores, abre la posibilidad de simular el comportamiento de las interacciones peatonales a un nivel específico (cuadro por cuadro en una secuencia de video).
+Los resultados de un sistema así podrían tener una repercusión positiva e inmediata en sistemas de seguridad, con lo que se mejoraría la capacidad de reacción de los elementos de seguridad y contribuiría a la reducción de delitos (Ullah y Munir, 2023), (Ansari y Singh, 2021).
+En términos teóricos, a pesar de ser muy estudiados, generalmente los autómatas celulares se estudian a grandes escalas temporales (en estudios sobre la evolución de la mancha urbana, con imágenes con días e incluso años, de diferencia (He et al., 2023) o bien con reglas binarias (para el reconocimiento de patrones (de Menezes et al., 2013)); en lo que respecta al estudio del tráfico, este se suele centrar en el vehicular, principalmente para su aplicación en vehículos autónomos (Moutakki et al., 2023). Por lo que el modelado de peatones, que inherentemente se vería beneficiado tanto por reglas probabilísticas (es esencial no dar falsos positivos, como se aborda más adelante) como por vecindarios no conexos (las personas reaccionan a su entorno) es terreno poco explorado.
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+Siguiendo en el aspecto práctico: es crucial que el autómata celular no entregue falsos positivos: una persona con alguna condicional mental no necesariamente es una
+
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+potencial amenaza y tampoco tendrá un comportamiento dentro de lo considerado como típico; el detectar estos casos pueden conducir a un desvío (o desperdicio) de recursos humanos: poner a actuar elementos de seguridad contra un individuo que no resulte una amenaza puede llevar a la situación de abuso de autoridad o bien, al desenfoque de aquellos individuos que sí representan una amenaza.
+En lo que respecta a la construcción del autómata: uno de los principales problemas se presenta a la hora de recibir datos de entrada: ¿qué tipos de clasificadores serán los ideales para detectar únicamente seres humanos y su movimiento?, si se desea construir un autómata eficiente, este debe procesar la cantidad mínima de datos posible: se deben desechar elementos como las sombras, los reflejos, accesorios que sobresalgan del cuerpo; así como algunos otros seres vivos, en este sentido: es importante identificar las características particulares y esenciales que constituyen a un ser humano en un video de prueba: para abordar esta cuestión se utilizará una técnica conocida como modelo de fondo y un método de detección basado en diferencias.
+Sobre la teoría de autómatas celulares, es inherente que el principal conflicto será la definición automática de reglas, de modo que estas reproduzcan de forma realista los patrones de comportamiento de los transeúntes y su interacción, siendo así que se busque generar un modelo lo más fiel posible al flujo vehicular (Zeng et al., 2023).
+La definición de reglas debe contemplar y servir para describir el modelado del comportamiento de los peatones: que sean capaces de reflejar el cómo es que los seres humanos se mueven, se detienen, corren, se caen e incluso si se dan la vuelta o se mueven con apoyos ortopédicos (muletas, sillas de ruedas).
+Otro aspecto que deben tomar en cuenta las reglas es la interacción con otros peatones: que capturen con certeza la interacción entre ellos en situaciones como ir en grupo, acercarse a otros e interactuar, seguimiento a otras personas.
+Las reglas también deben considerar factores externos: la lluvia, la intersección, caminos  incompletos  o  en  reparación:  todos  los  elementos  que  afecten  el comportamiento del humano deben ser contemplados.
+En un principio se estipulan reglas de transición binarias, pero también se realizará un estudio con reglas probabilísticas, esto debido a que es más difícil clasificar comportamientos de carácter aparentemente impredecible como los cambios de decisiones de los humanos (He et al., 2018).
+
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Sin duda las reglas serán complejas y demasiado pormenorizadas, pues deben capturar el comportamiento más realista del tráfico, pero no deben dejar de lado el factor de que deben ser comprendidas por un autómata celular, de modo que este modelo pueda ejecutarlas de manera eficiente.
+Otro desafío incumbe a la interacción de vecindarios no conexos: ¿cómo saber qué es un vecindario para las células (seres humanos) y qué no lo es y con qué probabilidad puede dejar de serlo o volverse uno?, una célula (otro ser humano) no necesariamente podría estar dentro del vecindario de otra, aunque llegue un punto en el que se aproximen demasiado (una persona va más lento que otra, pero no van juntas, por ejemplo). Por otro lado, puede ser que una persona se quede detenida en una esquina porque distinguió a un conocido (ambas células comparten un vecindario no conexo). Por este motivo, los vecindarios no sólo serán de carácter no conexo, sino también de carácter dinámico (Liang et al., 2021).
+Solventando estos problemas se puede generar un autómata centrado en la generación y el manejo de vecindarios dinámicos, y dejar paso a la creación de un modelo más completo (uno que se pueda combinar con reglas dinámicas generadas por el autómata).
+
+V. COMITÉ DE BIOÉTICA
+En esta sección se presentan los pormenores relacionados con los participantes, voluntarios e involuntarios, en la realización del proyecto, en lo referente a las consideraciones éticas, en estas últimas se detallan las acciones en las que podrían participar los sujetos, así como en las previsiones que serán tomadas en cuenta.
+El resumen de este proyecto, en específico, en la parte en la que podría haber participantes es la siguiente: se busca modelar el tráfico peatonal de determinadas zonas de la Universidad Autónoma de Querétaro, esto con la finalidad de determinar anomalías como acciones de riesgo o accidentes; ante tal panorama sólo es posible que aparezcan seres vivos durante la etapa de recopilación de imágenes. Por tal motivo no serán utilizados en pruebas directas ni en grupos de control: entiéndase esto como que no se les indicará que serán partícipes de un experimento, para recopilar datos de la forma más natural posible.
+
+
+
+
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Participantes:
+Cabe destacar que, dada la naturaleza del proyecto, no se utilizarán seres vivos como sujetos de prueba para la realización del presente proyecto, en concreto, todas las  pruebas  se  realizarán  sobre  imágenes  reales  extraídas  de  cámaras  de videovigilancia dirigidas a peatones, sin ningún objetivo específico fuera de la recopilación de la presencia o ausencia de peatones, dejando fuera características específicas y privadas de estos como nombres, identidades, domicilio, género, edad, estatus social, siendo consideradas estas como información sensible.
+Consideraciones éticas:
+Este proyecto está compuesto por dos etapas, en lo que refiere a la participación de individuos: extracción de imágenes y procesamiento de estas. De este modo, la participación de las personas y seres vivos será de forma involuntaria y sin consentimiento previo, debido a que el objetivo es generar un modelo de tráfico natural, bajo estas condiciones de participación: no se indagará más allá de la presencia de un ser vivo como ausente o presente en la imagen; también se contará la cantidad de individuos que circulan por la calzada y varias condiciones como si se detienen, si avanzan o no, el tiempo que les toma salir de cuadro.
+Debido a la limitada participación de los sujetos, no se les solicitará ningún dato personal ni de ninguna índole. Toda la información será tratada bajo los siguientes puntos:
+•  Nadie ajeno a la investigación tendrá acceso a ninguna de las imágenes recopiladas que no sean presentadas en circunstancias como la defensa de tesis, la presentación del proyecto en coloquios, congresos y eventos académicos. Asimismo, toda información no utilizada será destruida sin darse a conocer a ninguna persona no involucrada en el proyecto.
+•  Toda la información presentada en los eventos del punto anterior será tratada con máximo respeto hacia los involucrados, esto es: se protegerá la identidad de los seres vivos que salgan a cuadro, cubriendo sus rostros y elementos distintivos; en este sentido, tampoco serán mostradas marcas comerciales en ninguna  circunstancia,  para  evitar  conflictos  de  intereses  que  puedan comprometer a los involucrados en el proyecto y/o a la Universidad Autónoma de Querétaro.
+
+
+14
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Nadie será obligado, ni siquiera los involucrados en el proyecto, a aparecer en las imágenes recopiladas, siendo decisión absolutamente voluntaria de quien tenga conocimiento del proyecto, si decide aparecer en alguna de las imágenes por decisión propia.
+•  No se hostigará, ni se vigilará a ningún ser vivo de forma deliberada y constante, considerando esto como una técnica éticamente cuestionable (dejando de lado cualquier conducta considerada como espionaje).
+El equipo con el que se recopilarán las imágenes del tráfico peatonal estará totalmente aislado eléctricamente para evitar daños a los investigadores u operadores; del mismo instrumento, también se resalta el hecho de que el tipo de cámara (cámara de videovigilancia común) no genera ningún perjuicio hacia ningún ser tipo, sin importar su condición médica.
+En lo referente al impacto medioambiental:
+•  Al utilizar equipos de cómputo, se garantiza que estos serán utilizados únicamente  con  los  accesorios  mínimos  indispensables,  en  periodos establecidos de tiempo, de modo tal que no se encuentren trabajando al 100% de sus capacidades durante las 24 horas del día.
+•  Se promete reutilizar cada uno de los equipos electrónicos (cámaras de videovigilancia, computadoras) en tanto su vida útil lo permita, además de que se estipula que sigan siendo funcionales para trabajos futuros, esto con el objetivo de reducir los desechos químicos, bioquímicos al mínimo.
+•  El reciclaje de elementos especiales como componentes electrónicos que concluyen su vida útil, baterías principalmente, se realizará en centros especializados y siguiendo las normas ambientales para asegurar una nula contaminación.
+
+VI. PLANTEAMIENTO TEÓRICO (Hipótesis y/o supuestos, pregunta, etc.) Preguntas de investigación:
+•  ¿Por qué un vecindario debe ser conexo?
+•  ¿Es conveniente limitar el estudio a reglas deterministas?
+•  ¿Los vecindarios no conexos permiten crear un modelo de tráfico peatonal con reglas probabilísticas?
+
+
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  ¿Cuánta carga computacional requiere el autómata celular para actualizar el modelo?
+•  ¿Cuáles tipos de vecindarios, aplicados de forma dinámica y no conexa, permiten una ejecución que consuma menos recursos computacionales?
+•  ¿Cómo se comporta un autómata celular con vecindarios predefinidos comparado con uno con vecindarios dinámicos y no conexos en lo referente a la precisión del modelado del tráfico?
+•  Extrapolando el tema de investigación, ¿qué nos dice un clasificador binario, para un autómata celular aplicado al modelado del tráfico, acerca del comportamiento humano?
+•  ¿Cuál será el límite, hablando en términos de distancia entre celdas, de los vecindarios?
+
+Hipótesis:
+Un autómata celular síncrono con células dispersas que haga uso de vecindarios no conexos, apoyado en reglas probabilísticas de forma que, mediante un clasificador binario, es capaz de modelar y predecir efectos del tráfico peatonal de una calzada universitaria con una afluencia promedio de 650 personas diarias, empleando cámaras de videovigilancia convencionales.
+
+VII. OBJETIVOS
+Los objetivos expresan las situaciones que se esperan resolver con la investigación.
+Objetivo general:
+Desarrollar un autómata celular compuesto por vecindarios dinámicos no conexos, reglas probabilísticas y clasificadores binarios para el modelado y predicción de tráfico peatonal.
+
+Objetivos específicos:
+•  Distinguir de entre los tipos de clasificadores binarios disponibles el más apropiado para la combinación con reglas probabilísticas en autómatas celulares, aplicados al modelado del tráfico peatonal.
+
+
+
+
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+•  Contrastar y seleccionar el tipo de reglas probabilísticas, de entre la literatura referente, el conjunto que mejor se adapte al modelado del comportamiento del flujo peatonal.
+•  Determinar los tipos de vecindarios más adecuados en lo referente a la exactitud del modelado del tráfico y al consumo de recursos computacionales, para ser incluidos en un único vecindario dinámico no conexo para modelar efectos a distancia.
+
+VIII. METODOLOGÍA
+En esta sección se presentan los recursos tanto materiales como humanos, además de un cronograma de actividades, como elementos de referencia para la realización del presente proyecto, el cual consiste en una investigación mixta, dado que evaluará aspectos cuantitativos en cuanto a rendimiento del autómata, como cualitativos en lo referente al ajuste del modelo en cuestiones humanitarias:
+Recursos humanos:
+•  Francisco Miguel García Herrera – estudiante responsable del proyecto.
+•  Dr. Hugo Jiménez Hernández – director del proyecto
+•  Dra. Ana Marcela Herrera Navarro – miembro del comité
+Recursos materiales:
+•  Computadora personal con las siguientes especificaciones:
+o Procesador: AMD Ryzen 7 4800H con Radeon Graphics a una velocidad de
+2.90 GHz
+o Tarjeta gráfica: NVIDIA GeForce RTX 2060
+o Memoria: 16 GB RAM
+o Disco Duro: 512GB
+o Sistema operativo: Windows 10 – 64bits
+•  Programa de cómputo ‘MATLAB’ u ‘Octave’
+•  Entorno de desarrollo integrado ‘CodeBlocks’
+•  Cámaras de videovigilancia
+Cronograma:
+Para el desarrollo de esta investigación se ha estimado una duración de 3 años. Como nota adicional: la mayoría de las actividades se desarrollarán en las instalaciones de la Universidad Autónoma de Querétaro. Cabe destacar que ya se está trabajando en
+
+
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+un artículo de clasificadores en colaboración con la facultad de Ingeniería de la propia Universidad Autónoma de Querétaro.
+Los a desarrollar se muestran a continuación:
+1. Revisar bibliografía y estado del arte sobre los autómatas celulares, centrando los esfuerzos  en  los  siguientes  campos:  clasificadores,  vecindarios,  reglas determinísticas.
+2. Revisar el estado del arte en lo referente al modelado del tráfico en general y en particular sobre el avance de autómatas celulares.
+3. Redactar y enviar a publicación el primer artículo de investigación, enfocado a clasificadores y algoritmos de optimización en procesamiento de imágenes (iniciado en el semestre enero-junio).
+4. Abordar pruebas de preprocesamiento de las imágenes de tráfico, esto con el fin de garantizar que las imágenes de entrada no consuman tantos recursos para que los clasificadores las identifiquen.
+5. Diseñar algoritmos de prueba enfocados en clasificadores binarios.
+6. Ejecutar pruebas exhaustivas del uso de los distintos tipos de clasificadores binarios sobre imágenes de videovigilancia que se utilizarán.
+7. Analizar el rendimiento de los clasificadores en las imágenes obtenidas.
+8. Solicitar retroalimentación de los asesores y, en su caso, volver al paso 5.
+9. Elaborar un algoritmo basado en el tipo de clasificador que mejor se adaptó al modelado de tráfico, en términos de eficiencia computacional e identificación de elementos (peatones).
+10. Optimizar el algoritmo del paso 9 y realizar nuevas pruebas.
+11. Presentar los resultados mediante la elaboración y publicación de un artículo o bien, en la presentación en un congreso internacional.
+12. Estudiar y definir las reglas determinísticas cuya adaptación sea enfocada al modelado de tráfico peatonal.
+13. Realizar un autómata celular combinando el mejor algoritmo encontrado en el paso 9 de clasificadores binarios con reglas determinísticas y vecindarios fijos.
+14. Evaluar el desempeño del autómata mediante videos de entrenamiento y de prueba.
+15. Presentar resultados preliminares a los asesores y obtener retroalimentación; en su debido caso, volver al paso 12.
+
+
+18
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+16. Redactar y publicar un trabajo en el que se aborde la conjunción del clasificador binario y las reglas determinísticas elegidas para el autómata.
+17. Realizar una revisión del estado del arte de los tipos de vecindarios dinámicos y dispersos en general y enfocados al modelado de tráfico peatonal.
+18. Diseñar vecindarios dinámicos y dispersos con base en los resultados reportados en la literatura.
+19. Realizar pruebas exhaustivas con los distintos tipos de vecindarios dinámicos.
+20. Analizar los resultados para seleccionar los tipos de vecindarios más adecuados para el modelado del tráfico peatonal.
+21. Redactar y publicar un artículo referente a los resultados de los vecindarios dinámicos y su aplicación en el modelado de fenómenos y la predicción.
+22. Obtener retroalimentación de los asesores sobre los resultados obtenidos en el paso 20 y, en su caso, volver al paso 18.
+23. Llevar a cabo la elaboración de un algoritmo capaz de generar cualquier tipo de vecindario dinámico (y de efectos a distancia), de entre la selección del paso 20.
+24. Elaborar un nuevo autómata celular, con el clasificador binario elegido en el paso 9 y con el algoritmo de vecindarios dinámicos del paso 22.
+25. Evaluar el rendimiento del autómata celular en imágenes de entrenamiento y validarlo mediante imágenes de prueba.
+26. Obtener retroalimentación de los asesores y, en su debido caso, rediseñar al autómata y volver al paso 18, de ser necesario.
+27. Optimizar el algoritmo de vecindarios dinámicos y ejecutar nuevas pruebas.
+28. Obtener retroalimentación de los asesores sobre el autómata celular y, en su debido caso, volver al paso 23.
+29. Validar el funcionamiento del autómata.
+30. Ejecutar pruebas para comprobar la capacidad de predicción del autómata.
+31. Obtener retroalimentación de los asesores y, en su caso, volver al paso 30.
+32. Presentación de los resultados definitivos a los asesores.
+33. Presentación del autómata en, por lo menos, un congreso.
+34. Redactar un artículo sobre el autómata celular generado.
+35. Realizar una comparativa con autómatas celulares basados en la generación automática de reglas.
+
+
+19
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+36. Plantear la elaboración, mediante un trabajo exploratorio, de un autómata celular robusto (que combine la generación automática de reglas con el uso de vecindarios dinámicos).
+37. Redacción de la tesis.
+El cronograma por semestres se muestra en los siguientes cuadros: Cuadro 1: actividades del semestre Ago-Dic 2023:
+
+Act.
+Agosto
+Septiembre
+Octubre
+Noviembre
+Diciembre
+
+1  X  X  X  X
+2  X  X  X  X
+3  X  X  X  X
+4      X  X
+5
+6
+7
+8
+9
+10
+37      X  X
+X X X
+X X X
+X X X
+X X X
+X X X
+
+
+
+
+
+X
+X X X
+X X X
+X X X X
+X X
+X
+
+
+
+
+X
+X X
+X X
+X X
+
+X X X
+X
+X X X
+X X
+
+
+X  X      X  X
+X X
+X X
+X X
+
+
+
+
+X  X  X  X
+X X X
+X X
+X X
+
+Cuadro 2: actividades del semestre Ene-Jun 2024:
+
+Act.
+Enero
+Febrero
+Marzo
+Abril
+Mayo
+Junio
+Julio
+
+1  X X
+2  X X
+11
+12
+13
+14
+15
+16
+17
+18
+37
+X X X
+X X X X
+
+
+
+
+
+
+
+X X
+X X   X
+X X   X
+X X X X
+X X X
+
+
+
+
+
+
+X X
+X X X
+X X
+X X X
+
+
+
+
+
+X X
+
+
+
+
+X
+X X X X
+X X X
+
+
+
+X X
+
+
+
+
+
+
+
+X
+X X X X
+
+X X
+
+
+
+
+
+
+
+
+
+X X X
+X X
+X  X     X  X
+
+Cuadro 3: actividades del semestre Ago-Dic 2024:
+
+Act.
+Agosto
+Septiembre
+Octubre
+Noviembre
+Diciembre
+
+1      X
+2      X
+19  X  X  X
+20      X
+21
+X      X  X
+X      X  X
+X
+X X X
+X  X  X  X
+X  X      X  X  X  X
+X  X      X  X  X  X
+
+
+20
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+22
+23
+24
+25
+37      X  X
+X X X
+
+
+
+X X
+X
+X X
+X  X  X  X
+X X X
+X  X      X  X  X  X
+
+Cuadro 4: actividades del semestre Ene-Jun 2025:
+
+Act.
+Enero
+Febrero
+Marzo
+Abril
+Mayo
+Junio
+Julio
+
+1  X
+2  X
+25  X
+26
+27
+28
+29
+37
+X X X X
+X X X X
+X X X
+X X X
+
+
+
+X X
+X  X   X  X
+X  X   X  X
+X
+X X X
+X X X X
+X X
+
+X  X     X  X
+
+
+X X X
+X X X
+
+
+
+X X
+
+
+
+X X X
+X X X
+
+
+X X
+
+
+
+
+X
+X X
+X X X X
+X  X     X  X
+
+Cuadro 5: actividades del semestre Ago-Dic 2025:
+
+Act.
+Agosto
+Septiembre
+Octubre
+Noviembre
+Diciembre
+
+1      X
+2      X
+30  X  X  X
+31      X
+32
+37      X
+X X X
+X X X X
+X X
+X X
+
+X X
+X  X  X  X
+X X
+X X
+X X
+X X X X
+
+X X
+X  X  X  X
+X  X  X  X
+X
+X  X  X  X  X
+
+X  X  X  X
+Cuadro 6: actividades del semestre Ene-Jun 2026:
+
+Act.
+Enero
+Febrero
+Marzo
+Abril
+Mayo
+Junio
+Julio
+
+1  X
+2  X
+33  X
+34
+35
+36
+37  X
+X X X X
+X X X X
+X X X X
+
+
+
+X X X X
+X X   X
+X X   X
+X X X
+X
+
+
+X X X X
+X     X
+X     X
+X X X
+X
+
+X X
+X X X X
+X     X
+X     X
+X
+X X
+X X
+X X X X
+X X
+
+
+X X X X
+X X X X
+X X X X
+
+
+
+
+X X X
+X X X X
+X X X X
+
+
+
+
+
+X X X
+X X X
+Como nota adicional: cada bloque en cada mes equivale a una semana.
+
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO
+En este apartado se desglosan los siguientes impactos del proyecto: científico, tecnológico, social, económico; también se comenta sobre los resultados esperados además de los productos.
+
+21
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+X.1.-Impacto científico
+El estudio del autómata celular se centrará en los efectos de vecindarios no conexos y reglas probabilísticas para ver la viabilidad de que, en un futuro, se abran las vías de estudio de autómatas celulares que no dependan de reglas binarias, al modelar comportamiento humano.
+X.2.-Impacto tecnológico
+Una de las directrices de este proyecto, en términos prácticos, es la de optimizar el uso de recursos computacionales, de modo que el modelo sea escalable y adaptable a diversos equipos de cómputo, con distintas capacidades de procesamiento.
+X.3.-Impacto social
+Generar un autómata capaz de modelar y predecir el comportamiento humano puede ser aplicado como una herramienta de seguridad que ayude a lidiar con anomalías: riñas, colapsos, presuntos delitos, de modo que el personal de seguridad se pueda coordinar y actuar con mayor rapidez.
+X.4.-Impacto económico
+Al trabajar pensando en la optimización de recursos computacionales y con mínima detección de falsos positivos posible, puede hacer de este estudio uno que sea fácil de abordar para futuros investigadores, sin necesidad de contar con un equipo de prestaciones altas, además de presentar una portabilidad a sistemas más modestos como los de videovigilancia. Por lo que la parte económica no sería un detrimento para experimentar y aplicar.
+X.5.-Resultados esperados
+•  En lo referente al prototipo: generar un modelo funcional, escalable y preparado para futuras pruebas, estudios y modificaciones. Estableciendo las bases para un diseño potencialmente comercializable.
+•  En lo referente a la investigación: sentar un precedente de carácter orientativo, sobre el tipo de vecindarios (de tipo no conexo) más adecuados para el modelado y la predicción de comportamiento humano.
+•  En lo referente a la metodología: se pretende crear una base de datos, consistentes en videos ya clasificados, para posteriores estudios. Así como una estructura básica para la generación de nuevos modelos de autómatas celulares.
+
+
+
+
+22
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+X.6.-Productos esperados:
+•  Modelo de autómata celular.
+•  Al menos dos artículos JCR; revistas propuestas (cuartiles actualizados al 2023, basados en las calificaciones de Scopus):
+o Revista: Genetic Programming and Evolvable Machines Editor: Springer Nature Cuartiles: Teoría de Ciencias de la Computación – Q1; Aplicaciones de Ciencias de la Computación – Q2
+o Revista: Evolving Systems Editor: Springer Nature Cuartiles: Aplicaciones de Ciencias de la Computación – Q2; Modelado y simulación – Q1
+o Revista: Journal of Statistical Mechanics: Theory and Experiment Editor: Institute of Physics Publishing Cuartiles: Probabilidad, Estadística e incertidumbre – Q1
+o Revista:  IEEE  Transactions  on  Cybernetics  Editor:  IEEE  Cuartiles: Aplicaciones de Ciencias de la Computación – Q1; Interacción Humano-Computadora – Q1
+Los temas propuestos son:
+o Estudio del rendimiento de autómatas celulares en el modelado de tráfico peatonal.
+o Comparativa de reglas determinísticas y reglas probabilísticas
+o Clasificadores binarios para la detección de seres humanos
+o Comparativa de los vecindarios no conexos y vecindarios tradicionales.
+•  Tesis de grado en tiempo y forma.
+
+
+X. INDICE TENTATIVO DE LA TESIS
+Dedicatorias.
+Agradecimientos.
+Índice.
+Índice de Figuras Índice de Tablas Abreviaturas y siglas Resumen en español Abstract.
+I. Introducción
+
+
+
+23
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+I.I. Organización de la tesis
+I.II. Contexto del autómata celular en el modelado de tráfico
+II. Antecedentes
+II.I. Trabajos previos sobre clasificadores binarios aplicados en autómatas celulares
+II.II. Trabajos previos sobre reglas probabilísticas en autómatas celulares II.III.Trabajos previos sobre vecindarios no conexos en autómatas celulares
+II.IV.   Estado del arte sobre autómatas celulares aplicados a modelado de tráfico peatonal
+III. Fundamentación teórica
+III.I. Constitución del autómata celular
+III.I.1. Concepto de una malla
+III.I.2. Concepto de vecindario
+III.I.2.1.  Tipos de vecindarios III.I.2.1.1.   Vecindarios conexos
+III.I.2.1.2.  Vecindarios no conexos
+III.I.3. Concepto de reglas de transición
+III.I.3.1.  Reglas probabilísticas
+III.I.3.2.  Reglas determinísticas
+III.I.4. Concepto de clasificadores binarios III.II.Conceptos de procesamiento de imágenes
+III.II.1. Composición de una imagen
+III.II.2. Métodos de clasificación de objetos
+III.II.3. Métodos para detección de movimiento III.II.3.1.  Modelo de fondo
+III.II.3.2. Método de diferencias
+IV. Hipótesis o supuestos
+V. Objetivos
+V.I. Objetivo general
+V.II. Objetivos específicos
+V.III.   Alcance
+VI. Materiales y métodos
+VI.I. Recursos materiales
+VI.II.   Consideraciones éticas
+
+24
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+VI.III.   Algoritmos de clasificación
+VI.III.1.    Detección de movimiento
+VI.III.2.    Detección de seres humanos
+VI.IV.   Desglose de reglas de transición propuestas
+VI.IV.1.   Reglas determinísticas
+VI.IV.2.   Reglas probabilísticas
+VI.V.   Propuestas de vecindarios no conexos
+VII. Resultados y discusión
+VII.I.   Algoritmos de clasificación y detección de movimiento
+VII.II.   Reglas de transición
+VII.II.1.    Comparativa entre reglas determinísticas y probabilísticas
+VII.III.  Vecindarios
+VII.III.1.   Comparativa entre vecindarios conexos y no conexos
+VII.IV.  Complejidad computacional
+VII.V.   Rendimiento del autómata
+VII.VI.  Discusiones
+VIII.  Conclusiones
+VIII.I.   Conclusiones generales
+VIII.II.  Trabajo futuro
+IX. Bibliografía
+X. Anexos
+
+
+XI. REFERENCIAS BIBLIOGRÁFICAS
+Ansari, M. A., y Singh, D. K. (2021). Human detection techniques for real time surveillance: a comprehensive survey. Multimedia Tools and Applications, 8759-8808.
+Clarke, K. C., Hoppen, S., y Hoppen, S. (1997). A self-modifying cellular automaton model of historical urbanization in the San Francisco Bay area. Environment and Planning B: Planning and Design, 247-261.
+Conway, J. H. (1970). Juego de la Vida.
+de Menezes, M. A., Brigatti, E., y Schwämmle, V. (2013). Evolving cellular automata for diversity generation and pattern recognition: deterministic versus random strategy. Journal of Statistical Mechanics: Theory and Experiment, P08006.
+
+
+
+
+25
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Flores Cortés, S. V. (2012). Modelado de reproducción e invasión de neoplasias malignas usando autómatas celulares (Tesis de maestría). Ciudad de México: Instituto Politécnico Nacional.
+Gani, G., y Qadir, F. (2021). A novel method for digital image copy-move forgery detection and localization using evolving cellular automata and local binary patterns. Evolving Systems, 503-517.
+García Baños, Á. d. (2019). Herramientas para construir mundos. Vida artificial I.
+Universidad del Valle.
+Garcia-Garcia, B., Bouwmans, T., y Rosales Silva, A. J. (2020). Background subtraction in real applications: Challenges, current models and future directions. Computer Science Review, 100204.
+He, J., Li, X., Yao, Y., Hong, Y., & Jinbao, Z. (2018). Mining transition rules of cellular automata for simulating urban expansion by using the deep learning techniques. International Journal of Geographical Information Science, 2076-2097.
+He, S., Ma, S., Zhang, B., Li, G., y Yang, Z. (2023). Early Warning of the Carbon- Neutral Pressure Caused by Urban Agglomeration Growth: Evidence from an Urban Network-Based Cellular Automata Model in the Greater Bay Area. Remote Sensing.
+Hou, B., Liu, Y., Ling, N., Ren, Y., y Liu, L. (2023). A Survey of Efficient Deep Learning Models for Moving Object Segmentation. APSIPA Transactions on Signal and Information Processing.
+Ilachinski, A. (2001). Cellular Automata: A Discrete Universe. World Scientific Publishing Company.
+INEGI, I. N. (11 de Septiembre de 2023). Encuesta Nacional de Victimización y Percepción sobre Seguridad Pública (ENVIPE) 2023. Instituto Nacional de Estadística y Geografía: https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2023/ENVIPE/ ENVIPE_23.pdf
+Liang, X., Guan, Q., Clarke, K. C., Chen, G., Guo, S., & Yao, Y. (2021). Mixed-cell cellular automata: A new approach for simulating the spatio-temporal dynamics of mixed land use structures. Landscape and Urban Planning, 103960.
+Moutakki, Z., Ouloul, I. M., Amghar, A., Motahhir, S., y Afdel, K. (2023). Embedded and real time vehicle classification system with occlusion handling.
+Multimedia Tools and Applications, 24407-24423.
+Ullah, H., y Munir, A. (2023). Human Activity Recognition Using Cascaded Dual Attention CNN and Bi-Directional GRU Framework. Journal of Imaging.
+Wolfram, S. (1994). Cellular Automata and Complexity. Champaign: Westview Press.
+Wolfram, S. (2019). A New Kind of Science. Champaign: Wolfram Media Inc.
+Zeng, H., Zhang, B., y Wang, H. (2023). A hybrid modeling approach considering spatial heterogeneity and nonlinearity to discover the transition rules of urban cellular automata models. Environment and Planning B: Urban Analytics and City Science.
+
+26
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Zhai, S., Feng, Y., Yan, X., Wei, Y., Wang, R., & Li, P. (2023). Using spatial heterogeneity to strengthen the neighbourhood effects of urban growth simulation models. Journal of Spatial Science, 319-337.
+
+
+
+
+
+Firma del alumno
+
+
+
+Nivel de revisión: 02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27

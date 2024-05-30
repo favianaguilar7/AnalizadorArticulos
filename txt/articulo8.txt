@@ -1,0 +1,724 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Universidad Autónoma de Querétaro
+Facultad de Informática
+C.U. a 17 de enero de 2023
+MAESTRÍA EN CIENCIAS DE LACOMPUTACIÓN
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+
+Nombre del Alumno: Diana Carmen Rodriguez Lira
+
+No. de Expediente: 317969
+
+No. CVU: 1203626
+
+Correo electrónico: diana.rodli.c@gmail.com
+
+Teléfono: 4424534612
+
+
+
+Línea de investigación sobre la cual se desarrollará el trabajo: inteligencia artificial
+
+Responsable de la Asesoría: Dr. Jorge Domingo Mendiola Santibáñez Programas educativos que apoya: Posgrado de la facultad de informática Línea de investigación del responsable: Procesamiento de imágenes Firma de aceptación:
+
+
+
+
+Dr. Jorge Domingo Mendiola Santibáñez
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+Número de veces que sea sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez ( x )   2da. (  )   Más de 2 veces (  )
+Semestre o Cuatrimestre actual del alumno: primer semestre Fecha de Ingreso al programa: agosto 2022
+
+I.  DATOS GENERALES
+•  Título del proyecto.
+Uso de Machine learning para predicción de trastorno del espectro autista
+•  Nombre del alumno responsable. Diana Carmen Rodríguez Lira
+•  Colaboradores (director y/o Codirector)
+Director: Dr. Jorge Domingo Mendiola Santibáñez Codirector:
+•  Centro o lugar donde se realiza investigación
+Universidad Autónoma de Querétaro, Facultad de informática, Av. de las Ciencias s/n, Campus Juriquilla, Juriquilla, Querétaro, Qro. C.P. 76230 México
+•  Tipo de investigación básica, aplicada o tecnológica (diseño, construcción de prototipo o prueba experimental).
+Científica aplicada y tecnológica
+
+•  Línea de investigación sobre la cual se desarrollará el trabajo Inteligencia artificial
+
+
+II.  ANTECEDENTES Y/O FUNDAMENTACIÓN TEÓRICA
+II.1.Introducción.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+A partir de la obtención del diagnóstico del trastorno del espectro autista (TEA), “acomodaciones” pueden ser diseñadas con el fin de proveer un mejor desarrollo y mejorar la calidad de vida de la persona y su núcleo coexistente, mediante intervenciones específicas para contribuir la minimización de lesiones y barreras sociales. Por lo que se puede inferir que un diagnóstico lo más temprano posible es extremamente relevante para un “tratamiento” efectivo.
+Hoy en día, existe un instrumento que es ampliamente aceptado y se encuentra referenciado en el Manual de Diagnóstico y Estadístico de Trastornos Mentales (DSM por sus siglas en inglés) (IJI, D. ,1983), que presenta una clasificación nueva con cuatro elementos dispuestos los cuales son: déficit en la comunicación, déficit en la interacción social, déficit en el patrón de comportamiento y por ultimo déficit en actividades e interés restrictivos y repetitivos, los cuales siguen las ponderaciones de la asociación Americana de psiquiatría (American Psychiatric Association (2022). Para ubicar en el espectro y distinguir los niveles de magnitud de los síntomas de dicha condición para los cuales existen diferentes niveles de preocupación.
+Se advierte que entre más temprano se realiza un diagnóstico, más se podrán ampliar las capacidades de las intervenciones, lo que por consecuencia proporcionaría un tratamiento eficaz y por lo tanto se verían reflejados impactos positivos.
+Almeida Marina S. R. (2018). menciona que dicho criterio se basa en un conjunto de características las cuales pueden ser consideradas negativas, por lo que generalmente se dejan de lado las positivas, es por este motivo que es de suma importancia que el profesional vaya un poco más allá que solo la búsqueda de “déficits” sino que también deben ser resaltadas las habilidades y fortalezas de personas con autismo, encontrando medios por los cuales el éxito en entornos naturales puede ser alcanzado evitando de esta manera lenguajes que etiquetan el TEA como un defecto que requiere ser corregido.
+Es claro que aún quedan aspectos por cubrir para lograr conciliar un diagnóstico precoz y un tratamiento adecuado. También es evidente que un retraso en el diagnóstico del TEA imposibilita el inicio temprano de un tratamiento, lo que conllevaría una mejor calidad de vida de los niños y su núcleo de convivencia, mayor autonomía en su vida diaria y la minimización de lesiones y barreras sociales. El aumento en el número de diagnósticos y
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+abordajes sobre el tema puede estar contribuyendo a romper un paradigma en cuanto al concepto y pronóstico de los TEA, por lo que hay más aceptación, respeto y socialización por parte de otros individuos en la comunidad. Por lo tanto, el diagnóstico precoz para un tratamiento eficaz sigue siendo un desafío y debe explorarse cada vez más con el fin de concienciar a las familias sobre la importancia de detectar signos que puedan inferir sobre una posible condición de autismo, de modo que cuanto más precoz sea la búsqueda de tratamiento, mayores son las posibilidades de que este individuo se adapte y se desarrolle satisfactoriamente, mostrando sus características positivas y mejorando aspectos modificables.
+Entre las causas más relevantes que dificultan un diagnóstico temprano se encuentran la falta de profesionales con dominio en el tema, la falta de una herramienta diagnóstica estándar. Existen varios métodos que evalúan al paciente y pueden sugerir el diagnóstico, pero corresponde al profesional asimilar las características clínicas del paciente, los relatos de la familia y los resultados de las pruebas y cuestionarios aplicados para asignar un diagnóstico más confiable.
+Es aquí donde el machine learning resulta sumamente atractivo para proveer asistencia al diagnóstico y clasificación del TEA ya que se ha comprobado su utilidad y versatilidad en el campo de la medicina, tal y como se muestra a continuación.
+
+II.2.Usos del machine learning en la medicina.
+
+Desde el 2018 al 2021 existen trabajos relacionados con enfermedades como :Shailaja, et al.,(2018)  quien menciona su uso en la rectificación de diagnósticos para detección de enfermedades del corazón, análisis de tipos de diabetes, cáncer de mama y problemas de la tiroides, es por esto que debido a la naturaleza compleja de las enfermedades y trastornos mentales; (Dwyer et al., 2018) que lo utiliza para diagnósticos de la enfermedad de Alzheimer, depresión y esquizofrenia, pero en años recientes se ha abierto el espectro incluyendo, desórdenes de ansiedad, anorexia, abuso de sustancias y fobias especificas; Fredo (2018) logra diagnosticar trastorno del espectro autista al analizar imágenes de resonancia magnética, el cual presentó un 65% de precisión; Xiaowei Li et al., (2019) habla sobre el uso de métodos de deep
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+learning para el reconocimiento de depresión usando imágenes de encefalografías, el cual obtuvo una precisión del 84.75%; Sadeh‐Sharvit et al., (2020) presentan una precisión de 52.6% al utilizar random forest aplicado a la actividad de internet de los participantes para predecir trastornos alimenticios; por ultimo Shah, D. et al., (2020) y Katarya, et al., (2021) muestran el beneficio del uso del algoritmo random forest para predecir enfermedades del corazón, mostrando una precisión de 97% y 95.60% respectivamente. En 2022 Ahsan, M. M., & Siddique,
+Z. (2022) presentaron una revisión sistemática de la literatura de diagnóstico de enfermedades cardiacas basado e machine learning. Mas recientemente S., Abduljabbar, H. N., & Alhayani, B. (2023). Analizaron casos de coronavirus (COVID-19) usando aplicaciones de machine learning que pueden ser de ayuda en la evaluación y clasificación de pacientes en los hospitales. A continuación, se muestra en la tabla 1 un resumen de esta información.
+Tabla 1
+Usos del machine learning en la medicina.
+
+
+AUTOR       Año                  Uso                 Precisión
+Rectificación de diagnósticos para detección de
+
+Shailaja, et al.,
+(2018)
+2018
+enfermedades del corazón, análisis de tipos de       NA
+diabetes, cáncer de mama y problemas de la tiroides
+
+
+Dwyer et al., (2018)
+
+2018
+Diagnósticos de desórdenes de ansiedad, anorexia,
+NA
+abuso de sustancias y fobias específicas
+
+
+Fredo (2018)
+Xiaowei Li et al.,
+2018   Diagnosticar trastorno del espectro autista         65%
+
+(2019)
+Shah, D. et al.,
+2019
+reconocimiento de depresión
+84.75%
+
+(2020)
+Shah, D. et al., (2020)
+2020   predecir trastornos alimenticios              52.60%
+
+2020   predecir enfermedades del corazón             97%
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+Katarya, et al., (2021)
+Ahsan, M et al. (2022)
+Kwekha-Rashid, A et al, (2023).
+2021   predecir enfermedades del corazón            95.60%
+
+2022   Diagnóstico de enfermedades cardiacas           NA
+
+
+2023   Análisis de casos de COVID-19 (pruebas de testeo)    92.9%
+
+Fuente: Autoría propia.
+
+II.3.El machine learning en el diagnostico de TEA.
+
+Otro de las posibles aplicaciones del machine learning en la medicina es apoyo en el diag- nostico de TEA, diversos autores han hecho uso de diversos tipos de datos para clasificar y/o identificar la presencia de TEA, tal es el caso de Bi et al (2018), que utiliza imágenes de resonancia magnética y aplica el algoritmo de support vector machine (con cluster aleatorio) para identificar la presencia de TEA, menciona que el precúneo, hipocampo y la corteza cin- gulada son las regiones donde se dan las principales diferencias entre cerebros que presentan o no el TEA, la máxima precisión alcanzada fue de 96.15% al utilizar 500 optimizadores básicos, y entrenando al algoritmo con 272 características optimas.
+
+Wang et al. (2020) realiza una clasificación basada en conectividad funcional al hacer una eliminación de características recursiva mediante el uso del algoritmo support vector ma- chine, la mayoría de estas características seleccionadas siendo el núcleo caudado, el opérculo parietal, la circunvolución frontal superior, la circunvolución prerolándica, la corteza cingu- lada y cingulada anterior. Las características se extrajeron de 531 sujetos (255 con TEA y 276 de control) obtenidas de 10 diferentes sitios de base de datos, el uso del algoritmo de clasificación propuesto logró identificar los dos grupos con una precisión del 90,60% (sensi- bilidad 90,62%, especificidad 90,58%) el cual proviene de 148 características seleccionadas por imágenes de resonancia magnética y el uso de support vector machine con una validación cruzada estratificada de 4 pliegues.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Por otro lado, Kong et al. (2019), utiliza una red neuronal profunda con dos codificadores automáticos dispersos y una capar softmax para formar el clasificador, entrenado con un set el cual se compone de 182 sujetos (78 con TEA y 104 de control) el uso de su propuesta de algoritmo mostro un 90% de precisión en la asistencia de una estrategia de clasificación de presencia de TEA.
+
+Yamagata et al. (2018) centra su estudio en las diferencias entre hermanos diagnosticados es decir que presentan el endofenotipo y hermanos que no lo presentan, por medio del análisis de imagen de resonancia magnética funcional en estado de reposo, el uso del algoritmo LASSO (Contracción mínima absoluta y operador de selección por sus siglas en ingles), lo- gró una precisión de 75% en la clasificación de lo antes mencionado.
+
+Heinsfeld et al. (2018) procesa 1035 sujetos (505 sujetos con TEA y 530 de control) en una red neuronal profunda la cuál logro una precisión de clasificación media del 70% (sensibili- dad de 74% y especificidad de 63%) de pliegues de validación cruzada y una gama de preci- sión del 66% a 71% en pliegues individuales.
+
+Zhang et al. (2018) analiza imágenes de resonancia magnética de difusión f en un set de 149 individuos (70 niños con TEA y 79 que no lo presentan) y mediante el uso de deep learning y support vector machine, en el estudio de validación cruzada se logra una precisión de cla- sificación del 78.33%.
+Goel et al. (2020) hace uso del MGOA (algoritmo de optimización de saltamontes modifi- cado por sus siglas en inglés) en un conjunto de datos pequeño (no se menciona el tamaño exacto de la población) de prueba de TEA y el análisis de 21 atributos, para detectar la pre- sencia de TEA en todas las etapas de la vida, con una precisión de 100% en niños y adoles- centes, y de 99.29% en adultos.
+
+Shahamiri y Thabtah (2020) utilizan una red neuronal convolucional presento una precisión de prueba promedio de 97.95% con una sensibilidad media del 95.53% y una especificidad de 98.63% siendo aplicado a un conjunto de datos de prueba de TEA que incluía un total de
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+6075 muestras en las que 4556 Se utilizaron muestras aleatorias durante el entrenamiento y 1519 para la prueba en cada pliegue. Los datos contenían 42% de sujetos femeninos de los cuales el 31% fueron identificados con TEA. Asimismo, el 30% de los participantes mascu- linos fueron identificados con TEA. de 1045 sujetos con ictericia, el 29% de ellos eran par- ticipantes con TEA también. Hubo un 81% de los participantes sin antecedentes familiares con TEA, de los cuales el 31% presentaban TEA, mientras que sólo el 25% de los sujetos con antecedentes familiares de TEA fueron clasificados como TEA. En general, el 69% de los participantes fueron etiquetados sin rasgos de TEA detectados y31% de lo contrario.
+
+En solitario Thabtah (2019) aplica regresión logística y naive bayes en un dataset con las siguientes características; La edad promedio en años de niños, adolescentes y adultos en los tres subconjuntos con base en los métodos utilizados son 6.3, 14.1 y 29.7 años, respectiva- mente, existen más instancias masculinas que femeninas, dichas son 1100 instancias totales (625 y 475 respectivamente), las principales etnias que participaron en los datos la colección fueron caucásicos-europeos, asiáticos, del medio oriente, del sur de Asia y africanos/afro- americanos con 381, 185, 128 y 65 respectivamente. En los tres subconjuntos de datos, había 707 y 393 instancias vinculadas con las etiquetas de clase “Rasgo TEA” y “Sin rasgo TEA”. La mayoría de las pruebas en adultos fueran tomados por los propios individuos, mientras que muchas pruebas para niños han sido tomadas por padres, profesores o cuidadores. Entre los casos reunidos, hay hubo 194 casos con familiares diagnosticados con TEA y 165 casos de personas nacidas con ictericia. Finalmente, faltaron algunos valores en variables como la etnia y quién se hace la prueba. El algoritmo de regresión logística mostró mejores resultados en las tres categorías niños, adolescentes y adultos con 97.94%, 94.23% y 99.85% respecti- vamente.
+
+Un papper de Pratama et al. (2019) compara los algoritmos support vector machine y random forest, en un conjunto de datos que consta de 3 conjuntos de datos de detención de TEA relacionados con la edad, desde niños hasta adultos, el número de instancias contenido en los tres conjuntos de datos es el siguiente: 292,104 y 704 respetivamente, Los resultados de la evaluación utilizando una validación cruzada de n=10, mostraron que random forest logró
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+producir mayor sensibilidad en adultos, que fue del 87,89%. El aumento del nivel de especi- ficidad de AQ-Adolescentes se produce mejor utilizando un support vector machine de 86,33%.
+Baadel et al. (2020) muestra en su estudio la aplicación de distintos algoritmos mejorando significativamente la precisión lo que se puede atribuir al hecho de reducir la dimensionali- dad de los datos al eliminar la redundancia en el conjunto de datos, con lo que además se disminuye la tasa de error, el algoritmo que mostró mejor precisión en todas sus 3 datasets (niños, adolescentes y adultos) fue la red neuronal con 98% 97.8% y 98% respectivamente.
+
+Akter et al. (2019) por su parte compara múltiples algoritmos al ser aplicados en un conjunto de datos de los siguientes tamaños niños pequeños (n=1054), niños (N=248), adolescentes (N=98) y adultos (N=609). Los conjuntos de datos representan 319 (30,26%) niñas pequeñas y 735 (69,73%) niños pequeños, 74 (29,83%) niñas y 174 (70,16%) niños, 49 (50%) adoles-
+centes femeninas y 49 (50%) adolescentes masculinos, 288 (47,29%) adultas femeninas y
+321 (52,70%) adultos masculinos, y obtienen una precisión de 97.8%, 94.23%, 99.85% con el uso de adaboost (Adaptive Boosting) glmboost (gradient boosting) y adaboost para niños, adolescentes y adultos respectivamente.
+
+Achenie et al. (2019) aplica su técnica en una tabla de datos de 14,995 infantes de edades entre 16-30 meses de los cuales 46.51% son hombres, para la muestra total, los mejores re- sultados arrojaron un 99.72% de clasificación correcta utilizando 18 elementos. Los mejores resultados arrojaron una clasificación correcta del 99.92% con 14 elementos para los niños pequeños blancos y una clasificación correcta del 99.79% con 18 elementos para los niños pequeños negros. en los niños, los mejores resultados arrojaron 99.64% de clasificación co- rrecta usando 18 elementos, mientras que los mejores resultados arrojaron 99.95% correctos usando 18 elementos en las niñas. Para el caso en que la educación materna es de 15 años o menos, los mejores resultados fueron 99.75% de clasificación correcta al utilizar 16 elemen- tos. Los resultados fueron esencialmente los mismos cuando la educación materna era de 16 años o más, es decir, se obtuvo una clasificación correcta del 99.7% utilizando 16 elementos.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Vaishali y Sasikala. (2018) aplica el algoritmo binario de luciérnaga en un dataset de 292 muestras de niños, de los cuales 151 pertenecientes a la clase “si” y 141 pertenecientes a la clase “no”, y la presencia de 21 atributos para su clasificación, y se encontró que 10 caracte- rísticas entre 21 características del conjunto de datos ASD son suficientes para distinguir
+
+
+
+entre pacientes con TEA y sin TEA, los resultados producen un promedio de precisión en el rango de 92.12%-97.95%.
+
+En cuanto a Puerto et al. (2019) usa un conjunto de datos con 40 casos diagnosticados, de los cuales 20 de 23 casos fueron diagnosticados como Autismo definitivo (DA), 10 de 13 como autismo probable (PA), y 3/4 como sin autismo (NA). Utilizando el MFCM, obtiene los si- guientes resultados: 23 de 23, 11 de 13 y 3/4, lo que da una tasa de precisión del 92,5 %, que es superior en comparación con el 82,5% de precisión sin embargo el algoritmo naive bayes muestra una precisión de 86.5%.
+
+A diferencia de Wingfield et al (2020) quien en su artículo menciona el desempeño de ran- dom forest quien presenta una precisión de 96% aplicado a un dataset de 86 sujetos de control de edad media de 2.6 años entre los que se encuentran 76 hombres y 10 mujeres, y 195 sujetos que presenta TEA con edades medias de 3 años entre los que se encuentran 156 hombres y 39 mujeres.
+Por su parte Washington, P et al (2021) evalúa videos caseros y logra un 88% de precisión para ayudar a la detección rápida y móvil de detección automática con machine learning de retrasos en el desarrollo de los niños esto mediante le uso de dos clasificadores de regresión logística.
+
+La tabla 2 enuncia diversos autores que han utilizado métodos de machine learning para complementar el diagnostico de TEA.
+
+
+Tabla 2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Recopilación de método de mayor rendimiento de acuerdo con el autor.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+Autor(es)
+
+Tipo de dato utilizado
+Algoritmo o método utilizado
+
+Objetivo predictivo
+
+Precisión
+Observaciones/ limitaciones
+
+
+
+
+
+
+Bi et al (2018)     RMf-ER        SVM      TEA/CT    96.15%
+El clúster SVM basado en una sola característica modal. Toma en cuenta solo características cerebrales.
+
+
+
+
+
+Wang et al. (2020)
+
+
+RMf-ER        SVM      TEA/CT    90.60%
+Heterogeneidad descontrolada.
+Solo toma el indicador de conectividad funcional (CF) MRI.
+
+
+Kong et al. (2019)
+
+IRM-t1
+Red neuronal profunda
+
+TEA/CT   90%
+No menciona ninguna
+
+
+
+Zhang et al. (2018)
+
+IRM         SVM      TEA/DT    78%
+El método no puede eliminar errores de tractografía aparentes.
+
+
+Yamagata et al. (2018)
+
+IRMf-ER       LASSO      TEA/DT    75%
+No asocia endofenotipos, sugiere
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+que CF se asocia a TEA
+
+
+
+Heinsfeld et al. (2018)
+
+
+IRMf-ER     Deep learning    TEA/CT    70%
+La clasificación de datos de IMf queda corta a estándares de biomarcadores
+
+
+
+Goel et al. (2020)
+test de TEA: niños test de TEA: adolescentes
+
+
+MGOA
+TEA/no-TEA  100%
+
+TEA/no-TEA  100%
+
+Probado en dataset
+pequeño.
+test de TEA: adultos            TEA/no-TEA  99.29%
+
+
+
+Shahamiri y Thabtah (2020)
+
+test de TEA
+
+Red neuronal convolucional
+
+TEA/no-TEA  97.95%
+No toma en cuenta endofenotipos
+
+
+
+Thabtah (2019)
+test de TEA: niños test de TEA: adolescentes
+
+Regresión lógistica
+
+
+TEA/no-TEA
+97.94%  Clases desbalanceadas
+
+94.23%
+test de TEA: adultos                     99.85%
+
+
+
+
+
+Pratama et al. (2019)
+test de TEA: niños     SVM     TEA/no-TEA  91.85%
+test de TEA:
+SVM    TEA/no-TEA  86.33%
+adolescentes
+test de TEA: adultos   Red neuronal   TEA/no-TEA  87.89%
+
+
+test de TEA: niños   Red neuronal   TEA/no-TEA   98%
+
+Rendimiento de la clasificación aún puede mejorar
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+Baadel et al. (2020)
+test de TEA: adolescentes
+
+TEA/no-TEA  97.80%
+Los datasets son
+pequeños y el de adultos esta
+
+test de TEA: adultos            TEA/no-TEA   98%
+desbalanceado
+
+
+test de TEA: niños    Adaboost    TEA/no-TEA  97.80%  Algunos clasificadores
+
+Akter et al. (2019)
+test de TEA:
+Glmboost   TEA/no-TEA  94.23%
+adolescentes
+
+test de TEA: adultos    Adaboost    TEA/no-TEA  99.85%
+produjeron resultados sesgados, cantidad de datos TEA no suficientes
+
+
+
+Achenie et al. (2019)
+
+CL-TEA/np
+
+Red neuronal reetroalimentada
+
+TEA/no-TEA  99.64%
+Datasets sesgado por clases socioeconómicas
+
+
+
+Vaishali y Sasikala. (2018)
+
+
+POD-TEA       ABL     TEA/no-TEA  92.12%
+instancias faltantes en el
+Conjunto de datos de niños con TEA
+
+
+
+Puerto et al. (2019)
+
+
+POD-TEA     Naives bayes   TEA/no-TEA  86.50%
+La utilización de múltiples capas hace que nuestro enfoque más robusto
+
+
+Wingfield et al (2020)
+
+POD-TEA     Random forest  TEA/no-TEA   96%
+Cantidad de datos para el control es baja
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+Washington, P et al (2021)
+
+
+
+
+Videos caseros
+
+
+
+Regresión lógistica
+
+
+
+
+TEA/no-TEA  88%
+La naturaleza no estructurada de los videos podría introducir factores de confusión no controlados
+
+
+
+
+Nota: RMf-ER, resonancia magnética funcional en estado de reposo; DT, desarrollo típico; CT, control típico; MGOA, Algoritmo de optimización Grasshopper modificado; IRM-t1-, Imagen de resonancia magnética ponderada t1; CL-TEA/np, Check list de autismo para niños pequeños; POD-TEA, Programa de observación de diagnóstico de autismo; ABL, Algoritmo binario de luciérnaga; MCDM, Mapas cognitivos difusos multicapa. Objetivo predictivo se refiere al resultado arrojado del modelo, en el caso de los trabajos revisado es de tipo binario es decir menciona la presencia o ausencia del TEA. Fuente: Autoría propia.
+
+Es importante recalcar las limitaciones con las que se cuenta ya que podría ser considerada la superposición de muestras entre estudios, debido a que no se cuenta con información sobre el proceso de selección de pacientes, calidad de los estudios o de los aparatos con los que realizaron las imágenes de resonancia magnética, si es que los pacientes se encontraban bajo tratamiento, cuales eran las dosis y si estas alteran su comportamiento neuronal además de tomar en cuenta lo fundamental que es la investigación de patrones cerebrales distintivos de TEA en comparación con otros trastornos psiquiátricos ya que podrían afectar en las respues- tas al realizarles los cuestionarios.
+
+
+II.4.Métodos comúnmente utilizados
+
+II.4.1  SVM (máquinas de soporte de vectores).
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Es un enfoque de aprendizaje lineal que se utiliza para la clasificación y regresión resolviendo problemas mediante reconocimiento de patrones. Separa las clases al definir un margen de decisión entre estas y operar sobre dicho margen. Observar figura 1.
+Figura 1
+
+Vectores de soporte y márgenes
+
+
+
+
+
+
+
+
+
+
+
+
+Nota: El gráfico representa el vector de soporte (rojo) entre dos clases (+, −) y el margen de decisión (línea punteada). Tomado de (Zhou, Z. H., 2021).
+
+
+II.4.2  Redes neuronales
+
+Las redes neuronales artificiales son una cantidad masiva de redes paralelamente interconectadas de elementos simples (generalmente adaptativos) y sus organizaciones jerárquicas las cuales están destinadas a interactuar con objetos del mundo real en la misma forma en la que los sistemas nerviosos biológicos lo hacen (Kohonen, 1988). Se puede considerar una red neuronal como un modelo matemático con muchos parámetros sin enfocarnos si funcionan o no de la misma manera que las redes neuronales biológicas. En la figura 2 se pueden observar dos tipos de redes neuronales.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Figura 2
+
+Redes neuronales de multicapa retroalimentadas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nota: El gráfico representa la comunicación de las redes neuronales de una capa oculta (inciso a) y las redes neuronales de doble capa oculta (inciso b). Tomado de (Zhou, Z. H., 2021).
+
+
+II.4.3  Random Forest (bosque aleatorio).
+
+Utiliza varios árboles de decisión creados de forma aleatoria, de ahí el nombre y hace un promedio con las conclusiones de cada árbol, lo que hace que, al modificar aspectos de la base de datos para el entrenamiento del algoritmo, no modifique significativamente la toma de decisión. En la figura 3 se muestra un ejemplo de bosque aleatorio de cuatro arboles de decisión.
+Figura 3
+
+Bosque aleatorio de cuatro árboles de decisión
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nota: El gráfico representa cómo se obtiene el resultado de un bosque aleatorio de cuatro árboles de decisión. Fuente: Autoría propia.
+
+
+II.4.4  Regresión logística
+
+Hace uso de funciones para vincular las predicciones de la regresión lineal con la verdad fundamental del problema de clasificación, para aprender el modelo y predecir posteriores resultados.
+Figura 4
+Representación bidimensional de regresión logística.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Nota: “+” y “-” representan muestras positivas y negativas respectivamente, las elipses son los límites del grupo, las líneas punteadas representan proyecciones; el punto rojo y el triángulo son el centro de las proyecciones. Tomado de (Zhou, Z. H., 2021).
+II.4.4  Otros
+
+La tabla 3 presenta otras técnicas y algoritmos aplicados y sus caracteristicas.
+
+Tabla 3
+Características de métodos
+Nombre      Tipo      Objetivo y/o características
+Multi capa.
+
+Deep learning  Red neuronal
+La complejidad se puede aumentar al agregar más neu- ronas ocultas.
+
+
+
+LASSO      Regresión
+Identificar las variables y los coeficientes de regresión correspondientes que conducen a un modelo que mini- miza el error de predicción.
+
+
+
+Adaboost     Clasificación
+Reduce los errores de clasificación.
+Puede manejar registros perdidos y aumenta múltiples clasificadores.
+
+Glmboost     Clasificación  Puede encajar modelos lineales generalizados.
+
+
+Algoritmo lu- ciérnaga binario
+Metaheurís- tico
+Inspirado en las luces intermitentes de las luciérnagas.
+
+Naive bayes    Clasificación  Se asume que cada atributo influye en el resultado de la
+predicción de manera independiente.
+
+
+
+Grasshopper
+Metaheurís- tico
+La ubicación de cada saltamontes en el enjambre ex- hibe una solución plausible al problema de optimiza-
+                          ción en consideración.             
+
+Nota: Resumen de técnicas de machine learning y algoritmos de optimización. Fuente: Autoría propia.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+III. JUSTIFICACIÓN
+
+El presente trabajo se enfocará en el uso de un algoritmo de deep learning para procesar y analizar imágenes de resonancia magnética, posteriormente realizar un análisis para encon- trar características que puedan ser identificadas con el algoritmo propuesto lo cual facilitará el diagnóstico del TEA al reducir el tiempo de realización del diagnóstico y brindar herra- mientas certeras al especialista para la confirmación del diagnóstico.
+
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+
+
+Actualmente se centran en la observación de áreas específicas del cerebro siendo algunas, pero no limitándose el precúneo, hipocampo, corteza cingulada, núcleo caudado, opérculo parietal, circunvolución frontal superior, circunvolución prerolándica, corteza cingulada y cingulada anterior, que si bien son zonas que en las cuales se presentan las principales diferencias entre cerebros que presentan o no el TEA mientras que en el presente trabajo se enfocara en analizar al cerebro y sus zonas como un “todo” ya que al tratarse de un trastorno, puede presentarse con características muy distintas entre un sujeto y otro, con lo cual podría ser utilizado para ser observado de manera más completa y tomando en cuenta todas las áreas del cerebro y cómo reaccionan ante diferentes estímulos.
+V. COMITÉ DE BIOÉTICA
+
+
+Se descartarán datos personales que puedan considerarse sensibles tales como (nombre, origen racial o étnico, datos biométricos, peso, entre otros).
+Se seguirán los lineamentos mencionados en la proclamación de la declaración univer- sal de los derechos de los animales.
+
+La información contenida en el presente es fruto de la investigación y trabajo personal sin incurrir en falsificación o tergiversación de datos o algún otro tipo de fraude.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+VI. PLANTEAMIENTO TEÓRICO
+VI.1.   Preguntas de investigación
+
+¿Cuáles son las técnicas de machine learning más utilizadas para el análisis de imágenes de resonancia magnética?
+¿Qué las hace destacar entre las demás técnicas?
+
+¿Cuáles son las ventajas y desventajas de cada una de las técnicas de machine learning?
+
+¿Cómo identificar las variables más determinantes en las áreas del cerebro y su correlación con el resultado?
+¿Por qué se analizan zonas específicas y no como reacciona todo el cerebro a ciertos estímulos?
+VI.2.   Hipótesis, Supuestos y/o proposiciones de investigación
+
+Al aplicar machine learning en el análisis de imágenes por resonancia magnética y clasificación, generar las clases suficientes de acuerdo con la teoría evitando la redundancia y la superposición de muestras se logrará una adecuada clasificación de los datos en dos grupos, TEA o NO-TEA
+VII. OBJETIVOS
+Objetivo general: Generar un algoritmo de machine learning que clasifique de manera correcta imágenes de resonancia magnética.
+Objetivos específicos:
+
+Realizar una investigación del estado de arte en el uso de machine learning en la medicina y en el diagnóstico de TEA.
+Analizar las características de las investigaciones que hacen uso de imágenes de resonancia magnética y su desempeño con el método utilizado.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Crear una propuesta de algoritmo fundamentada y justificada con los antecedentes encontrados.
+Diseñar un algoritmo para la identificación del TEA mediante imágenes de resonancia magnética.
+Validar el algoritmo y realizar pruebas con el fin de realizar las correcciones pertinentes.
+
+VIII. METODOLOGÍA
+
+Figura 5
+
+Metodología.
+
+
+
+Investigación   observación    Propuesta     Diseño de
+algoritmo
+Validación de
+algoritmo
+
+Fuente: Autoría propia.
+
+
+
+Investigación: realizar el estado del arte con el fin de definir la viabilidad del algoritmo e identificar los posibles aspectos a los cuales prestar atención, qué tan desarrollado está el tema a nivel científico, y observar posibles mejoras.
+Observación: identificar cuales métodos son los más utilizados con el tipo de dato que será utilizado, observar su desempeño y cuáles fueron las áreas en las cuales se mostraron deficiencias.
+Propuesta: generar una propuesta de algoritmo en base a regiones del cerebro con mayor actividad y su impacto en las que presentan menor actividad.
+Diseño de algoritmo: crear un modelo de algoritmo con las características especificadas de acuerdo con la propuesta anterior.
+Validación de algoritmo: Validar la precisión del modelo generado.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PRO- YECTO
+Este algoritmo impactará en:
+
+o Nivel científico: Proporcionar de antecedentes para futuras investigaciones me- diante la publicación de artículos de divulgación científica.
+o Nivel tecnológico: Banco de imágenes de radiación magnética balanceado y lim- pio.
+o Económico: al reducir el tiempo de diagnóstico se observará un ahorro de recur- sos económicos dedicados a este, ya sea de manera privada o mediante institucio- nes públicas.
+o Social: Se ha observado una mejoría en las personas con autismo cuentan con un diagnóstico en comparación con las que se encuentran en búsqueda de uno por lo cual el impacto social de la creación de algoritmo será notoriamente positivo.
+X. INDICE TENTATIVO DE LA TESIS
+Este contenido debe adaptarse a la investigación en proceso.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Dedicatorias. Agradecimientos. Índice.
+Índice de Figuras Índice de Tablas Abreviaturas y siglas Resumen en español Abstract.
+I.Introducción / planteamiento del problema y justificación. II.Antecedentes/estado del arte.
+III.Fundamentación teórica. IV.Hipótesis o supuestos V.Objetivos.
+VI.Material y Métodos o Metodología VII.Resultados y discusión VIII.Conclusiones.
+IX.Bibliografía o Referencias. X.Anexos.
+
+
+XI. REFERENCIAS BIBLIOGRÁFICAS
+Achenie, L. E., Scarpa, A., Factor, R. S., Wang, T., Robins, D. L., & McCrickard, D. S. (2019). A machine learning strategy for autism screening in toddlers. Journal of developmental and behavioral pediatrics: JDBP, 40(5), 369.
+Ahsan, M. M., & Siddique, Z. (2022). Machine learning-based heart disease diagnosis: A systematic literature review. Artificial Intelligence in Medicine, 102289.
+Akter, T., Satu, M. S., Khan, M. I., Ali, M. H., Uddin, S., Lio, P., ... & Moni, M. A. (2019).
+Machine learning-based models for early stage detection of autism spectrum disorders. IEEE Access, 7, 166509-166527.
+Almeida Marina S. R. (2018). Consultora Ed. Inclusiva, Psicóloga Clínica e Escolar. Neuropsicóloga,      Psicopedagoga      e      Pedagoga      Especialista https://www.institutoinclusaobrasil.com.br/instrumentos-diagnosticos-para-avaliar--o- autismo-tea/
+American Psychiatric Association (2022). https://www.psychiatry.org/]
+Baadel, S., Thabtah, F., & Lu, J. (2020). A clustering approach for autistic trait classification. Informatics for Health and Social Care, 45(3), 309-326.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Bhattacharjee, K. K., & Sarmah, S. P. (2015, December). A binary firefly algorithm for knapsack problems. In 2015 IEEE International Conference on Industrial Engineering and Engineering Management (IEEM) (pp. 73-77). IEEE.
+Bi, X. A., Wang, Y., Shu, Q., Sun, Q., & Xu, Q. (2018). Classification of autism spectrum disorder using random support vector machine cluster. Frontiers in genetics, 9, 18.
+Cutler, A., Cutler, D. R., & Stevens, J. R. (2012). Random forests. In Ensemble machine learning (pp. 157-175). Springer, Boston, MA.
+Dwyer, D. B., Falkai, P., & Koutsouleris, N. (2018). Machine learning approaches for clinical psychology and psychiatry. Annual review of clinical psychology, 14, 91-118.
+Fredo, A. J., Jahedi, A., Reiter, M., & Müller, R. A. (2018). Diagnostic classification of autism using resting-state fMRI data and conditional random forest. Age (years), 12(2.76), 6-41.
+Goel, N., Grover, B., Gupta, D., Khanna, A., & Sharma, M. (2020). Modified grasshopper optimization  algorithm  for  detection  of  autism  spectrum  disorder. Physical Communication, 41, 101115.
+Heinsfeld, A. S., Franco, A. R., Craddock, R. C., Buchweitz, A., & Meneguzzi, F. (2018). Identification  of  autism  spectrum  disorder  using  deep  learning  and  the  ABIDE dataset. NeuroImage: Clinical, 17, 16-23.
+Howlader, K. C., Satu, M. S., Barua, A., & Moni, M. A. (2018). Mining significant features of diabetes mellitus applying decision trees: A case study in bangladesh. BioRxiv, 481994.
+IJI, D. (1983). Manual diagnóstico y estadístico de los trastornos mentales. Masson, Barcelona.
+Katarya, R., & Meena, S. K. (2021). Machine learning techniques for heart disease prediction: a comparative study and analysis. Health and Technology, 11(1), 87-97.
+Kohonen T (1988) An introduction to neural computing. Neural Netw, 1(1):3-16.
+Kong, Y., Gao, J., Xu, Y., Pan, Y., Wang, J., & Liu, J. (2019). Classification of autism spectrum disorder by combining brain connectivity and deep neural network classifier. Neurocomputing, 324, 63-68.
+Kwekha-Rashid, A. S., Abduljabbar, H. N., & Alhayani, B. (2023). Coronavirus disease (COVID-19)   cases   analysis   using   machine-learning   applications. Applied Nanoscience, 13(3), 2013-2025.
+Li, X., Zhang, X., Zhu, J., Mao, W., Sun, S., Wang, Z., ... & Hu, B. (2019). Depression recognition using machine learning methods with different feature generation strategies. Artificial intelligence in medicine, 99, 101696.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Pratama, T. G., Hartanto, R., & Setiawan, N. A. (2019). Machine learning algorithm for improving performance on 3 AQ-screening classification. Communications in Science and Technology, 4(2), 44-49.
+Puerto, E., Aguilar, J., López, C., & Chávez, D. (2019). Using multilayer fuzzy cognitive maps to diagnose autism spectrum disorder. Applied soft computing, 75, 58-71.
+Rahman, M. M., Usman, O. L., Muniyandi, R. C., Sahran, S., Mohamed, S., & Razak, R. A. (2020). A Review of machine learning methods of feature selection and classification for autism spectrum disorder. Brain sciences, 10(12), 949.
+Rahman, M. M., Usman, O. L., Muniyandi, R. C., Sahran, S., Mohamed, S., & Razak, R. A. (2020). A Review of machine learning methods of feature selection and classification for autism spectrum disorder. Brain sciences, 10(12), 949.
+Reis, S. T., & Lenza, N. (2020). A Importância de um diagnóstico precoce do autismo para um tratamento mais eficaz: uma revisão da literatura. Revista Atenas Higeia, 2(1), 1-7.
+Sadeh‐Sharvit, S., Fitzsimmons‐Craft, E. E., Taylor, C. B., & Yom‐Tov, E. (2020). Predicting eating disorders from Internet activity. International Journal of Eating Disorders, 53(9), 1526-1533.
+Shah, D., Patel, S., & Bharti, S. K. (2020). Heart disease prediction using machine learning techniques. SN Computer Science, 1(6), 1-6.
+Shahamiri, S. R., & Thabtah, F. (2020). Autism AI: a new autism screening system based on artificial intelligence. Cognitive Computation, 12(4), 766-777.
+Shailaja, K., Seetharamulu, B., & Jabbar, M. A. (2018, March). Machine learning in healthcare:  A  review.  In  2018  Second  international  conference  on  electronics, communication and aerospace technology (ICECA) (pp. 910-914). IEEE.
+Thabtah, F. (2019). An accessible and efficient autism screening method for behavioural data and predictive analyses. Health informatics journal, 25(4), 1739-1755.
+Vaishali, R., & Sasikala, R. (2018). A machine learning based approach to classify autism with optimum behaviour sets. International Journal of Engineering & Technology, 7(4), 18.
+Wang, C., Xiao, Z., & Wu, J. (2019). Functional connectivity-based classification of autism and control using SVM-RFECV on rs-fMRI data. Physica Medica, 65, 99-105.
+Washington, P., Tariq, Q., Leblanc, E., Chrisman, B., Dunlap, K., Kline, A., ... & Wall, D.
+P. (2021). Crowdsourced privacy-preserved feature tagging of short home videos for machine learning ASD detection. Scientific reports, 11(1), 7620.
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+Wingfield, B., Miller, S., Yogarajah, P., Kerr, D., Gardiner, B., Seneviratne, S., ... & Coleman, S. (2020). A predictive model for paediatric autism screening. Health informatics journal, 26(4), 2538-2553.
+X. Yang, “Firefly algorithm,” Nature-Inspired Metaheuristic Algorithms, vol. 20, pp. 79–90, 2008.
+Yamagata, B., Itahashi, T., Fujino, J., Ohta, H., Nakamura, M., Kato, N., ... & Aoki, Y. (2019). Machine learning approach to identify a resting-state functional connectivity pattern serving as an endophenotype of autism spectrum disorder. Brain imaging and behavior, 13(6), 1689-1698.
+Zhang, F., et al. (2018). Whole brain white matter connectivity analysis using machine learning: an application to autism. Neuroimage 172, 826–837.
+Zhou, Z. H. (2021). Machine learning. Springer Nature.

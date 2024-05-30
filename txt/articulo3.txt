@@ -1,0 +1,701 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+Universidad Autónoma de Querétaro
+Facultad de Informática
+C.U. a 10 de Noviembre de 2023
+
+MAESTRÍA EN CIENCIAS DE LA COMPUTACIÓN
+
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+Nombre del Alumno: Irving Abraham Barba Pérez
+No. de Expediente: 252598
+No. CVU: 1289571 .
+Correo electrónico: irving_h421@hotmail.com
+Teléfono: 4425517172
+
+
+Línea de investigación sobre la cual se desarrollará el trabajo: Visión por computador y su procesamiento embebido
+Responsable de la Asesoría: Dr. Julio Alejandro Romero González
+Programas educativos que apoya: Ingeniería en Computación, Ingeniería de Software, Ingeniería en Telecomunicaciones y Redes, Maestría y Doctorado en Ciencias de la Computación.
+Línea de investigación del responsable: Visión por computador e Inteligencia Artificial
+Firma de aceptación:
+
+
+Dr. Julio Alejandro Romero
+Número de veces que se ha sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez ( x )   2da. (  )    Más de 2 veces (  )
+Semestre o Cuatrimestre actual del alumno:    Fecha de Ingreso al programa:        
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+I. DATOS GENERALES
+● Título del proyecto.
+Desarrollo de un Modelo de Aprendizaje Automático para la Identificación de Escleroderma Lineal y Localizada.
+● Nombre del alumno responsable. Irving Abraham Barba Pérez
+● Colaboradores (Director y/o Co-director) Dr. Julio Alejandro Romero González
+●  Centro o lugar donde se realiza investigación Universidad Autónoma de Querétaro, Facultad de Informática.
+●  Tipo de investigación básica, aplicada o tecnológica (diseño, construcción de prototipo o prueba experimental). Investigación Aplicada
+●  Línea de investigación sobre la cual se desarrollará el trabajo Visión por Computadora y su procesamiento embebido
+
+II. ANTECEDENTES Y/O FUNDAMENTACIÓN
+
+
+La esclerodermia es una enfermedad crónica autoinmune que, hasta nuestros días, no tiene una causa conocida y tampoco un método para prevenirla o curarla, esta enfermedad afecta a 3 de cada 10,000 habitantes la cual puede afectar en ambos sexos (frecuentemente en mujeres) a diferentes edades. (García, 2014). A continuación, se presentan las fases en las que se presenta y puede identificarse el grado de avance de la enfermedad, no necesariamente el orden implica que sucedan así, por ende, se desenvolverá en un orden tentativo.
+Fase Generales: Se presenta fatiga, pérdida de peso, artralgias* y mialgias* con posible disminución de fuerza e hinchazón de extremidades superiores e inferiores.
+Fase a nivel interno, celular u organismo: García (2014), presenta a grandes rasgos las 3 etapas en las que la esclerodermia se desarrolla y altera el organismo: 1: Afectación Vascular, 2: Cambios Inflamatorios: (producción de Colágeno en exceso). 3: Alteración autoinmune: (producción de anticuerpos en suero afectando proteínas y células del cuerpo).
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Fase Sistemática: Donde aparecen las primeras características del tipo de esclerodermia que se presenta en el paciente, ya que según las clasificaciones que veremos adelante, tendremos una Esclerodermia Sistémica que, de manera general, esta enfermedad atrofia ciertos órganos internos disminuyendo o afectando su funcionamiento. Principalmente afectaciones de tipo pulmonar, cardiaca, digestiva y renal.
+Fase Social: Discapacitante a nivel motriz y estético. Esta fase nos está aproximando a uno de los puntos importantes de esta investigación, guardaremos la palabra “estético” para más tarde. Continuando con la fase del momento, a nivel motriz las articulaciones se ven afectadas por los daños a nivel óseo y dermis, esto puede llevar a malformación en las zonas afectadas que como resultado dos afecciones, pueden provocar en los pacientes cuadros depresivos y de ansiedad que se suman a la falta de conciliación de sueño debido a la deformación del cuerpo.
+Fase cutánea:
+
+Morfea: es el subtipo más común de esclerodermia localizada. En este tipo se forman áreas de piel endurecida y de coloración anormal en la superficie de la piel, que pueden ser de diferentes formas y tamaños y, por lo general, no afectan los órganos internos. La morfea se puede dividir en varios subtipos, como morfea en placas, morfea lineal, morfea en gotas y morfea profunda (George, 2020).
+Lineal: La esclerodermia lineal es una variante de la morfea que se presenta como líneas de piel endurecida y pigmentación anormal que siguen un patrón lineal en un lado del cuerpo o extremidad. Puede afectar tejidos más profundos, como músculos y articulaciones, y puede causar limitaciones en el movimiento (Fernández, 2020).
+En la Figura 1, se aprecia la estructura de lo que nos protege y presenta físicamente ante todo lo que nos rodea: La piel, el órgano más grande del cuerpo humano.
+
+
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Figura 1.
+Capas de la Piel.
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Stanford (2023)
+
+La figura 2, nos describe cómo luce una piel con esclerodermia donde se visualiza en la zona subepidérmica, la presencia de haces de colágeno gruesos (morado oscuro), toscos, sin espacio interfascicular*. La esclerodermia se presenta y se clasifica de las siguientes formas
+Figura 2.
+Esclerodermia analizada histológicamente.
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Mariana (2011)
+
+Difusa: en la piel endurecida puede afectar áreas más extensas del cuerpo, incluyendo el tronco. Los problemas con los órganos internos son más graves y pueden desarrollarse más rápidamente en comparación con la forma limitada (Kowalska-Kępczyńska, 2022).
+Limitada: presenta la piel endurecida generalmente se presenta en áreas distales, como manos, cara y pies. También puede haber fenómenos de Raynaud (vasoespasmo en los dedos en respuesta al frío o al estrés) y problemas esofágicos.
+
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+El daño a los órganos internos tiende a ser menos severo que en el subtipo difusa (Kowalska-Kępczyńska, 2022).
+A continuación, en la tabla 1, se puede apreciar de manera ordenada la clasificación que Bibiana (2011) propone sobre la esclerodermia y su forma de aparición (apariencia) dependiendo el tipo.
+Tabla 1.
+Clasificación y apariencia de esclerodermia.
+
+Morfea-Localizada                      Linear
+
+
+Limitada
+●  Gotas
+●  Placas
+●  Subcutánea o Profunda
+●  Generalizada
+●  En banda o linear de los miembros superiores e inferiores.
+●  Golpe de sable (Hemiatrofia facial progresiva).
+
+Fuente: Mariana (2011)
+
+Para determinar si esta enfermedad está presente en el paciente, es necesario realizar un exámen físico y arrojar un pre diagnóstico, con el grado de afectación, será necesario realizar exámenes de laboratorio, como muestras de sangre para determinar la cantidad de anticuerpos en el paciente.
+La identificación temprana de esta enfermedad puede ser crucial para ayudar a mitigar la progresión de la enfermedad y mejorar la calidad de vida de los pacientes. Sin embargo, la detección puede ser desafiante debido a la variabilidad en la presentación  de  los  síntomas  y  la  sobreposición  con  otras  condiciones dermatológicas. En este contexto, la tecnología puede jugar un papel vital para proporcionar herramientas avanzadas que asistan en la identificación y el seguimiento de la esclerodermia.
+En la literatura se han reportado técnicas de análisis de textura que pueden ser aplicadas con éxito en la detección de diversas enfermedades de la piel. En el trabajo realizado por Navlet (2020) exploraron el uso de análisis de textura para la clasificación de lesiones cutáneas en imágenes dermatoscopicas, lo cual nos da paso a las técnicas utilizadas para determinar presencia de esclerodermia.
+
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Es importante saber identificarla para proceder a un tratamiento de control específico y qué mejor que tener un diagnóstico en tiempo real.
+Métodos de diagnóstico:
+
+Pruebas de Sangre: para monitorear lo que sucede en el cuerpo tal como la reacción del cuerpo a medicamentos controlados, como menciona National Heart Lung and Blood Institute (NHLBI) (2022): estos exámenes, proporcionan un amplio campo para determinar la presencia de enfermedades y afecciones además de evaluar la función de los órganos y monitoreo de tratamientos. En la esclerodermia, se realiza el examen de laboratorio Anticuerpos Antinucleares (ANA): Examen principal  para  determinar  la  presencia de  anticuerpos autoinmunes.  Estos anticuerpos atacan a los componentes de las células, algo muy común en enfermedades autoinmunes (ver Tabla 2).
+Tabla 1.
+Tipos de anticuerpos.
+
+
+Tipos de anticuerpos:
+
+
+
+●  Anticuerpos anti-centrómero: Son típicos de la esclerodermia limitada (Síndrome de CREST), tiene relación con la calcinosis, fenómeno de Raynaud, telangiectasias*, esclerodactilia* y dismotilidad esofágica*.
+
+●  Anticuerpos anti-topoisomerasa I (Scl-70): Asociados con esclerodermia difusa que son un latente riesgo de fibrosis pulmonar.
+●  Anticuerpos anti-RNA polimerasa I y II: Estos anticuerpos son específicos de la esclerodermia y se asocian con una mayor probabilidad de afectación pulmonar y cutánea también relacionado con los anticuerpos anti-RNA polimerasa III.
+●  Anticuerpos anti-fibrilina-1: asociados con la esclerodermia difusa.
+●  Anticuerpos anti-PM/Scl: Estos anticuerpos pueden estar presentes en varios trastornos autoinmunes, incluyendo la esclerodermia.
+
+
+Pruebas RMI: Imágenes de Resonancias Magnéticas, se puede realizar en tomar un plano axial en el que se aprecian las zonas afectadas. Originalmente las resonancias magnéticas eran enfocadas para estudiar zonas intracraneales y del cuello con padecimiento de esclerodermia morfea, (Stefan Schanz, 2011). La figura 3, es una resonancia magnética del hombro derecho con morfea circunscrita, de un
+
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+paciente de 40 años, presenta una marcada subcutánea, Engrosamiento del tabique del tejido graso con marcado contraste. Indicado por una flecha. provocando rigidez y dolor
+Figura 3.
+Figura de una resonancia magnética.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Schanz (2011)
+
+Técnica Histológica: Enfocada en el estudio de tejidos y células que lo componen, preparando la muestra a analizar, para tener las mejores condiciones de conservación y observación, pero es un método que puede resultar invasivo en el paciente de quien se obtendrá la muestra y el trabajo que conlleva mantener fresca la muestra es algo que aumenta la dificultad. La figura 4 nos describe la muestra histológica: La dermis reticular se caracteriza por amplios haces de colágeno  esclerótico  (morado  oscuro)  que  rodean  y  reemplazan  el  tejido subcutáneo con tejido perivascular* profundo y ligero.
+Figura 4.
+Infiltrado linfoplasmocítico (hematoxilina y eosina, ×4).
+
+
+
+
+
+
+
+
+
+
+
+
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Fuente: Ferreli (2017)
+
+Técnica Dermatoscopica: Es una técnica que funciona en tiempo real, completamente no invasiva y enfocada en el estudio de lesiones cutáneas que desde principalmente tiene como enfoque el melanoma, enfermedad en la cual es posible obtener mejores resultados durante el análisis, arrojando diagnósticos anticipados de lesiones hiperpigmentadas. Esto ya nos plantea una buena respuesta en la evaluación de lesiones cutáneas, cómo nos describen en Dermatoscopia para principiantes (i): características generales Palacios y Alonzo (2015). Las variables que se propone son:
+Piel Seca - Deshidratada: Presenta una superficie brillosa y frágil (refleja más
+luz).
+
+Piel Hidratada - Grasosa: La luz atraviesa las capas más profundas, llegando incluso a alcanzar la dermis profunda.
+El uso de esta herramienta implica regular fenómenos físicos que limitan el diagnóstico, hablamos de reflexión, refracción, dispersión y absorción (ver Tabla 3). Al trabajar con la transiluminación* de una lesión cutánea y la amplificación de imágenes por medio de lentes (permiten apreciar la profundidad de las lesiones), es necesario que se realice por medio de dos métodos: la inmersión en determinados fluidos y la luz polarizada.
+Figura 5.
+Ejemplos de dermatoscopios portátiles.
+
+
+
+
+
+
+
+
+
+
+
+
+
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Fuente: Palacios (2015)
+
+Tabla 3
+Técnicas dermatoscopicas
+
+Por Inmersión                    Por luz polarizada
+
+
+cuando el dermatoscopio entra en contacto con la piel, se debe utilizar una fuente de luz halógena* no polarizada, y aplicar líquidos de inmersión que consisten  en  aceites,  soluciones  antisépticas, glicerina, parafina o como se recomienda, alcohol o geles para ecografías.
+
+Pasos para realizar la exploración: Aplicar el fluido en la lesión, acercar el lente del dermatoscopio y sumergirlo hasta que desaparezcan las burbujas de aire y aproximar o alejar el lente hasta obtener una imágen clara, esta técnica capta mejor los tonos marrones y azules de la melanina situados en la epidermis y las capas profundas de la piel.
+Dependen de filtros luminosos para obtener luz polarizada para que de este modo se atraviese la piel en un plano establecido y poder observar las estructuras de la lesión, además se pueden apoyar de separadores que ayudan a distanciar el lente de la lesión, algo parecido como si fuera un enfocador y poder conseguir una imágen nítida.
+
+Pasos para realizar la exploración: Si se cuenta con separador apoyar sobre la lesión y ajustar la imágen, si no se cuenta con ese aditamento, se debe acercar el dermatoscopio 1cm de distancia aproximadamente de la lesión y encender la luz deseada para ajustar imágen y comenzar la exploración.
+
+
+El uso de esta técnica es muy importante si se toman en cuenta las variables correctas ya que de estas se puede determinar la gravedad de la lesión, a continuación, se nos demuestra en la imagen, que es posible detectar si la esclerodermia se encuentra activa o no, por medio de pruebas dermatoscopicas.
+En la figura 6 se muestra una imagen que arroja tres resultados de esclerodermia localizada: Morfea, de los cuales se infiere lo siguiente: el cuadro naranja indica por medio de asterisco rojos, presencia de marcas denominadas nubes blancas y a sus alrededores se puede observar vasos ramificados rojos, el cuadro azul nos muestra igualmente nubes blancas y amarillentas con características similares, ambos resultados indicadores de esclerodermia activa. En el cuadro verde se puede apreciar de manera reticular manchas de un color marrón indicando una esclerodermia inactiva.
+
+
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Figura 6.
+Muestras dermatoscópicas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Paulina (2022)
+
+Una vez estudiadas las técnicas de diagnóstico de esclerodermia es necesario filtrar la información para poder tomar las variables necesarias que formarán parte de esta investigación, dejando de lado los estudios de laboratorio, es importante centrarnos en las imágenes de una esclerodermia. Una imagen de esclerodermia tiene características  que  pueden  clasificarse  para  poder  identificar  el  tipo  de esclerodermia y el daño que ha ocasionado en la piel o zona a estudiar, que se plantearía con la siguiente pregunta: ¿qué tan grave es la lesión?
+
+
+VARIABLES
+Toda lesión tiene características para poder clasificar y nombrar, según la apariencia y su afectación. Esto nos da pautas para poder trabajar con las lesiones de esclerodermia y poder identificar qué tipo de lesión se tiene en juego. Tomando en  cuenta  la  clasificación  de  lesiones  cutáneas  según  Benedetti  (2021), clasificaremos estas para nuestra investigación apoyándonos de la información de coloración y texturas de Miguez (2009).
+● Tamaño-Forma:
+Placa: midiendo más de 10 mm de diámetro y pueden resultar con un techo elevado o deprimido comparándola con la piel sana.
+
+
+
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Lineal: se extienden de manera recta, con medidas variables y no determinadas que pueden relacionarse también como serpiginosas, que presentan ramificaciones y curvas.
+● Color según el tipo de esclerodermia:
+Lineal-Morfea: coloración blanquecina, marfileña, amarillento o moreno
+
+sucio.
+
+
+Golpe de Sable: coloración Morena.
+Subcutánea: relacionada con la textura Induración, presenta una coloración
+marfileña o porcelánica (haciendo referencia a la textura).
+
+DESCRIPTORES
+
+● Tamaño-Forma:
+
+Método: Momentos de órden para describir objetos.
+
+Funcionamiento: Para determinar todos los píxeles o contornos de una figura (perímetro de una lesión), En la figura 7 se muestran 3 formas propuestas por parte de la Facultad de Ciencias Exactas, Ingeniería y Agrimensura (FCEIA) para la descripción de objetos.
+Figura 7.
+Fórmulas para Media, Varianza y Momentos de órden superior.
+
+
+
+
+
+
+
+Fuente: FCEIA (2023)
+
+En la media se obtendrá el centroide (punto promedio entre dos puntos), donde se promedian dos puntos, N = puntos del contorno y xi e yi = coordenadas de un punto. En la varianza se obtiene la dispersión de puntos respecto a la media, calculando la media de las distancias al cuadrado de cada punto. Donde sí se obtiene una varianza baja (implicaría un contorno regular y predecible = puntos más juntos = bordes suaves), varianza alta (implica un contorno irregular = puntos separados =
+
+11
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+esquinas). En los momentos de orden superior, se determinaría los cambios de orientación de la imágen y si esta es alargada o equidistante, tomando en cuenta el centroide y verificando el segundo momento (M20 y M02) donde si M20 > M02 = entorno extendido y momento central cruzado (M11) donde M11 → 0 implica puntos con simetría respecto el centroide.
+Tomando los parámetros: Extensión de píxeles determinados en horizontal o vertical de la zona.
+Método: Descripción de forma por Curvatura.
+
+Funcionamiento: Determinar, qué tan redonda o cuadrada es la geometría de una lesión tomando los siguientes parámetros: Para el tamaño, se determinará el diámetro, largo y ancho de la lesión. Para la forma se determinará la suavidad de los bordes de la lesión con la curvatura (suave y brusca).
+Calculando la curvatura en el punto Pi = (xi, yi), donde i = posición en el contorno. Calculando orientación con tangente inversa θi = tan−¹ (yi+1−yi / xi+1−xi)
+Calculando la medida de la curvaturai = d²θi / di2, donde di = cambio de posición. Si esta resulta alta, implica que hay cambios de dirección de puntos, esquinas o puntos de inflexión.
+● Color:
+
+Método: Histograma y Modelos de Color.
+
+Funcionamiento: Para analizar distribuciones de color de una imágen y también poder separar por color cada pixel.
+Parámetros: Lesion delimitada, detectar colores blanquecinos, marfíl, amarillos, rojos y cafés (ver figura 8).
+Utilizando histogramas de Niveles de gris y RGB.
+
+Figura 8.
+Lectura y Descomposición por canal de una imágen.
+
+
+
+
+
+12
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+
+
+
+
+a)                    b)
+
+Fuente: Fotografía Esencial (2023), Rodolfo(2021)
+
+Nota: a) Lectura de un histograma, b) La foto muestra más píxeles azules claros y por eso la mayor acumulación a la derecha en el canal azul.
+
+En la Figura 9, de acuerdo con la zona más oscura en los canales grises, implica mayor intensidad de R, G O B. dando como resultado el cuadro RGB con toda la gama de colores.
+Figura 9.
+RGB como tres canales grises.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Manuel (2020)
+
+Identificación del tipo de esclerodermia: Para la identificación de forma se cuentan con algoritmos como Red Neuronal Convolucional, Distribución de covarianzas y Análisis discriminante lineal, cada uno de estos métodos ofrece una perspectiva única para comprender y analizar los datos, especialmente en tareas de clasificación y reconocimiento de patrones. La Red Neuronal Convolucional, con su estructura especializada para el procesamiento de imágenes, ha marcado un hito
+13
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+en el campo de la visión por computadora. Por otro lado, la Distribución de Covarianzas proporciona un marco estadístico para entender las relaciones entre variables en un conjunto de datos. Finalmente, el Análisis Discriminante Lineal se utiliza para encontrar una combinación lineal de características que mejor separa dos o más clases de eventos o objetos. Con la evaluación de estos métodos se podrá observar la versatilidad en la extracción de conocimientos a partir de la información generada.
+Red Convolucional-Neuronal-IA: Las redes convolucionales, operan a través de cinco etapas clave. Primero, emplean capas convolutivas que aplican filtros para generar mapas de características de la entrada. Luego, la función de activación ReLU introduce no linealidades, esencial para captar patrones complejos. A continuación, las capas de pooling reducen las dimensiones de estos mapas para disminuir los parámetros y el cómputo necesario. En la penúltima etapa, la red se apoya en capas densas, que procesan los mapas aplanados de características para tareas específicas como la clasificación. Finalmente, mediante backpropagation, la red ajusta los pesos de los filtros para alinear las salidas predichas con los resultados reales
+Distribución de covarianzas: Se puede determinar el perímetro de una lesión, analizando píxeles que cumplan con un parámetro de colores para así arrojar un histograma de vectores y poder obtener un perímetro dibujado.
+Análisis discriminante lineal:
+Para clasificación de objetos: calculando la probabilidad de que una imágen pertenezca a una clasificación específica.
+Segmentación de imágenes: calculando la probabilidad de que un píxel pertenezca a una zona específica de la lesión.
+Filtrado de imágenes: enfocado a calcular la intensidad de píxeles en una zona determinada para así identificar una posible textura.
+
+
+
+14
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+III. JUSTIFICACIÓN
+De acuerdo con Muñoz (2020), la esclerodermia es una enfermedad rara porque se reporta en 5 de cada 10 mil habitantes y que afecta a la población en general, la cual ocurre entre mujeres de 30 a 40 años en proporción de 4:1 comparado en hombres y con base en la Ley General de Salud, afecta 3 de cada 10 mil habitantes (García, 2014), es tipo de enfermedad no tiene una causa conocida o un método para prevenirla o curarla, por lo que se presenta un considerable aumento de interés en el tema del año 2016 al 2020 de acuerdo con las estadísticas de búsqueda de la National Library of Medicine (PubMed, ver Figura 10).
+
+Figura 10.
+Interés en el mercado de la esclerodermia.
+
+
+
+
+
+
+
+
+
+
+
+
+a)                   b)
+
+Fuente: a) PubMed(2023) y b) Mordor Intelligence (2023)
+
+La causa real de esta enfermedad autoinmune, es desconocida y sólo se han planteado algunas posibles causas o variables relacionadas al problema, en los cuales se hacen referencia a desórdenes en el sistema inmune del paciente, que genera anticuerpos que atacan a las mismas células sanas, en las cuales se genera una sobreproducción y acumulación de colágeno en los tejidos corporales como se menciona en el Centro Estatal de Vigilancia Epidemiológica y Control de Enfermedades (CEVECE, 2023). Por lo que en esta  investigación  tiene como propósito desarrollar un algoritmo para la identificación de la esclerodermia lineal y localizada en la piel como una alternativa a las técnicas existentes de diagnóstico, el cual busca detectar lesiones de esclerodermia antes de que esta se desarrolle y
+15
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+agrave la calidad de vida del paciente, debido a que esta enfermedad autoinmune se extiende y actúa en el cuerpo de formas muy agresivas y prevenir que se detecten anomalías en la piel de los pacientes de forma tardía. Detectar esta enfermedad a tiempo es crucial para que se aminoren los daños, donde influye el tipo de esclerodermia que esté en juego. Como ejemplo, la esclerodermia sistémica que además de afectar “superficialmente”, afecta órganos de gran importancia. Un diagnóstico a tiempo puede prevenir el avance de una esclerodermia, sometiéndose a tratamiento médico oral (medicamento controlado), tópico (uso de cremas dérmicas) y terapia física. “El acceso a los servicios de genética resulta complicado debido a que son pocos los que se encuentran adscritos a instituciones de salud públicas. Otros Estados del país, como Nuevo León, Jalisco, Querétaro, Hidalgo y Yucatán, tienen un genetista por cada 500,000 habitantes, mientras que en Baja California Sur, Colima y Campeche no cuentan con estos especialistas” CEVECE (2023). Actualmente en la literatura no se reporta alguna aplicación que asista en la detección de esclerodermia.
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+La identificación de lesiones de esclerodermia es un problema que sigue vigente debido a las múltiples manifestaciones que tiene, pudiendo comenzar como simples manchas parecidas a moretones o zonas enrojecidas que pueden parecer desapercibidas (ver Figura 11) y de un día a otro presentar complicaciones que comprometen el cuerpo del paciente, afectando a nivel cutáneo y motriz sin algún indicio para que la enfermedad se detenga. Al no haber un tratamiento específico para la detección y prevención de la esclerodermia, es necesario que a indicios de lesiones extrañas en la piel acudir a un médico para que realice una observación profunda en el cuerpo.
+
+Figura 11.
+Casos de esclerodermia localizada
+
+
+
+
+16
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+
+
+
+a)         b)          c)
+
+Notas: a) Esclerodermia localizada donde se presentan manchas rojizas y oscuras simulando contusiones, b) se presentan depresiones en la piel, c) Presenta una coloración rojiza y amarillenta con depresión en la piel y endurecimiento, además de textura tersa. Fuente: Maria Bibiana (2011), Edith Gomez (2018) y Canarias Dermatológica (2014)
+
+V. COMITÉ DE BIOÉTICA
+El presente proyecto no incide sobre los valores, la libertad o los aspectos con implicaciones éticas y sociales de las personas con relación a las nuevas tecnologías, las imágenes que serán tratadas son obtenidas de bases de datos públicas o que cuentan con un proceso de consentimiento informado, por tal efecto, se considera que esta sección no aplica a la propuesta del proyecto.
+
+VI. PLANTEAMIENTO TEÓRICO (Hipótesis y/o supuestos, pregunta, etc.) Preguntas de investigación
+¿Cuáles son las características dermatoscópicas más distintivas de la escleroderma lineal y localizada que pueden ser utilizadas por descriptores estructurales?
+¿Es posible el diseño de una herramienta como sistema de apoyo para la detección temprana de la escleroderma lineal y localizada?
+¿Cuál es la mejora de los resultados clínicos de los pacientes con detección temprana de la escleroderma lineal y localizada?
+¿Es posible integrar un sistema de apoyo con otras tecnologías como inteligencia artificial para mejorar la gestión de casos de esclerodermia lineal y localizada?
+¿Qué tiempo de diagnóstico es más eficiente entre los métodos convencionales de diagnóstico contra un algoritmo de identificación de esclerodermia lineal y localizada?
+
+
+
+
+17
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Hipótesis, Supuestos y/o proposiciones de investigación
+1 - Hipótesis: El desarrollo de un algoritmo que extraiga las características de tamaño, forma, color de imágenes dermatoscópicas de la piel, permitirá analizar la información para identificar las lesiones de esclerodermia lineal y localizada.
+
+2 - Hipótesis Nula: Un algoritmo de análisis de características de tamaño, forma, color y textura extraídas de imágenes dermatoscópicas de la piel, no proporciona indicadores significativos que permitan la identificación temprana de la esclerodermia lineal y localizada de manera más efectiva que los métodos de diagnóstico convencionales.
+
+VII. OBJETIVOS
+Objetivo general: Desarrollar un algoritmo que permita identificar esclerodermia Lineal y Localizada como una herramienta de apoyo médico, con base en el análisis de imágenes dermatoscópicas mediante descriptores de tamaño, forma, color y textura.
+
+Objetivos específicos:
+● Implementar el descriptor de curvatura y momentos de orden para determinar el tamaño y forma de la lesión para poder delimitar la zona a analizar.
+● Implementar el descriptor de color. Para poder determinar el grado de avance de la lesión y así comenzar el análisis de textura.
+● Desarrollo, testeo e implementación de red neuronal para entrenar al algoritmo.
+A largo plazo
+●  Obtención de muestras, contactando a instituciones dedicadas al estudio de enfermedades reumatológicas y solicitando acceso a bases de datos de investigaciones en tema. (Principalmente muestras dermatoscópicas.)
+● Preprocesamiento de imágenes para su análisis.
+● Validación e Identificación de imágenes (Entrenamiento del algoritmo).
+
+
+
+18
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+VIII. METODOLOGÍA
+La metodología para esta investigación se basa en la propuesta de Sampieri (2014), la cual será una investigación descriptiva con enfoque cuantitativo y se definen las siguientes etapas:
+
+Figura 12.
+Diagrama de procedimiento.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A continuación, se describen las etapas del proceso para identificación de lesiones de esclerodermia de acuerdo con la Figura 12.
+
+Adquisición de imágenes: Se adquirirá información de bases de datos como la librería de imágenes de la American College of Rheumatology, así mismo se continúa buscando fuentes de bases de datos en sitios e instituciones referentes a la reumatología.
+Preprocesamiento: En esta etapa se aplicará el filtro gaussiano para reducir el ruido en la imagen, para posteriormente segmentar la región de interés mediante el método de OTSU, para obtener los bordes de la lesión se implementarán filtros de realce como el filtro de Sobel o Canny que identifica cambios en la intensidad de pixeles de una zona a otra, un ejemplo de este proceso se muestra en la figura 13. Figura 13.
+19
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Preprocesamiento: Filtrado, Segmentación de imágenes dermatoscopicas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Paulina (2022)
+
+Nota: a. Imágen original, b. borde lesión, c. extracción de lesión, d. inversión, e. imágen final segmentada.
+
+Descripción de características: En esta etapa se aplicarán los descriptores de curvatura y descriptor de momentos para poder identificar la suavidad de todo el perímetro de la lesión, cualquier punto no suave presenta un índice de curvatura alto, este valor servirá para identificar una característica en la forma de la lesión, posteriormente  se  implementará  el  descriptor  de  color  para  obtener  las características de color de la piel, que está asociado al grado de la lesión, estas características serán evaluadas por medio de histogramas y modelos de color.
+
+Identificación: Una vez que se ha cuantificado la información se requiere de un algoritmo que permita discernir entre esclerodermia lineal y localizada, para ello se empleara una red neuronal convolucional, la cual tendrá como entradas las características obtenidas de forma, tamaño y color, estas características pueden ser representadas por medio de matrices, (capa de entrada) simulando cada píxel como un dato, característica específica, después se pasa a las capas convolucionales donde se busca que las características sean entrenadas para poder etiquetar de forma adecuada de acuerdo con los parámetros mencionados.
+
+Validación: En esta etapa se validarán, los resultados obtenidos mediante la correlación de variables, con la cual se podrá verificar la relación entre pixeles de una muestra a otra y si la correlación es alta, significa que la imágen tiene características para ser clasificadas según un parámetro, Xi-cuadrada servirá para
+20
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+poder determinar presencia de características específicas y así poder hacer una relación entre zonas o dos imágenes y por último Medición error 1 (falso positivo) y 2 (falso negativo) que servirá para poder evaluar qué tan precisos son los resultados de la red identificando características en 1 identificando resultados buenos cuando realmente no son una característica correcta y 2 donde no identifica características correctas o esperadas, cuando sí están presentes en la imagen.
+Para la realización de este proyecto se contempla se trabajará en la Universidad Autónoma de Querétaro en la facultad de Informática, plantel Juriquilla, con apoyo de equipo de cómputo personal y de ser necesario laboratorio de la institución, las herramientas de Software y Hardware. que se emplearán será MATLAB o python para  procesamiento  de  imágenes  e  implementación  de  redes  neuronales convolucionales. Computadoras con GPU para el desarrollo del algoritmo, testeo y entrenamiento.
+
+a) Cronograma de actividades planeadas 2023-2025.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+A. Investigación del estado del Arte
+B. Escritura de protocolo
+C. Escritura de Tésis
+D. Escritura de Artículo
+E. Obtención de bases de datos
+F. Preprocesamiento de imágenes (Filtrado y segmentación)
+G. Implementación de Tamaño Forma (descriptor de curvatura)
+H. Implementación de descriptor Tamaño Forma (momentos de orden)
+I.  Implementación de descriptor de color
+a. Histograma de color y Modelos de color
+J.  Desarrollo de algoritmo de Identificación y validación
+K. Entrenamiento, Testeo de Algoritmo
+
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO
+Impacto científico: Desarrollo de un algoritmo que permita identificar y detectar lesiones de esclerodermia y el grado de avance de las lesiones.
+Impacto tecnológico: Desarrollo de una aplicación o herramienta de apoyo en la realización de diagnósticos.
+Impacto social: El desarrollo de la aplicación que evalúe lesiones por esclerodermia,  es  una  oportunidad  para  la  población  de  prevenir  un agravamiento en la salud de quien padece la enfermedad debido a la rara forma de desarrollarse y propagarse por el cuerpo. A nivel educativo, es una opción para poder identificar rápidamente muestras de pacientes en prácticas de campo, pudiendo diferenciar entre otros tipos de lesiones cutáneas, las cuales se clasifican según sus características visuales y físicas y filtrando la información de la lesión, es posible identificar una lesión de esclerodermia. Aplicando tecnología de procesamiento de imágenes, se espera que se logren identificar patrones y características principales en las que se manifiesta la esclerodermia en los pacientes, esperando obtener resultados una tesis terminada, derechos de autor y la elaboración de una aplicación. Al igual que participación en congresos y un coloquio de investigación.
+
+X. ÍNDICE TENTATIVO DE LA TESIS
+
+22
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Dedicatorias.
+Agradecimientos.
+Índice.
+Índice de Figuras Índice de Tablas Abreviaturas y siglas Resumen en español Abstract.
+I.  Introducción / planteamiento del problema y justificación.
+II.  Antecedentes/estado del arte.
+III.  Fundamentación teórica.
+IV.  Hipótesis o supuestos
+V.  Objetivos.
+VI.  Material y Métodos o Metodología
+VII.  Resultados y discusión
+VIII.  Conclusiones.
+IX.  Bibliografía o Referencias.
+X.  Anexos.
+
+
+XI. REFERENCIAS BIBLIOGRÁFICAS
+
+Adigun R, Goyal A, Hariz A. (2022). Systemic Sclerosis. In: StatPearls [Internet]. Treasure Island  (FL):  StatPearls  Publishing;  2023  Jan-.  Available  from: https://www.ncbi.nlm.nih.gov/books/NBK430875/
+Administrator, & Administrator. (2017, 17 junio). Entendiendo y usando el histograma. Fotografía   Esencial.   https://www.fotografiaesencial.com/blog/entendiendo-y- usando-el-histograma/
+Análisis de imágenes dermatoscópicas para el diagnóstico de lesiones pigmentadas. (2022). [Tésis Doctoral]. Teoría de la Señal y Comunicaciones Escuela Técnica Superior de Ingeniería Universidad de Sevilla.
+Benedetti, J. (2023, 3 agosto). Descripción de las lesiones cutáneas. Manual MSD versión para profesionales. https://www.msdmanuals.com/es-mx/professional/trastornos-
+23
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+dermatol%C3%B3gicos/abordaje-del-paciente- dermatol%C3%B3gico/descripci%C3%B3n-de-las-lesiones- cut%C3%A1neas#v958451_es
+Candela , N. R. (2020). Detección y segmentación de Eritema en lesiones de la piel basado en imágenes dermatoscópicas (thesis). idUS, Sevilla.
+colaboradores de Wikipedia. (2019, 22 octubre). Descriptor de archivo. Wikipedia, la enciclopedia                                     libre.
+https://es.wikipedia.org/wiki/Descriptor_de_archivo#:~:text=Generalmente%2C%20 un%20descriptor%20de%20archivo,cada%20proceso%20tiene%20la%20suya
+Collazo, A. H., García, M. C., Hernández, F. B., & Venegas, R. Q. (2022). Halo perifolicular blanquecino a la dermatoscopia del signo de sal y pimienta en el diagnóstico de esclerosis sistémica y enfermedad pulmonar intersticial. Actas Dermo-Sifiliográficas, 113(10), 970-972. https://doi.org/10.1016/j.ad.2021.07.011
+Esclerodermia. (s/f). Rheumatology.org. Recuperado el 7 de octubre de 2023, de https://rheumatology.org/patients/esclerodermia
+Fernández, I. N., Alonso, S. A., Vian, C. D., Cura, L. R. D., González-Vela, C., & González- López, M. (2020). Linear Scleroderma and Primary Sclerosing Cholangitis: An Undescribed  Association.  Indian  journal  of  dermatology,  65(6),  514–515. https://doi.org/10.4103/ijd.IJD_473_18
+Ferreli, C., Gasparini, G., Parodi, A., Cozzani, E., Rongioletti, F., & Atzori, L. (2017). Cutaneous Manifestations of Scleroderma and Scleroderma-Like Disorders: A Comprehensive review. Clinical Reviews in Allergy & Immunology, 53(3), 306-336. https://doi.org/10.1007/s12016-017-8625-4
+Franco,   R.   (2021,   15   julio).   Histograma   y   niveles.   MIXDYR. https://mixdyr.wordpress.com/2021/07/06/histograma-y-niveles/
+George, R., George, A., & Kumar, T. S. (2020). Update on Management of Morphea (Localized Scleroderma) in Children. Indian dermatology online journal, 11(2), 135–
+145. https://doi.org/10.4103/idoj.IDOJ_284_19
+
+Gómez, J. M. R. (s. f.). Modelos perceptivos del color: HSB y HLS. https://www.logo- arte.com/blog-5.htm
+24
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Gómez, J. M. R. (s. f.). Modelos perceptivos del color: HSB y HLS. https://www.logo- arte.com/blog-5.htm
+Juan Manuel Barrios. (2020, 28 septiembre). 04.3-Histogramas de color [Vídeo]. YouTube. https://www.youtube.com/watch?v=zaWgtN1xlDA
+Kim, H. J., Brown, M. S., Elashoff, R. M., Li, G., Gjertson, D. W., Lynch, D. A., Strollo, D. C.,
+Kleerup, E. C., Chong, D., Shah, S. K., Ahmad, S., Abtin, F., Tashkin, D. P., & Goldin,
+J. G. (2011). Quantitative texture-based assessment of one-year changes in fibrotic reticular patterns on HRCT in scleroderma lung disease treated with oral cyclophosphamide.    European    Radiology,    21(12),    2455-2465.
+https://doi.org/10.1007/s00330-011-2223-2
+
+Kowalska-Kępczyńska, A. (2022). Systemic Scleroderma—Definition, Clinical Picture and Laboratory Diagnostics. Journal of Clinical Medicine, 11(9), 2299. MDPI AG. Retrieved from http://dx.doi.org/10.3390/jcm11092299
+Leroux, María & Bergero, A. (2011). Esclerodermia localizada: Diagnósticos diferenciales. Revista argentina de dermatología. 92. Material formativo | AEE. (s. f.). https://esclerodermia.com/project/material-formativo/
+Míguez Burgos, A. (2009). Esclerodermia - revista Electronica de PortalesMedicos.com. https://www.portalesmedicos.com/publicaciones/articles/1488/2/Esclerodermia
+Morel, Z., Benadón, E., Faugier, E., & Del Rocío Maldonado, M. (2009). Características clínicas de niños con esclerodermia en un hospital de referencia. Reumatología Clínica. https://doi.org/10.1016/j.reuma.2008.11.018
+Palacios-Martínez, D., & Díaz-Alonso, R. (2017). Dermatoscopia para principiantes ( I ): Características generales. Medicina de Familia. SEMERGEN, 43(3), 216-221. https://doi.org/10.1016/j.semerg.2015.11.009
+Peña-Romero, A. G., & García‐Romero, M. T. (2019). Diagnosis and management of linear scleroderma  in  children.  Current  Opinion  in  Pediatrics,  31(4),  482-490. https://doi.org/10.1097/mop.0000000000000785
+Procesado   de   imágenes   digitales.   (s.   f.).   MATLAB   &   Simulink. https://la.mathworks.com/discovery/digital-image-processing.html
+Qué es la Esclerodermia. (2017). Asociación Española de Esclerodermia. Recuperado 15 de octubre de 2023, de https://esclerodermia.com/que-es-la-esclerodermia/#general
+
+
+
+25
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Romero-González, J., Herrera-Navarro, M., & Jiménez-Hernández, H. (2022). Shape descriptor    based    on    curvature.    OAlib,    09(03),    1-13.
+https://doi.org/10.4236/oalib.1108422
+Singh, D., Parihar, A. K. S., Patel, S., Srivastava, S., Diwan, P., & Singh, M. R. (2019). Scleroderma: An insight into causes, pathogenesis and treatment strategies. Pathophysiology, 26(2), 103-114. https://doi.org/10.1016/j.pathophys.2019.05.003
+Szczepanik-Kułak, P., Michalak-Stoma, A., & Krasowska, D. (2022). Usefulness of Dermoscopy in Localized Scleroderma (LOS, Morphea) Diagnosis and Assessment- Monocentric Cross-Sectional Study. Journal of Clinical Medicine, 11(3), 764.
+https://doi.org/10.3390/jcm11030764
+Técnica     histológica.     (s.     f.).     McGraw     Hill     Medical. https://accessmedicina.mhmedical.com/content.aspx?bookid=1995§ionid=1502994 54#:~:text=El%20objeto%20de%20estudio%20de,microscop%C3%ADa%20y%20l a%20t%C3%A9cnica%20histol%C3%B3gica
+Trípticos visión CEVECE | Centro Estatal de Vigilancia Epidemiológica y Control de Enfermedades. (s. f.). https://cevece.edomex.gob.mx/tripticos-vision-cevece
+Universidad Nacional de Rosario. (s. f.). Procesamiento Digital de Imágenes [Diapositivas].
+Slideshare. https://www.fceia.unr.edu.ar/dip/Representacion_Descriptores.pdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+Firma del alumno
+
+
+
+
+
+
+Nivel de revisión: 02
+
+26

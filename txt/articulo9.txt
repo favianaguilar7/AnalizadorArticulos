@@ -1,0 +1,306 @@
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+Universidad Autónoma de Querétaro
+Facultad de Informática
+C.U. a 10 de marzo de 2023
+MAESTRÍA EN CIENCIAS DE LA COMPUTACIÓN
+
+Me permito presentar ante el H. Consejo Académico de la Facultad de Informática la siguiente solicitud de titulación por tesis de acuerdo con la fracción VII, artículos: 45-54 y 55-58 del reglamento de titulación vigente.
+
+Nombre del Alumno: Andrea Elizabeth Góngora Tun No. de Expediente: 317966
+No. CVU: 1203913
+Correo electrónico: andreaagongora@hotmail.com Teléfono: (999) 247-23-257
+
+Línea de investigación sobre la cual se desarrollará el trabajo: Visión por computadora
+
+Responsable de la Asesoría: Ana Marcela Herrera Navarro
+Programas educativos que apoya: Maestria y Doctorado en Ciencias de la Computación
+Línea de investigación del responsable: Visión por computadora Firma de aceptación:
+Número de veces que se a sometido esta propuesta al H. Consejo Académico de la Facultad: Primera vez (  )   2da. ( X )    Más de 2 veces (  )
+Semestre o Cuatrimestre actual del alumno: Segundo semestre Fecha de Ingreso al programa: 01/ago/2022
+
+
+1
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+I. DATOS GENERALES
+•  Título del proyecto: Desarrollo de un algoritmo evolutivo con una codificación simbólica para estimar el desplazamiento de objetos.
+•  Nombre del alumno responsable: Andrea Elizabeth Góngora Tun
+•  Colaboradores (Director y/o Co-director): Ana Marcela Herrera Navarro
+•  Centro o lugar donde se realiza investigación: Facultad de informática, UAQ
+•  Tipo de investigación básica, aplicada o tecnológica (diseño, construcción de prototipo o prueba experimental): Investigación básica
+•  Línea de investigación sobre la cual se desarrollará el trabajo: Visión computacional
+
+
+
+II. ANTECEDENTES Y/O FUNDAMENTACIÓN TEÓRICA
+
+
+El proceso por el cual se detecta el cambio físico de un objeto de un lado a otro con respecto a su entorno se le conoce como detección de movimiento. Éste puede ser detectado de diferentes tecnologías como infrarrojo, óptica, radio frecuencia, vibración y magnetismo, sin embargo, la tecnología más usada es mediante cámaras ya que con las imágenes se ejecutan técnicas de visión computacional para la detección de movimiento (Machanda & Sharma, 2016).
+
+Estas técnicas de visión por computadora tienen diversos campos de aplicación. Uno de ellos que ha estado emergiendo debido al incremento de vehículos es el manejo inteligente del tráfico. Se puede aprovechar los sistemas de cámaras de video vigilancia para analizar horas pico, reconocimiento de vehículos en movimiento, comportamiento de los vehículos peatones para un manejo eficaz del tráfico (Ho et al., 2019).
+
+
+
+
+2
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Una de las técnicas empleadas para el análisis del movimiento es el método del flujo óptico, este método se basa en el desplazamiento de los patrones de intensidad que tienen las imágenes. Esta definición plantea que la intensidad de los pixeles se mantiene en movimiento es constante (Fortun et al., 2015).
+
+Durante el procesamiento de imágenes se tiene un interés en la relación que hay entre dos o más imágenes para esto se realiza un análisis conocido como registro de imágenes. El cual puede ser de dos tipos, de imagen a imagen y de imagen a mapa. En el primero, se alinean dos o más imágenes para integrar o fusionar los pixeles correspondientes a un mismo objeto. En el segundo, una imagen de entrada se cambia de manera que coincida con la información del mapa de una imagen base. Durante el proceso de registro de imágenes se pretende encontrar los puntos correspondientes entre dos imágenes y alinearlos espacialmente para minimizar el error en la distancia entre dos imágenes (Singh Phogat et al., 2014).
+
+Las medidas de similaridad o disimilaridad son medidas que cuantifican la dependencia o independencia que hay entre objetos o fenómenos. Dentro del registro de imágenes se tienen secuencias X y Y que representan las intensidades de los pixeles correspondientes a una imagen bidimensional. Estas medidas tienen aplicaciones como la búsqueda de un objeto especifico dentro de la imagen o para dada un conjunto de imágenes, encontrar la que más coincida (Advances in Computer Vision and Pattern Recognition, s/f).
+
+La similaridad o disimilaridad puede ser representado por mapas de disparidad. De estos mapas se busca por medio de mínimos cuadrados la sección cuya similaridad sea mayor a un objeto el cual será el objetivo para encontrar.
+
+Se han propuesto diferentes metodologías para el registro de imágenes y el cálculo de la similaridad. En el artículo (Lucas & Kanade, 1981) proponen resolver el vector de flujo óptico asumiendo que el vector será similar a un pequeño vecindario que rodea al pixel, en el método las ecuaciones de flujo óptico se resuelven por mínimos cuadrados para aproximar el flujo óptico en el pixel.
+3
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+
+
+Otras metodologías como la de (Shi & Tomasi, s/f) proponen el uso de puntos característicos para calcular el flujo óptico como líneas, bordes, o esquinas y también propuso una técnica para buscar estos puntos en una imagen.
+
+Sin embargo, el método propuesto por Shi & Tomasi, converge cuando encuentra un mínimo local por lo que este método termina la búsqueda de la solución. Además, el espacio métrico en el cual se quiere hacer la búsqueda puede tener varios mínimos locales, por lo que se ha propuesto el uso de algoritmos genéticos como método de búsqueda, ya que su uso evitará que el algoritmo termine en un mínimo local (Reynosa-Guerrero et al., 2016).
+
+De este modo, una problemática de los métodos de flujo óptico es que no se consideran valores atípicos como pixeles ocluidos, cambios de iluminación, ruido y discontinuidad, por lo contrario el valor de intensidad de los pixeles se considera constante.
+
+Los algoritmos metaheurísticos han sido empleados para resolver problemáticas de diferentes áreas como la economía, ingeniería y política. La mayoría de estos algoritmos están inspirados en el proceso biológico de evolución, comportamiento de enjambres o leyes físicas. Estos algoritmos pueden estar basados en una solución o en una población. En las metaheurísticas basadas en una población, se emplean múltiples soluciones candidatas durante el proceso de búsqueda esto mantiene la diversidad en la población y evita que las soluciones se detengan en óptimos locales. Los algoritmos genéticos son algoritmos metaheurísticos de optimización basados en poblaciones; están inspirados en el proceso de evolución biológica y la supervivencia del más apto. Los elementos básicos de los algoritmos genéticos son la representación cromosómica, la selección de aptitud y los operadores (Katoch et al., 2021).
+
+Uno de los elementos de los algoritmos genéticos es el esquema de codificación, es decir la conversión de un objeto u información en un esquema en particular. El
+4
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+esquema de codificación es usado para representar cada gen o cromosoma, el cual es la manera en el cual el algoritmo procesará la información; los esquemas de codificación usado en estos algoritmos son el octal, hexadecimal o binario (Katoch et al., 2021).
+
+
+III. JUSTIFICACIÓN
+
+
+
+Los métodos de Lukas-Kanade y Shi-Tomasi para el registro de imágenes y la estimación del desplazamiento presentan problemáticas ya que la solución de estas ecuaciones puede caer en mínimos locales, debido a que el método de resolución como newthon-raphson tienden a detenerse en soluciones locales, por lo que la solución resulta inexacta.
+
+Además, en esas metodologías no se toma en cuenta las variaciones de intensidad lumínica que puede haber en un video y sus imágenes secuenciales. Ya que en un cuadro de video se puede tener una intensidad lumínica mayo y el siguiente  cuadro de  video una menor.  Tampoco  se toma en cuenta  los desplazamientos largos, ya que en esas metodologías se toman secciones cercanas al objeto a detectar, si el desplazamiento del objeto fue largo, entonces puede salir del rango de búsqueda.
+
+Por otro lado, el uso de otro método de búsqueda como el método de algoritmos genéticos que evitan caer en mínimos locales al ser un método donde se busca dentro de una población de soluciones. Así como el uso de un esquema de codificación binario, donde se convierte la imagen a un sistema binario, puede resultar en que las variaciones lumínicas no afecten la información que existe en la imagen.
+
+IV. DESCRIPCIÓN DEL PROBLEMA
+
+
+
+
+5
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+El método de flujo óptico tiene varios usos, sin embargo, cuando es empleado para aplicaciones en el exterior como monitoreo del tráfico o conducción autónoma donde los videos captados están expuestos a cambios lumínicos debido al cambio del clima como las nubes, luz solar variable o niebla la constante de la luminosidad ya no se cumple en estas aplicaciones (Zhai et al., 2021).
+
+Aunque numerosas metodologías del cálculo del flujo óptico asumen el brillo de la imagen constante, en las imágenes existen diferentes variaciones del brillo que se deben a cambios en la orientación de la superficie con respecto a algún iluminante como el sol.
+
+Los desplazamientos largos se pueden producen cuando el movimiento de un objeto se desplaza a gran velocidad o debido a una baja velocidad entre los fotogramas siguientes de un video. Estos desplazamientos pueden afectar a los métodos locales donde el flujo se evalúa en los pixeles cercanos a la sección objetivo haciendo que el resultado se quede en un mínimo local (Fortun et al., 2015).
+
+V. COMITÉ DE BIOÉTICA
+
+
+No aplica
+
+VI. PLANTEAMIENTO TEÓRICO (Hipótesis y/o supuestos, pregunta, etc.)
+
+
+Preguntas de investigación
+¿El uso de un espacio métrico basado en una representación simbólica de la información de la intensidad de los pixeles puede ayudar a tolerar mejor las invariancias lumínicas para que el cálculo del desplazamiento sea más eficiente?
+
+Hipótesis, Supuestos y/o proposiciones de investigación
+
+
+6
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Si se utiliza una métrica basada en una representación simbólica resultado de la codificación de la intensidad de los pixeles, es posible mediante un algoritmo de búsqueda evolutivo construir un método de cálculo del desplazamiento que sea tolerante a perturbaciones lumínicas globales del escenario.
+
+
+VII. OBJETIVOS
+
+
+Objetivo general:
+Desarrollar un algoritmo evolutivo que apartir de un método de codificación simbólica de las intensidades del píxel permita calcular el desplazamiento de un objeto en un par de imágenes.
+
+Objetivos específicos:
+•  Diseñar un esquema de codificación simbólica en diferentes espacios de representación para las intensidades del píxel de una imagen.
+•  Analizar las representaciones simbólicas mediante mapas de disparidad.
+•  Desarrollar las etapas de la metodología de algoritmos evolutivos.
+
+
+
+VIII. METODOLOGÍA
+1. Revisión de la literatura: Determinar los parámetros de entrada empleados en el registro de imágenes.
+2. Evaluar las metodologías de Lucas-Kanade y Shi-tomasi: Desarrollar los algoritmos propuestos por Lukas-Kanade y Shi-tomasi, determinar el tiempo de ejecución y los valores de error.
+3. Generar una representación simbólica para imágenes: desarrollar una representación mediante símbolos para obtener la información de la imagen sin una serie de números finitos que representan un píxel.
+
+
+
+
+7
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+4. Implementar la metodología de registro de imágenes mediante métodos evolutivos: Desarrollar la metodología de Shi-tomasi y emplear como método de búsqueda de soluciones un algoritmo genético.
+5. Evaluar  la  metodología  de  estimación  de  desplazamiento  mediante algoritmos genéticos: comparar los resultados obtenidos en la metodología de Shi-tomasi y Lucas-kanade, con la metodología empleando métodos evolutivos.
+
+
+
+Cronograma
+Actividades
+
+
+Revisión  de  la literatura
+Evaluación    de
+metodologías   de Lucas-Kanade y Shi- tomasi
+Generar     un
+esquema     de codificación simbólica    para imágenes.
+Evaluar y validar la metodología   de
+registro      de
+imágenes por medio de     modelos evolutivos.
+
+Primer semestre
+
+Segundo semestre
+
+Tercer semestre
+
+Cuarto semestre
+
+
+
+
+8
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+IX. RESULTADOS ESPERADOS, POSIBLES APLICACIONES Y USO DEL PROYECTO
+Determinar de manera adecuada la estimación del desplazamiento para ser aplicados a secuencias de video con exposición a entornos no controlados, Además se espera que tenga aplicaciones en el monitoreo del tráfico ya que los videos presentados, tienen mucha exposición a variaciones en la luz debido al ambiente externo.
+
+
+X. INDICE TENTATIVO DE LA TESIS
+Dedicatorias.
+Agradecimientos.
+Índice.
+Índice de Figuras Índice de Tablas Abreviaturas y siglas Resumen en español
+I.  Introducción / planteamiento del problema y justificación.
+II.  Antecedentes/estado del arte.
+III.  Fundamentación teórica.
+IV.  Hipótesis o supuestos
+V.  Objetivos.
+VI.  Material y Métodos o Metodología
+VII.  Resultados y discusión
+VIII.  Conclusiones.
+IX.  Bibliografía o Referencias.
+
+
+
+XI. REFERENCIAS BIBLIOGRÁFICAS
+
+Fortun, D., Bouthemy, P., & Kervrann, C. (2015). Optical flow modeling and computation: A survey. Computer Vision and Image Understanding, 134, 1–21. https://doi.org/10.1016/j.cviu.2015.02.008
+
+
+9
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Ho, G. T. S., Tsang, Y. P., Wu, C. H., Wong, W. H., & Choy, K. L. (2019). A computer vision-based roadside occupation surveillance system for intelligent transport in smart cities. Sensors (Switzerland), 19(8). https://doi.org/10.3390/s19081796
+
+Katoch, S., Chauhan, S. S., & Kumar, V. (2021). A review on genetic algorithm: past, present, and future. Multimedia Tools and Applications, 80(5), 8091–8126. https://doi.org/10.1007/s11042-020-10139-6
+
+Lucas, B. D., & Kanade, T. (1981). An Iterative Image Registration Technique with an Application to Stereo Vision. https://www.researchgate.net/publication/215458777
+
+Machanda, S., & Sharma, S. (2016). Analysis of Computer Vision based Techniques for Motion Detection. IEEE.
+
+Shi, J., & Tomasi, C. (s/f). Good Features to Track.
+
+Singh Phogat, R., Dhamecha, H., Pandya, M., Chaudhary, B., & Potdar, M. (2014).
+Different Image Registration Methods-An Overview. International Journal of Scientific & Engineering Research, 5. http://www.ijser.org
+
+Reynosa-Guerrero, J., Canseco-Pinacho, J.-A., Jiménez-Hernández, H., Rafael-Montes Martínez, J., & Bringas-Rico, V. (2016). Displacement Estimation in Micro- photographies through Genetic Algorithm.
+
+Zhai, M., Xiang, X., Lv, N., & Kong, X. (2021). Optical flow and scene flow estimation: A survey. Pattern Recognition, 114. https://doi.org/10.1016/j.patcog.2021.107861
+
+
+
+
+
+
+
+
+
+
+Firma del alumno
+
+
+
+
+
+
+
+10
+
+F-50-01 PROTOCOLO DE INVESTIGACIÓN
+
+Nivel de revisión: 02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11
