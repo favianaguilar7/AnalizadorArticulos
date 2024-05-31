@@ -52,7 +52,7 @@ app.post('/upload', async (req, res) => {
                 ]
             };
 
-            const response = await fetch('https://v2.convertapi.com/convert/pdf/to/txt?Secret=kCocT5pfICHz5GQa', {
+            const response = await fetch('https://v2.convertapi.com/convert/pdf/to/txt?Secret=Tr9GbHS2prltG0Aa', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -172,4 +172,3 @@ function countFrequencies(content) {
 app.listen(PORT, () => {
     console.log(`El servidor está funcionando en http://localhost:${PORT}`);
 });
-
